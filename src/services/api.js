@@ -1,5 +1,5 @@
 const SUPABASE_URL = 'https://wrssvnvagpnvlwhnqqta.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNzkxMzA0ODgzLCJleHAiOjIxMDY4ODA4ODN9.c4yG-S54rHPRhuEeohnDoYOYzR7OvR_8CkUH8QRYNQ0';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indyc3N2bnZhZ3Budmx3aG5xcXRhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTEzMDQ4ODMsImV4cCI6MjEwNjg4MDg4M30.c4y-GS54rHPRhuEeohnDoYOYzR7OvR_8CkUH8QRYNQ0';
 const ENDPOINT = `${SUPABASE_URL}/functions/v1/amanishu-admin`;
 
 export const PHONE_PATTERN = /^[6789][0-9]{9}$/;
