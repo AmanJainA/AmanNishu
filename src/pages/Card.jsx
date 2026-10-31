@@ -16,7 +16,7 @@ const dateKey = (value) => {
 
 const timeKey = (value) => {
   if (!value) return Number.MAX_SAFE_INTEGER;
-  const match = String(value).toLowerCase().match(/(\d{1,2})(?:[:.](\d{2}))?\\s*(am|pm)?/);
+  const match = String(value).toLowerCase().match(/(\d{1,2})(?:[:.](\d{2}))?\s*(am|pm)?/);
   if (!match) return Number.MAX_SAFE_INTEGER;
   let hours = Number(match[1]) % 12;
   const minutes = Number(match[2] || 0);
