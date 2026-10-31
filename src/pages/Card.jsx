@@ -16,7 +16,7 @@ const dateKey = (value) => {
 
 const timeKey = (value) => {
   if (!value) return Number.MAX_SAFE_INTEGER;
-  const match = String(value).toLowerCase().match(/(\\d{1,2})(?:[:.](\\d{2}))?\\s*(am|pm)?/);
+  const match = String(value).toLowerCase().match(/(\d{1,2})(?:[:.](\d{2}))?\\s*(am|pm)?/);
   if (!match) return Number.MAX_SAFE_INTEGER;
   let hours = Number(match[1]) % 12;
   const minutes = Number(match[2] || 0);
@@ -40,7 +40,7 @@ export default function Card() {
         title: row.function_name,
         time: row.timing || '',
         venue: row.venue_name || '',
-        date: row.date ? new Date(row.date + 'T00:00:00').toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }) : '',
+        date: row.date || '',
         image: row.url || '',
       }))))
       .catch(() => setCardEvents(events));
@@ -126,7 +126,7 @@ export default function Card() {
                           </div>
                         </div>
                         <div className="wpo-story-content">
-                          <span>{ev.date || group.label}</span>
+                          <span>{formatDate(ev.date || group.label)}</span>
                           <h2>{ev.title}</h2>
                           <p>{ev.time}</p>
                           <p>{ev.venue}</p>
