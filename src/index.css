@@ -14,8 +14,6 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-<<<<<<< HEAD
-=======
 }
 .video-page video {
   display: block;
@@ -258,7 +256,6 @@ body { width: 100%; min-width: 320px; overflow-x: clip; }
     scroll-behavior: auto !important;
     transition-duration: .01ms !important;
   }
->>>>>>> origin/main
 }
 .video-page video {
   display: block;
