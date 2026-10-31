@@ -1,23 +1,28 @@
 import { useEffect, useState } from 'react';
 
-// Same markup/CSS as the original theme loader. Fades out once the page has loaded.
 export default function Preloader() {
-  const [phase, setPhase] = useState('show'); // show -> hide -> gone
+  const [phase, setPhase] = useState('show');
 
   useEffect(() => {
-    let t1, t2;
+    let hideTimer;
+    let removeTimer;
+
     const finish = () => {
-      setPhase('hide');
-      t2 = setTimeout(() => setPhase('gone'), 400);
+      hideTimer = window.setTimeout(() => {
+        setPhase('hide');
+        removeTimer = window.setTimeout(() => setPhase('gone'), 350);
+      }, 250);
     };
+
     if (document.readyState === 'complete') {
-      t1 = setTimeout(finish, 350);
+      finish();
     } else {
       window.addEventListener('load', finish, { once: true });
     }
+
     return () => {
-      clearTimeout(t1);
-      clearTimeout(t2);
+      window.clearTimeout(hideTimer);
+      window.clearTimeout(removeTimer);
       window.removeEventListener('load', finish);
     };
   }, []);
@@ -25,19 +30,43 @@ export default function Preloader() {
   if (phase === 'gone') return null;
 
   return (
-    <div
-      className="preloader"
-      style={{ opacity: phase === 'hide' ? 0 : 1, transition: 'opacity 400ms ease' }}
-      aria-hidden="true"
-    >
-      <div className="vertical-centered-box">
-        <div className="content">
-          <div className="loader-circle"></div>
-          <div className="loader-line-mask">
-            <div className="loader-line"></div>
-          </div>
-        </div>
+    <>
+      <style>{`
+        @keyframes wedding-preloader-spin {
+          to { transform: rotate(360deg); }
+        }
+      `}</style>
+      <div
+        role="status"
+        aria-label="Loading"
+        style={{
+          position: 'fixed',
+          inset: 0,
+          zIndex: 999999,
+          display: 'grid',
+          placeItems: 'center',
+          width: '100%',
+          height: '100%',
+          backgroundColor: '#657150',
+          opacity: phase === 'hide' ? 0 : 1,
+          visibility: phase === 'hide' ? 'hidden' : 'visible',
+          transition: 'opacity 350ms ease, visibility 350ms ease',
+          pointerEvents: phase === 'hide' ? 'none' : 'auto',
+        }}
+      >
+        <span
+          aria-hidden="true"
+          style={{
+            display: 'block',
+            width: 54,
+            height: 54,
+            border: '4px solid rgba(255,255,255,.25)',
+            borderTopColor: '#fff',
+            borderRadius: '50%',
+            animation: 'wedding-preloader-spin .8s linear infinite',
+          }}
+        />
       </div>
-    </div>
+    </>
   );
 }
