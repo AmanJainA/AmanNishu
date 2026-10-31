@@ -499,3 +499,31 @@ body { width: 100%; min-width: 320px; overflow-x: clip; }
     transition-duration: .01ms !important;
   }
 }
+
+/* Center the story-shape behind each caricature image */
+.wpo-story-section-s6 .wpo-story-wrap .wpo-story-item .wpo-story-img {
+  position: relative;
+}
+
+.wpo-story-section-s6 .wpo-story-wrap .wpo-story-item .flower-shape {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 480px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.wpo-story-section-s6 .wpo-story-wrap .wpo-story-item .flower-shape img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.wpo-story-section-s6 .wpo-story-wrap .wpo-story-item .wpo-story-img-inner {
+  position: relative;
+  z-index: 1;
+}
