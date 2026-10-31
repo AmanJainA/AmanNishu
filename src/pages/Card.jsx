@@ -8,6 +8,30 @@ import { COUNTDOWN_TARGET, coupleTitle, dateLine, events } from '../data/wedding
 
 const DURATIONS = [1000, 1200, 1400];
 
+const dateKey = (value) => {
+  if (!value) return '9999-12-31';
+  const parsed = new Date(value);
+  return Number.isNaN(parsed.getTime()) ? String(value) : parsed.toISOString().slice(0, 10);
+};
+
+const timeKey = (value) => {
+  if (!value) return Number.MAX_SAFE_INTEGER;
+  const match = String(value).toLowerCase().match(/(\\d{1,2})(?:[:.](\\d{2}))?\\s*(am|pm)?/);
+  if (!match) return Number.MAX_SAFE_INTEGER;
+  let hours = Number(match[1]) % 12;
+  const minutes = Number(match[2] || 0);
+  if (match[3] === 'pm') hours += 12;
+  return hours * 60 + minutes;
+};
+
+const formatDate = (value) => {
+  if (!value) return 'Date to be announced';
+  const parsed = new Date(value);
+  return Number.isNaN(parsed.getTime())
+    ? value
+    : parsed.toLocaleDateString('en-IN', { day: '2-digit', month: 'long', year: 'numeric' });
+};
+
 export default function Card() {
   const [cardEvents, setCardEvents] = useState(events);
   useEffect(() => {
@@ -21,7 +45,16 @@ export default function Card() {
       }))))
       .catch(() => setCardEvents(events));
   }, []);
-  const rows = [cardEvents.slice(0, 3), cardEvents.slice(3, 6)];
+  const sortedEvents = [...cardEvents].sort((a, b) =>
+    dateKey(a.date).localeCompare(dateKey(b.date)) || timeKey(a.time) - timeKey(b.time)
+  );
+  const groupedEvents = sortedEvents.reduce((groups, event) => {
+    const key = dateKey(event.date);
+    const existing = groups.find((group) => group.key === key);
+    if (existing) existing.events.push(event);
+    else groups.push({ key, label: formatDate(event.date), events: [event] });
+    return groups;
+  }, []);
   return (
     <div className="page-wrapper">
       <Preloader />
@@ -70,32 +103,38 @@ export default function Card() {
         <div className="container">
           <div className="wpo-section-title"></div>
           <div className="wpo-story-wrap">
-            {rows.map((row, r) => (
-              <div className="row" key={r}>
-                {row.map((ev, i) => (
-                  <div className="col col-lg-4 col-md-12 col-12" key={ev.title}>
-                    <Reveal
-                      className="wpo-story-item"
-                      duration={DURATIONS[i]}
-                      style={{ boxShadow: '5px 5px 15px rgba(0,0,0,.3)', padding: '15px 0px' }}
-                    >
-                      <div className="wpo-story-img">
-                        <div className="wpo-story-img-inner">
-                          <img src={ev.image} alt={ev.title} />
+            {groupedEvents.map((group) => (
+              <div className="wpo-event-date-group" key={group.key} style={{ marginBottom: '42px' }}>
+                <div className="wpo-section-title" style={{ marginBottom: '24px' }}>
+                  <span style={{ color: '#a17b49', letterSpacing: '2px', fontSize: '12px' }}>WEDDING CELEBRATIONS</span>
+                  <h2 style={{ marginTop: '8px' }}>{group.label}</h2>
+                </div>
+                <div className="row">
+                  {group.events.map((ev, i) => (
+                    <div className="col col-lg-4 col-md-6 col-12" key={ev.id || `${ev.title}-${ev.time}-${i}`}>
+                      <Reveal
+                        className="wpo-story-item"
+                        duration={DURATIONS[i % DURATIONS.length]}
+                        style={{ boxShadow: '5px 5px 15px rgba(0,0,0,.3)', padding: '15px 0px' }}
+                      >
+                        <div className="wpo-story-img">
+                          <div className="wpo-story-img-inner">
+                            <img src={ev.image} alt={ev.title} />
+                          </div>
+                          <div className="flower-shape">
+                            <img src={asset('images/story/story-shape.png')} alt="" />
+                          </div>
                         </div>
-                        <div className="flower-shape">
-                          <img src={asset('images/story/story-shape.png')} alt="" />
+                        <div className="wpo-story-content">
+                          <span>{ev.date || group.label}</span>
+                          <h2>{ev.title}</h2>
+                          <p>{ev.time}</p>
+                          <p>{ev.venue}</p>
                         </div>
-                      </div>
-                      <div className="wpo-story-content">
-                        <span>{ev.date}</span>
-                        <h2>{ev.title}</h2>
-                        <p>{ev.time}</p>
-                        <p>{ev.venue}</p>
-                      </div>
-                    </Reveal>
-                  </div>
-                ))}
+                      </Reveal>
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
