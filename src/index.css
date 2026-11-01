@@ -657,3 +657,93 @@ body { width: 100%; min-width: 320px; overflow-x: clip; }
     letter-spacing: -0.02em;
   }
 }
+
+/* Romantic pink invitation gate entrance */
+.wedding-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #f8dfe5;
+  isolation: isolate;
+}
+.gate-panel {
+  position: absolute;
+  inset-block: 0;
+  width: 50.2%;
+  background:
+    radial-gradient(ellipse at center, rgba(255,255,255,.34), transparent 62%),
+    linear-gradient(135deg, #fbe9ed 0%, #f5d4dd 48%, #edc1ce 100%);
+  border: 1px solid rgba(255,255,255,.75);
+  box-shadow: inset 0 0 55px rgba(160,91,112,.10);
+  transition: transform 1.35s cubic-bezier(.7,0,.2,1), opacity 1.1s ease;
+}
+.gate-panel::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(151,91,108,.28);
+  pointer-events: none;
+}
+.gate-panel-left { left: 0; transform-origin: left center; }
+.gate-panel-right { right: 0; transform-origin: right center; }
+.gate-center {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  transition: opacity .35s ease, transform .5s ease;
+}
+.gate-seal {
+  width: clamp(142px, 25vw, 190px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid #a96e7d;
+  outline: 1px solid rgba(169,110,125,.5);
+  outline-offset: 7px;
+  background: radial-gradient(circle at 35% 28%, #fffaf9, #f7e5e9 62%, #edcbd4);
+  color: #7b4656;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  cursor: pointer;
+  box-shadow: 0 12px 38px rgba(113,57,75,.18);
+  transition: transform .3s ease, box-shadow .3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.gate-seal:hover { transform: scale(1.045); box-shadow: 0 16px 44px rgba(113,57,75,.24); }
+.gate-seal:focus-visible { outline: 3px solid #8d5264; outline-offset: 10px; }
+.gate-monogram {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(35px, 7vw, 52px);
+  line-height: 1;
+  letter-spacing: .04em;
+}
+.gate-monogram i { font-size: .62em; font-weight: 400; }
+.gate-seal-line { width: 42px; height: 1px; background: #b88794; }
+.gate-open-label {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 9px;
+  letter-spacing: .2em;
+}
+.gate-caption {
+  margin: 0;
+  color: #875666;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 14px;
+  font-style: italic;
+  letter-spacing: .08em;
+}
+.wedding-gate.is-opening .gate-panel-left { transform: translateX(-101%) rotateY(-12deg); }
+.wedding-gate.is-opening .gate-panel-right { transform: translateX(101%) rotateY(12deg); }
+.wedding-gate.is-opening .gate-center { opacity: 0; transform: scale(.82); }
+@media (prefers-reduced-motion: reduce) {
+  .gate-panel { transition-duration: .01ms; }
+  .gate-center { transition-duration: .01ms; }
+}
