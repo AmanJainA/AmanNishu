@@ -36,9 +36,8 @@ export default function Home() {
                             To ensure a comfortable stay during the celebrations, please provide us
                             with your itinerary details.
                           </li>
-                          <li>
-                            <Link to="/arrangement" className="blink-style">Stay Arrangement</Link>
-                            &nbsp;&nbsp;&nbsp;
+                          <li className="home-action-links">
+                            <Link to="/arrangement" className="blink-style me-3">Stay Arrangement</Link>
                             <Link to="/card" className="blink-style">View Invitation Card</Link>
                           </li>
                         </ul>

@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Card from './pages/Card';
 import Arrangement from './pages/Arrangement';
 import Video from './pages/Video';
+import Admin from './pages/Admin';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/arrangement" element={<Arrangement mode="new" />} />
         <Route path="/edit-arrangement" element={<Arrangement mode="edit" />} />
         <Route path="/video" element={<Video />} />
+        <Route path="/admin" element={<Admin />} />
         {/* Links already shared with guests used the old .php URLs */}
         <Route path="/index.php" element={<Navigate to="/" replace />} />
         <Route path="/card.php" element={<Navigate to="/card" replace />} />

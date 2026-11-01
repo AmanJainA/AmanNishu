@@ -1,13 +1,27 @@
+import { useEffect, useState } from 'react';
 import Preloader from '../components/Preloader';
+import { adminRequest } from '../services/adminApi';
 import Reveal from '../components/Reveal';
 import Countdown from '../components/Countdown';
 import { asset, publicUrl } from '../utils/asset';
 import { COUNTDOWN_TARGET, coupleTitle, dateLine, events } from '../data/wedding';
 
-const rows = [events.slice(0, 3), events.slice(3, 6)];
 const DURATIONS = [1000, 1200, 1400];
 
 export default function Card() {
+  const [cardEvents, setCardEvents] = useState(events);
+  useEffect(() => {
+    adminRequest('public-cards', {}, false)
+      .then(({ rows = [] }) => setCardEvents(rows.map((row) => ({
+        title: row.function_name,
+        time: row.timing || '',
+        venue: row.venue_name || '',
+        date: row.date ? new Date(row.date + 'T00:00:00').toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }) : '',
+        image: row.url || '',
+      }))))
+      .catch(() => setCardEvents(events));
+  }, []);
+  const rows = [cardEvents.slice(0, 3), cardEvents.slice(3, 6)];
   return (
     <div className="page-wrapper">
       <Preloader />
