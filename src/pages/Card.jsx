@@ -1,13 +1,72 @@
+import { useEffect, useState } from 'react';
 import Preloader from '../components/Preloader';
 import Reveal from '../components/Reveal';
 import Countdown from '../components/Countdown';
 import { asset, publicUrl } from '../utils/asset';
-import { COUNTDOWN_TARGET, coupleTitle, dateLine, events } from '../data/wedding';
+import { COUNTDOWN_TARGET, coupleTitle, dateLine } from '../data/wedding';
+import { adminRequest } from '../services/adminApi';
 
-const rows = [events.slice(0, 3), events.slice(3, 6)];
 const DURATIONS = [1000, 1200, 1400];
 
+const formatEventDate = (value) => {
+  if (!value) return '';
+  const [year, month, day] = String(value).slice(0, 10).split('-').map(Number);
+  if (!year || !month || !day) return value;
+  return new Intl.DateTimeFormat('en-GB', {
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric',
+  }).format(new Date(year, month - 1, day));
+};
+
+const resolveEventImage = (value) => {
+  if (!value) return '';
+  if (/^(https?:)?\/\//i.test(value) || value.startsWith('data:')) return value;
+  return publicUrl(value.replace(/^\/+/, ''));
+};
+
 export default function Card() {
+  const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const fetchCards = async () => {
+      try {
+        setLoading(true);
+        setError('');
+        // This is a public read action; do not send the Admin session token.
+        const data = await adminRequest('public-cards', {}, false);
+        const cards = (data.rows || []).map((card) => ({
+          id: card.id,
+          title: card.function_name,
+          date: formatEventDate(card.date),
+          time: card.timing || '',
+          venue: card.venue_name || '',
+          image: resolveEventImage(card.url),
+        }));
+
+        if (isMounted) setEvents(cards);
+      } catch (err) {
+        if (isMounted) setError(err.message || 'Unable to load wedding events.');
+      } finally {
+        if (isMounted) setLoading(false);
+      }
+    };
+
+    fetchCards();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const rows = Array.from(
+    { length: Math.ceil(events.length / 3) },
+    (_, index) => events.slice(index * 3, index * 3 + 3)
+  );
+
   return (
     <div className="page-wrapper">
       <Preloader />
@@ -56,18 +115,23 @@ export default function Card() {
         <div className="container">
           <div className="wpo-section-title"></div>
           <div className="wpo-story-wrap">
+            {loading && <p className="text-center">Loading wedding events...</p>}
+            {!loading && error && <p className="text-center" role="alert">{error}</p>}
+            {!loading && !error && events.length === 0 && (
+              <p className="text-center">Wedding event details will be updated soon.</p>
+            )}
             {rows.map((row, r) => (
               <div className="row" key={r}>
                 {row.map((ev, i) => (
-                  <div className="col col-lg-4 col-md-12 col-12" key={ev.title}>
+                  <div className="col col-lg-4 col-md-12 col-12" key={ev.id}>
                     <Reveal
                       className="wpo-story-item"
-                      duration={DURATIONS[i]}
+                      duration={DURATIONS[i % DURATIONS.length]}
                       style={{ boxShadow: '5px 5px 15px rgba(0,0,0,.3)', padding: '15px 0px' }}
                     >
                       <div className="wpo-story-img">
                         <div className="wpo-story-img-inner">
-                          <img src={ev.image} alt={ev.title} />
+                          {ev.image && <img src={ev.image} alt={ev.title} />}
                         </div>
                         <div className="flower-shape">
                           <img src={asset('images/story/story-shape.png')} alt="" />
