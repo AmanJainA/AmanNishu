@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
+import IntroGate from './components/IntroGate';
 import Home from './pages/Home';
 import Card from './pages/Card';
 import Arrangement from './pages/Arrangement';
@@ -9,6 +10,7 @@ import Admin from './pages/Admin';
 export default function App() {
   return (
     <>
+      <IntroGate />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
