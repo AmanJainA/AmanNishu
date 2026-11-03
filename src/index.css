@@ -1447,3 +1447,61 @@ body { width: 100%; min-width: 320px; overflow-x: clip; }
   }
   .gate-culture-rajasthan .gate-culture-copy { bottom: 7vh; }
 }
+
+
+/* Responsive Rajasthan photo mosaic: Jaipur, Ajmer, Udaipur and Bhilwara */
+.gate-rajasthan-collage {
+  display: grid;
+  grid-template-columns: 1.12fr .88fr .9fr;
+  grid-template-rows: 1.12fr .88fr .92fr .9fr;
+  gap: 4px;
+  padding: 4px;
+  background: #e7d2b4;
+}
+.gate-rajasthan-collage::after {
+  background: linear-gradient(180deg, rgba(30,18,10,.02) 42%, rgba(30,18,10,.12) 70%, rgba(30,18,10,.5) 100%);
+}
+.rajasthan-tile {
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border: 1px solid rgba(255,248,232,.9);
+  filter: saturate(1.03) contrast(1.03);
+}
+.tile-amer { grid-column: 1 / 3; grid-row: 1 / 3; object-position: center 48%; }
+.tile-hawa { grid-column: 3; grid-row: 1; object-position: center 35%; }
+.tile-jal { grid-column: 3; grid-row: 2; object-position: center 55%; }
+.tile-ajmer { grid-column: 1; grid-row: 3; object-position: center 42%; }
+.tile-udaipur { grid-column: 2 / 4; grid-row: 3; object-position: center 48%; }
+.tile-badnore { grid-column: 1; grid-row: 4; object-position: center 45%; }
+.tile-mandalgarh { grid-column: 2; grid-row: 4; object-position: center 48%; }
+.tile-menal { grid-column: 3; grid-row: 4; object-position: center 50%; }
+.gate-culture-rajasthan .gate-culture-copy {
+  bottom: clamp(25px, 5vh, 54px);
+  color: #fff8e9;
+  text-shadow: 0 2px 10px rgba(24,14,8,.9), 0 1px 3px rgba(24,14,8,.8);
+}
+@media (max-width: 700px) {
+  .gate-rajasthan-collage {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1.2fr .85fr .85fr .9fr .9fr;
+    gap: 2px;
+    padding: 2px;
+  }
+  .tile-amer { grid-column: 1 / 3; grid-row: 1 / 3; }
+  .tile-hawa { grid-column: 1; grid-row: 3; }
+  .tile-jal { grid-column: 2; grid-row: 3; }
+  .tile-ajmer { grid-column: 1; grid-row: 4; }
+  .tile-udaipur { grid-column: 2; grid-row: 4; }
+  .tile-badnore { grid-column: 1; grid-row: 5; }
+  .tile-mandalgarh { grid-column: 2; grid-row: 5; }
+  .tile-menal { display: none; }
+  .gate-culture-rajasthan .gate-culture-copy { bottom: 7vh; }
+}
+@media (max-width: 420px) {
+  .gate-rajasthan-collage { gap: 1px; padding: 1px; }
+  .gate-culture-rajasthan .gate-culture-copy { bottom: 6vh; }
+}
