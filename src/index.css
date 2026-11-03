@@ -1229,3 +1229,52 @@ body { width: 100%; min-width: 320px; overflow-x: clip; }
   .gate-orbiting-art { animation: none; }
   .gate-culture, .gate-center { transition-duration: .01ms; }
 }
+
+
+/* Landmark photography for the two-culture invitation entrance */
+.gate-culture-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: .32;
+  filter: saturate(.82) sepia(.12);
+  transform: scale(1.025);
+}
+.gate-culture-rajasthan .gate-culture-photo { object-position: center 54%; }
+.gate-culture-delhi .gate-culture-photo { object-position: center 48%; }
+.gate-culture-wash {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(180deg, rgba(250,239,220,.58), rgba(248,239,224,.78));
+  pointer-events: none;
+}
+.gate-culture-delhi .gate-culture-wash {
+  background: linear-gradient(180deg, rgba(237,242,241,.58), rgba(236,241,240,.80));
+}
+.gate-culture-art {
+  z-index: 1;
+  opacity: .36;
+}
+.gate-culture-copy { z-index: 2; text-shadow: 0 1px 8px rgba(255,255,255,.7); }
+.gate-center { width: min(34vw, 320px); }
+.gate-seal {
+  box-shadow:
+    0 24px 58px rgba(73, 51, 32, .25),
+    0 8px 20px rgba(73, 51, 32, .16),
+    inset 0 2px 9px rgba(255,255,255,.98),
+    inset 0 -6px 17px rgba(164,124,77,.13);
+}
+.gate-stamp-rim { border-width: 2px; }
+.gate-stamp-inner { inset: 10px; border-width: 1.5px; }
+@media (max-width: 700px) {
+  .gate-center { width: min(54vw, 276px); }
+  .gate-culture-photo { opacity: .26; }
+}
+@media (max-width: 420px) {
+  .gate-center { width: min(58vw, 245px); min-width: 184px; }
+  .gate-culture-photo { opacity: .22; }
+}
