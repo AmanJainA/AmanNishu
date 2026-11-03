@@ -839,3 +839,107 @@ body { width: 100%; min-width: 320px; overflow-x: clip; }
 @media (prefers-reduced-motion: reduce) {
   .gate-floral-ring { animation: none; }
 }
+
+
+/* Reference-inspired floral orbit: the floral wreath turns while A & N stay still */
+.gate-center {
+  width: min(88vw, 590px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.gate-seal {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 764 / 814;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+  cursor: pointer;
+  isolation: isolate;
+  transform: none;
+}
+.gate-seal:hover,
+.gate-seal:focus-visible {
+  transform: none;
+  box-shadow: none;
+  outline: none;
+}
+.gate-seal:focus-visible::after {
+  content: "";
+  position: absolute;
+  inset: 8%;
+  border: 1px solid rgba(150, 91, 109, .6);
+  border-radius: 50%;
+}
+.gate-floral-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.gate-orbiting-art {
+  transform-box: view-box;
+  transform-origin: 382px 407px;
+  animation: gate-flower-orbit 34s linear infinite;
+}
+.gate-monogram-fixed {
+  position: absolute;
+  inset: 0;
+  display: block;
+  color: #bd782c;
+  font-family: "Bodoni 72", "Bodoni MT", "Times New Roman", serif;
+  font-weight: 400;
+  line-height: .82;
+  pointer-events: none;
+  text-shadow: none;
+}
+.gate-letter-a,
+.gate-letter-n,
+.gate-ampersand {
+  position: absolute;
+  display: block;
+}
+.gate-letter-a {
+  left: 19.5%;
+  top: 21%;
+  font-size: clamp(118px, 34vw, 245px);
+}
+.gate-ampersand {
+  left: 48.2%;
+  top: 40.5%;
+  color: #922f29;
+  font-size: clamp(56px, 15vw, 108px);
+  line-height: 1;
+}
+.gate-letter-n {
+  left: 58.5%;
+  top: 50%;
+  font-size: clamp(118px, 34vw, 245px);
+}
+.gate-caption {
+  margin: -2px 0 0;
+  color: #8d5961;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(13px, 2.5vw, 17px);
+  letter-spacing: .16em;
+}
+@keyframes gate-flower-orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@media (max-width: 480px) {
+  .gate-center { width: min(96vw, 440px); }
+  .gate-letter-a, .gate-letter-n { font-size: clamp(112px, 36vw, 168px); }
+  .gate-ampersand { font-size: clamp(54px, 16vw, 78px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gate-orbiting-art { animation: none; }
+}
