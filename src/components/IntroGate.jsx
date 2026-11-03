@@ -1,5 +1,59 @@
 import { useEffect, useState } from 'react';
 
+function Flower({ x, y, scale = 1 }) {
+  return (
+    <g transform={`translate(${x} ${y}) scale(${scale})`}>
+      <g fill="#e9a18e" stroke="#d58a79" strokeWidth="1.4">
+        {Array.from({ length: 10 }, (_, i) => (
+          <ellipse key={i} cx="0" cy="-29" rx="15" ry="29" transform={`rotate(${i * 36})`} />
+        ))}
+      </g>
+      <g fill="#f3b6a2" stroke="#d98d7b" strokeWidth="1">
+        {Array.from({ length: 8 }, (_, i) => (
+          <ellipse key={i} cx="0" cy="-17" rx="10" ry="19" transform={`rotate(${i * 45})`} />
+        ))}
+      </g>
+      <circle r="12" fill="#c87565" />
+      <path d="M-8 0 C-5 -10 7 -10 9 -1 C10 7 -4 11 -7 3 C-10 -4 2 -8 5 -2" fill="none" stroke="#f8d1bd" strokeWidth="2.5" />
+    </g>
+  );
+}
+
+function FloralEmblem() {
+  return (
+    <svg className="gate-floral-art" viewBox="0 0 764 814" role="presentation" aria-hidden="true">
+      <g className="gate-orbiting-art">
+        <circle cx="382" cy="407" r="267" fill="none" stroke="#c98739" strokeWidth="3" />
+        <circle cx="382" cy="407" r="275" fill="none" stroke="#e9bd78" strokeWidth="2.5" />
+        <g fill="none" stroke="#b9a17b" strokeWidth="2" strokeLinecap="round">
+          <path d="M118 300 C80 225 115 174 181 155 C222 143 259 153 290 174" />
+          <path d="M646 520 C682 587 645 650 584 675 C535 694 481 680 444 652" />
+        </g>
+        <g fill="#9b9b7b" stroke="#81866c" strokeWidth="1.2">
+          <path d="M75 310 C34 283 23 260 20 237 C59 245 80 268 75 310Z" />
+          <path d="M100 353 C54 347 35 329 23 305 C65 303 91 321 100 353Z" />
+          <path d="M135 390 C104 424 78 426 51 415 C74 382 105 376 135 390Z" />
+          <path d="M677 552 C718 526 740 531 757 547 C724 574 696 575 677 552Z" />
+          <path d="M650 608 C697 610 719 628 730 653 C686 660 660 640 650 608Z" />
+          <path d="M609 647 C634 687 627 711 608 732 C581 695 585 667 609 647Z" />
+        </g>
+        <g fill="none" stroke="#b6a17e" strokeWidth="2" strokeLinecap="round">
+          <path d="M65 430 C83 465 82 500 71 531 M89 421 C105 466 108 489 102 515 M121 410 C137 450 137 480 130 503" />
+          <path d="M690 430 C675 468 681 495 696 525 M661 448 C645 483 646 510 656 536 M630 467 C613 500 615 527 626 550" />
+        </g>
+        <Flower x={133} y={292} scale={1.18} />
+        <Flower x={188} y={218} scale={0.68} />
+        <Flower x={630} y={574} scale={1.12} />
+        <Flower x={574} y={632} scale={0.68} />
+        <g fill="#d9b889">
+          <circle cx="54" cy="195" r="4"/><circle cx="75" cy="178" r="3"/><circle cx="98" cy="164" r="3"/>
+          <circle cx="708" cy="390" r="4"/><circle cx="725" cy="413" r="3"/><circle cx="738" cy="438" r="3"/>
+        </g>
+      </g>
+    </svg>
+  );
+}
+
 export default function IntroGate() {
   const [opening, setOpening] = useState(false);
   const [closed, setClosed] = useState(false);
@@ -24,13 +78,12 @@ export default function IntroGate() {
           disabled={opening}
           aria-label="Open Aman and Nishu's wedding invitation"
         >
-          <span className="gate-floral-ring" aria-hidden="true">
-            {Array.from({ length: 12 }, (_, index) => (
-              <span className="gate-flower-petal" key={index} style={{ '--petal': index }} />
-            ))}
-            <span className="gate-ring-inner" />
+          <FloralEmblem />
+          <span className="gate-monogram-fixed" aria-hidden="true">
+            <span className="gate-letter-a">A</span>
+            <span className="gate-ampersand">&amp;</span>
+            <span className="gate-letter-n">N</span>
           </span>
-          <span className="gate-monogram-fixed">A <i>&amp;</i> N</span>
         </button>
         <p className="gate-caption">A celebration of love</p>
       </div>
