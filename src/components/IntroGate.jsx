@@ -95,11 +95,11 @@ export default function IntroGate() {
   return (
     <div className={`wedding-gate ${opening ? 'is-opening' : ''}`} aria-label="Wedding invitation entrance">
       <div className="gate-culture gate-culture-rajasthan">
-        <img className="gate-culture-photo" src="https://mdb.ad-hoc-news.de/bild/bild-2738359_1200_0.webp" alt="" aria-hidden="true" /><div className="gate-culture-wash" /><div className="gate-culture-art"><RajasthanArt /></div>
+        <img className="gate-culture-photo" src="https://mdb.ad-hoc-news.de/bild/bild-2738359_1200_0.webp" alt="" aria-hidden="true" />
         <div className="gate-culture-copy"><span>THE LAND OF ROYALS</span><strong>RAJASTHAN</strong><small>Heritage · Tradition · Grandeur</small></div>
       </div>
       <div className="gate-culture gate-culture-delhi">
-        <img className="gate-culture-photo" src="https://ak-d.tripcdn.com/images/1mi0x224x9a8d8mez06C2_W_200_0_R5_Q50.jpg?proc=source%2Ftrip" alt="" aria-hidden="true" /><div className="gate-culture-wash" /><div className="gate-culture-art"><DelhiArt /></div>
+        <img className="gate-culture-photo" src="https://ak-d.tripcdn.com/images/1mi0x224x9a8d8mez06C2_W_200_0_R5_Q50.jpg?proc=source%2Ftrip" alt="" aria-hidden="true" />
         <div className="gate-culture-copy"><span>THE CITY OF HEARTS</span><strong>DELHI</strong><small>History · Dreams · New Beginnings</small></div>
       </div>
       <div className="gate-center">
@@ -120,7 +120,6 @@ export default function IntroGate() {
           </span>
           <span className="gate-stamp-caption">TWO PLACES, ONE STORY</span>
         </button>
-        <p className="gate-caption">A journey of love, heritage & new beginnings</p>
       </div>
       <div className="gate-bottom-note">RAJASTHAN <i>✦</i> DELHI <i>✦</i> TOGETHER, FOREVER</div>
     </div>
