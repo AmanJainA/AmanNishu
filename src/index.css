@@ -747,3 +747,211 @@ body { width: 100%; min-width: 320px; overflow-x: clip; }
   .gate-panel { transition-duration: .01ms; }
   .gate-center { transition-duration: .01ms; }
 }
+
+
+/* ------------------------------------------------------------------
+   Aman & Nishu — editorial royal wedding story, inspired by the Canva
+   "Two Places, One Story" storyboard.
+------------------------------------------------------------------- */
+.royal-home {
+  --royal-ink: #40242c;
+  --royal-wine: #713847;
+  --royal-rose: #b77b83;
+  --royal-gold: #b18a50;
+  --royal-paper: #f8f2e9;
+  --royal-blush: #ead8d0;
+  color: var(--royal-ink);
+  background: var(--royal-paper);
+  font-family: Georgia, 'Times New Roman', serif;
+}
+.royal-home a { color: inherit; text-decoration: none; }
+.royal-home .story-nav {
+  position: absolute; z-index: 10; top: 0; left: 0; width: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 25px clamp(20px, 5vw, 76px); color: #f9f1e8;
+  border-bottom: 1px solid rgba(255,255,255,.17);
+}
+.royal-home .story-brand { font-size: 26px; letter-spacing: .08em; color: inherit; white-space: nowrap; }
+.royal-home .story-brand span { color: #d6b77d; font-style: italic; font-size: .8em; }
+.royal-home .story-nav nav { display: flex; gap: clamp(16px, 3vw, 42px); }
+.royal-home .story-nav nav a, .royal-home .nav-invite {
+  color: inherit; font: 10px/1.2 Arial, sans-serif; letter-spacing: .16em;
+  text-transform: uppercase; transition: color .25s ease;
+}
+.royal-home .story-nav nav a:hover, .royal-home .nav-invite:hover { color: #e1c18b; }
+.royal-home .nav-invite { border: 1px solid rgba(232,207,165,.7); padding: 12px 17px; }
+.royal-home .nav-invite span { margin-left: 8px; color: #e1c18b; }
+.royal-home .story-hero {
+  position: relative; min-height: min(850px, 100svh); overflow: hidden;
+  display: grid; grid-template-columns: 1fr 1fr; align-items: center;
+  padding: 130px clamp(28px, 9vw, 140px) 85px;
+  color: #f9f0e7; background:
+    radial-gradient(ellipse at 74% 42%, rgba(157,91,88,.32), transparent 36%),
+    linear-gradient(118deg, #291c25 0%, #4b2b36 52%, #70414a 100%);
+}
+.royal-home .story-hero::before {
+  content: ''; position: absolute; inset: 18px; border: 1px solid rgba(210,177,124,.35); pointer-events: none;
+}
+.royal-home .hero-arch { position: absolute; pointer-events: none; border: 1px solid rgba(207,174,124,.2); border-bottom: 0; border-radius: 50% 50% 0 0; }
+.royal-home .hero-arch-one { width: 54vw; height: 78vw; max-height: 900px; right: 5%; bottom: -42%; }
+.royal-home .hero-arch-two { width: 45vw; height: 68vw; max-height: 790px; right: 9.5%; bottom: -38%; }
+.royal-home .story-hero-copy { position: relative; z-index: 2; max-width: 590px; padding-bottom: 24px; }
+.royal-home .story-kicker, .royal-home .section-eyebrow {
+  display: block; font: 10px/1.5 Arial, sans-serif; letter-spacing: .23em; text-transform: uppercase;
+}
+.royal-home .story-kicker { color: #d5b67e; margin-bottom: 28px; }
+.royal-home .story-hero h1 { font-size: clamp(58px, 8vw, 112px); line-height: .94; font-weight: 400; letter-spacing: -.055em; margin: 0 0 28px; }
+.royal-home .story-hero h1 em, .royal-home .section-heading h2 em, .royal-home .culture-section h2 em,
+.royal-home .couple-copy h2 em, .royal-home .save-date-frame h2 em { color: #d9b982; font-weight: 400; }
+.royal-home .hero-subtitle { color: rgba(255,244,234,.77); font: 14px/1.9 Arial, sans-serif; letter-spacing: .025em; margin: 0 0 35px; }
+.royal-home .gold-link { display: inline-flex; gap: 28px; align-items: center; color: #e1c18b; font: 10px Arial,sans-serif; letter-spacing: .18em; text-transform: uppercase; border-bottom: 1px solid rgba(225,193,139,.65); padding-bottom: 12px; }
+.royal-home .gold-link span { font-size: 16px; }
+.royal-home .hero-couple-frame { position: relative; z-index: 1; justify-self: center; width: min(100%, 430px); min-height: 430px; display: grid; place-items: center; }
+.royal-home .hero-couple-frame::before { content: ''; position: absolute; width: 78%; height: 95%; border: 1px solid rgba(217,185,130,.7); border-radius: 50% 50% 0 0; top: 2%; }
+.royal-home .hero-couple-halo { position: absolute; width: 68%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(237,207,167,.22), transparent 68%); }
+.royal-home .hero-couple-frame img { position: relative; z-index: 1; width: 100%; max-height: 470px; object-fit: contain; filter: drop-shadow(0 24px 35px rgba(0,0,0,.2)); animation: royal-float 6s ease-in-out infinite; }
+.royal-home .frame-caption { position: absolute; z-index: 2; bottom: 0; color: #e4c99e; font-size: 18px; letter-spacing: .13em; }
+.royal-home .frame-caption i { color: #fff0dc; font-size: .8em; }
+.royal-home .hero-spark { position: absolute; color: #d9b982; }
+.royal-home .hero-spark-one { top: 24%; right: 11%; font-size: 30px; }
+.royal-home .hero-spark-two { bottom: 22%; left: 48%; font-size: 24px; }
+.royal-home .hero-bottom-note { position: absolute; bottom: 35px; left: 7%; right: 7%; display: flex; justify-content: space-between; color: rgba(247,230,209,.62); font: 8px Arial,sans-serif; letter-spacing: .2em; }
+.royal-home .journey-section, .royal-home .memories-section { padding: 110px clamp(20px, 8vw, 120px); }
+.royal-home .section-heading { text-align: center; max-width: 720px; margin: 0 auto 65px; }
+.royal-home .section-heading .section-eyebrow, .royal-home .memory-copy .section-eyebrow { color: var(--royal-gold); }
+.royal-home .section-heading h2, .royal-home .culture-section h2, .royal-home .couple-copy h2 {
+  font-size: clamp(38px, 5vw, 64px); font-weight: 400; line-height: 1.08; letter-spacing: -.035em; margin: 18px 0;
+}
+.royal-home .section-heading h2 em, .royal-home .couple-copy h2 em { color: var(--royal-wine); }
+.royal-home .section-heading p, .royal-home .culture-section > p, .royal-home .couple-copy > p {
+  font: 13px/1.9 Arial,sans-serif; color: #826c69; max-width: 540px; margin: 0 auto;
+}
+.royal-home .journey-route { display: grid; grid-template-columns: 1fr 130px 1fr; align-items: center; max-width: 1100px; margin: 0 auto; }
+.royal-home .place-card { background: #fffaf3; border: 1px solid #e5d7c7; box-shadow: 0 18px 55px rgba(75,45,48,.07); }
+.royal-home .place-art { position: relative; height: 230px; overflow: hidden; display: grid; place-items: center; }
+.royal-home .place-art-rajasthan { background: linear-gradient(145deg,#8b4b42,#c58b62 58%,#e3bd91); }
+.royal-home .place-art-delhi { background: linear-gradient(145deg,#4b5960,#89918a 60%,#d0b58c); }
+.royal-home .place-sun { position: absolute; width: 115px; height: 115px; border-radius: 50%; background: rgba(250,222,174,.45); top: 28px; right: 22%; }
+.royal-home .place-dome, .royal-home .place-gate { position: relative; z-index: 1; color: rgba(255,241,216,.9); font-size: 115px; line-height: 1; text-shadow: 0 8px 20px rgba(50,24,24,.2); }
+.royal-home .place-gate { font-size: 145px; }
+.royal-home .place-line { position: absolute; bottom: 28px; left: 8%; right: 8%; height: 1px; background: rgba(255,239,216,.55); }
+.royal-home .place-copy { padding: 26px 30px 30px; }
+.royal-home .place-copy > span, .royal-home .place-copy small { font: 9px Arial,sans-serif; letter-spacing: .18em; color: var(--royal-gold); }
+.royal-home .place-copy h3 { font-size: 34px; font-weight: 400; margin: 10px 0; color: var(--royal-wine); }
+.royal-home .place-copy p { font: 12px/1.8 Arial,sans-serif; color: #806d68; min-height: 44px; }
+.royal-home .place-copy small { color: #a08b7a; }
+.royal-home .route-connector { position: relative; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 13px; }
+.royal-home .route-line { position: absolute; width: 100%; border-top: 1px dashed #c7a779; top: 20px; }
+.royal-home .route-plane { position: relative; display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: var(--royal-paper); color: var(--royal-wine); font-size: 22px; animation: plane-drift 3s ease-in-out infinite; }
+.royal-home .route-label { margin-top: 30px; text-align: center; color: #a78b61; font: 8px Arial,sans-serif; letter-spacing: .12em; }
+.royal-home .culture-section { position: relative; text-align: center; padding: 100px 24px; background: #eee2d4; overflow: hidden; }
+.royal-home .culture-section::before, .royal-home .culture-section::after { content: ''; position: absolute; width: 330px; height: 330px; border: 1px solid rgba(177,138,80,.23); border-radius: 50%; }
+.royal-home .culture-section::before { left: -190px; top: -150px; box-shadow: 0 0 0 22px rgba(177,138,80,.035),0 0 0 44px rgba(177,138,80,.03); }
+.royal-home .culture-section::after { right: -190px; bottom: -180px; box-shadow: 0 0 0 22px rgba(177,138,80,.035),0 0 0 44px rgba(177,138,80,.03); }
+.royal-home .culture-section .section-eyebrow { color: var(--royal-gold); }
+.royal-home .culture-section h2 { margin: 20px 0; }
+.royal-home .culture-section h2 em { color: var(--royal-wine); }
+.royal-home .culture-section > p { max-width: 590px; }
+.royal-home .culture-ornament { color: var(--royal-gold); font-size: 26px; margin-bottom: 20px; }
+.royal-home .culture-stats { display: flex; align-items: center; justify-content: center; gap: clamp(18px, 5vw, 65px); margin-top: 42px; color: var(--royal-wine); font: 11px Arial,sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+.royal-home .culture-stats b { display: block; font: 30px Georgia,serif; color: var(--royal-gold); margin-bottom: 8px; }
+.royal-home .culture-stats i { color: #bd9b69; font-style: normal; }
+.royal-home .couple-section { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 7%; padding: 110px clamp(24px, 12vw, 170px); background: #fbf7f0; }
+.royal-home .couple-image-wrap { position: relative; max-width: 480px; margin: auto; padding: 28px; border: 1px solid #d7bd95; border-radius: 50% 50% 0 0; }
+.royal-home .couple-image-wrap::before { content: ''; position: absolute; inset: 12px; border: 1px solid #e5d5bd; border-radius: 50% 50% 0 0; }
+.royal-home .couple-image-wrap img { position: relative; display: block; width: 100%; max-height: 440px; object-fit: contain; }
+.royal-home .couple-copy .section-eyebrow { color: var(--royal-gold); }
+.royal-home .couple-copy h2 { font-size: clamp(38px, 4.8vw, 60px); }
+.royal-home .couple-copy h2 em { font-size: .68em; }
+.royal-home .tiny-divider { color: var(--royal-gold); margin: 22px 0; }
+.royal-home .couple-copy > p { margin: 0 0 30px; }
+.royal-home .outline-link { display: inline-flex; gap: 25px; padding: 14px 19px; border: 1px solid #b99561; color: var(--royal-wine); font: 9px Arial,sans-serif; letter-spacing: .15em; text-transform: uppercase; }
+.royal-home .memory-list { max-width: 1000px; margin: 0 auto; display: grid; gap: 30px; }
+.royal-home .memory-card { display: grid; grid-template-columns: 36% 1fr; align-items: center; background: #fffaf4; border: 1px solid #e9ded1; }
+.royal-home .memory-card:nth-child(even) { grid-template-columns: 1fr 36%; }
+.royal-home .memory-card:nth-child(even) .memory-art { order: 2; }
+.royal-home .memory-art { position: relative; min-height: 250px; overflow: hidden; display: grid; place-items: center; background: linear-gradient(140deg,#7b4650,#b17c78); color: #f5e5cf; }
+.royal-home .memory-card-2 .memory-art { background: linear-gradient(140deg,#5d6265,#a68c70); }
+.royal-home .memory-card-3 .memory-art { background: linear-gradient(140deg,#a06b57,#d2ad83); }
+.royal-home .memory-number { position: absolute; top: 20px; left: 23px; font: 10px Arial,sans-serif; letter-spacing: .16em; opacity: .75; }
+.royal-home .memory-symbol { position: relative; z-index: 1; font-size: 90px; line-height: 1; }
+.royal-home .memory-orbit { position: absolute; width: 190px; height: 190px; border: 1px solid rgba(255,238,210,.45); border-radius: 50%; box-shadow: 0 0 0 18px rgba(255,238,210,.06),0 0 0 38px rgba(255,238,210,.04); }
+.royal-home .memory-copy { padding: 35px clamp(24px, 5vw, 65px); }
+.royal-home .memory-copy .section-eyebrow { color: var(--royal-gold); }
+.royal-home .memory-copy h3 { color: var(--royal-wine); font-size: clamp(27px, 3vw, 39px); font-weight: 400; margin: 14px 0; }
+.royal-home .memory-copy p { color: #806d68; font: 12px/1.9 Arial,sans-serif; }
+.royal-home .memory-copy small { display: block; color: #a28358; font: italic 13px Georgia,serif; margin-top: 18px; }
+.royal-home .save-date-section { padding: 95px 22px; background: linear-gradient(135deg,#3c2630,#70414a); }
+.royal-home .save-date-frame { position: relative; max-width: 780px; margin: 0 auto; padding: 75px 30px; text-align: center; color: #f8efe3; border: 1px solid rgba(220,189,137,.7); outline: 1px solid rgba(220,189,137,.25); outline-offset: 9px; }
+.royal-home .save-date-flower { display: block; color: #d8b982; font-size: 27px; margin-bottom: 23px; }
+.royal-home .save-date-frame .section-eyebrow { color: #d8b982; }
+.royal-home .save-date-frame h2 { font-size: clamp(48px, 7vw, 78px); font-weight: 400; margin: 20px 0; }
+.royal-home .save-date-frame h2 em { color: #e1c89f; }
+.royal-home .save-date-names { font-size: 23px; letter-spacing: .08em; }
+.royal-home .save-date-rule { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 26px auto; max-width: 230px; color: #d8b982; }
+.royal-home .save-date-rule::before, .royal-home .save-date-rule::after { content: ''; height: 1px; flex: 1; background: rgba(216,185,130,.55); }
+.royal-home .save-date-detail { font: 12px Arial,sans-serif; letter-spacing: .23em; color: #e5cfa9; }
+.royal-home .save-date-place { font-size: 18px; color: #fff4e5; }
+.royal-home .save-date-note { font: italic 14px Georgia,serif; color: rgba(255,244,229,.72); margin: 24px 0 30px; }
+.royal-home .save-date-actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.royal-home .save-date-actions a { border: 1px solid rgba(225,193,139,.7); padding: 13px 18px; color: #f7e7cf; font: 9px Arial,sans-serif; letter-spacing: .14em; text-transform: uppercase; }
+.royal-home .save-date-actions a:hover { background: rgba(225,193,139,.13); }
+.royal-home .story-footer { display: flex; justify-content: space-between; align-items: center; gap: 15px; padding: 28px clamp(20px, 6vw, 80px); background: #291c25; color: #e9d9c5; }
+.royal-home .story-footer p { margin: 0; color: rgba(233,217,197,.65); font: italic 12px Georgia,serif; }
+.royal-home .story-footer > span { color: #c3a577; font: 8px Arial,sans-serif; letter-spacing: .18em; }
+@keyframes royal-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes plane-drift { 0%,100% { transform: translateX(-8px) rotate(-5deg); } 50% { transform: translateX(8px) rotate(5deg); } }
+@media (max-width: 900px) {
+  .royal-home .story-nav nav { gap: 14px; }
+  .royal-home .story-nav nav a { font-size: 8px; letter-spacing: .1em; }
+  .royal-home .story-hero { padding-left: 6vw; padding-right: 6vw; }
+  .royal-home .journey-route { grid-template-columns: 1fr 70px 1fr; }
+  .royal-home .place-art { height: 180px; }
+  .royal-home .place-copy { padding: 22px 18px; }
+  .royal-home .couple-section { padding-left: 7vw; padding-right: 7vw; }
+}
+@media (max-width: 650px) {
+  .royal-home .story-nav { padding: 17px 20px; }
+  .royal-home .story-nav nav { display: none; }
+  .royal-home .nav-invite { padding: 10px 12px; font-size: 8px; }
+  .royal-home .story-hero { min-height: auto; min-height: 100svh; grid-template-columns: 1fr; text-align: center; padding: 125px 25px 90px; }
+  .royal-home .story-hero-copy { margin: 0 auto; }
+  .royal-home .story-kicker { margin-bottom: 20px; }
+  .royal-home .story-hero h1 { font-size: clamp(54px, 15vw, 76px); }
+  .royal-home .hero-subtitle { font-size: 12px; }
+  .royal-home .hero-couple-frame { width: min(78vw, 320px); min-height: 290px; margin-top: 15px; }
+  .royal-home .hero-couple-frame img { max-height: 315px; }
+  .royal-home .hero-bottom-note { bottom: 22px; left: 7%; right: 7%; font-size: 6px; }
+  .royal-home .hero-bottom-note span:nth-child(2) { display: none; }
+  .royal-home .hero-arch-one { width: 95vw; height: 130vw; right: -5%; bottom: -18%; }
+  .royal-home .hero-arch-two { width: 82vw; height: 115vw; right: 2%; bottom: -16%; }
+  .royal-home .journey-section, .royal-home .memories-section { padding: 75px 18px; }
+  .royal-home .section-heading { margin-bottom: 38px; }
+  .royal-home .section-heading h2, .royal-home .culture-section h2 { font-size: 40px; }
+  .royal-home .journey-route { grid-template-columns: 1fr; gap: 14px; max-width: 430px; }
+  .royal-home .place-art { height: 180px; }
+  .royal-home .route-connector { height: 60px; }
+  .royal-home .route-line { width: 1px; height: 100%; border-top: 0; border-left: 1px dashed #c7a779; }
+  .royal-home .route-plane { font-size: 18px; }
+  .royal-home .route-label { margin-top: -6px; font-size: 7px; }
+  .royal-home .culture-section { padding: 78px 22px; }
+  .royal-home .culture-stats { gap: 13px; font-size: 8px; }
+  .royal-home .culture-stats b { font-size: 25px; }
+  .royal-home .couple-section { grid-template-columns: 1fr; gap: 35px; padding: 75px 25px; text-align: center; }
+  .royal-home .couple-image-wrap { max-width: 300px; padding: 18px; }
+  .royal-home .couple-copy h2 { font-size: 42px; }
+  .royal-home .memory-card, .royal-home .memory-card:nth-child(even) { grid-template-columns: 1fr; }
+  .royal-home .memory-card:nth-child(even) .memory-art { order: 0; }
+  .royal-home .memory-art { min-height: 190px; }
+  .royal-home .memory-symbol { font-size: 70px; }
+  .royal-home .memory-copy { padding: 26px 24px 30px; }
+  .royal-home .save-date-section { padding: 70px 20px; }
+  .royal-home .save-date-frame { padding: 55px 18px; }
+  .royal-home .save-date-frame h2 { font-size: 53px; }
+  .royal-home .save-date-names { font-size: 20px; }
+  .royal-home .save-date-detail { font-size: 10px; letter-spacing: .16em; }
+  .royal-home .story-footer { flex-direction: column; text-align: center; padding: 25px 15px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .royal-home .hero-couple-frame img, .royal-home .route-plane { animation: none; }
+}
