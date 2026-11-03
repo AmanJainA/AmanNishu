@@ -943,3 +943,61 @@ body { width: 100%; min-width: 320px; overflow-x: clip; }
 @media (prefers-reduced-motion: reduce) {
   .gate-orbiting-art { animation: none; }
 }
+
+
+/* White, reference-matched invitation gate with a compact responsive emblem */
+.wedding-gate {
+  background: #ffffff;
+}
+.gate-panel {
+  background:
+    radial-gradient(ellipse at center, rgba(255,255,255,.96), transparent 72%),
+    linear-gradient(135deg, #ffffff 0%, #fffefd 55%, #fbf8f3 100%);
+  border-color: rgba(205, 166, 112, .24);
+  box-shadow: inset 0 0 42px rgba(180, 139, 83, .045);
+}
+.gate-panel::before {
+  border-color: rgba(190, 145, 83, .18);
+}
+.gate-center {
+  width: min(84vw, 460px);
+  gap: 2px;
+}
+.gate-seal {
+  width: 100%;
+}
+.gate-letter-a,
+.gate-letter-n {
+  font-size: clamp(104px, 28vw, 205px);
+}
+.gate-ampersand {
+  font-size: clamp(48px, 12vw, 92px);
+}
+.gate-caption {
+  color: #8c6748;
+  font-size: clamp(12px, 2vw, 15px);
+  letter-spacing: .12em;
+}
+@media (max-width: 600px) {
+  .gate-center {
+    width: min(90vw, 390px);
+    gap: 0;
+  }
+  .gate-letter-a,
+  .gate-letter-n {
+    font-size: clamp(96px, 29vw, 165px);
+  }
+  .gate-ampersand {
+    font-size: clamp(46px, 12.5vw, 76px);
+  }
+  .gate-caption {
+    margin-top: 0;
+    letter-spacing: .09em;
+  }
+}
+@media (max-width: 360px) {
+  .gate-center { width: 94vw; }
+  .gate-letter-a,
+  .gate-letter-n { font-size: 27vw; }
+  .gate-ampersand { font-size: 11.5vw; }
+}
