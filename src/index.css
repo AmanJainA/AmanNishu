@@ -1505,3 +1505,18 @@ body { width: 100%; min-width: 320px; overflow-x: clip; }
   .gate-rajasthan-collage { gap: 1px; padding: 1px; }
   .gate-culture-rajasthan .gate-culture-copy { bottom: 6vh; }
 }
+
+@media (max-width: 700px) {
+  .gate-rajasthan-collage {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1.12fr .82fr .82fr .82fr .82fr;
+  }
+  .tile-amer { grid-column: 1 / 3; grid-row: 1; }
+  .tile-hawa { grid-column: 1; grid-row: 2; }
+  .tile-jal { grid-column: 2; grid-row: 2; }
+  .tile-ajmer { grid-column: 1; grid-row: 3; }
+  .tile-udaipur { grid-column: 2; grid-row: 3; }
+  .tile-badnore { grid-column: 1; grid-row: 4; }
+  .tile-mandalgarh { grid-column: 2; grid-row: 4; }
+  .tile-menal { display: block; grid-column: 1 / 3; grid-row: 5; }
+}
