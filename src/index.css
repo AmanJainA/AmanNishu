@@ -747,3 +747,95 @@ body { width: 100%; min-width: 320px; overflow-x: clip; }
   .gate-panel { transition-duration: .01ms; }
   .gate-center { transition-duration: .01ms; }
 }
+
+
+/* Rotating floral frame with a stationary A & N monogram */
+.gate-seal {
+  position: relative;
+  isolation: isolate;
+  width: clamp(190px, 32vw, 244px);
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+}
+.gate-seal:hover {
+  transform: scale(1.035);
+  box-shadow: none;
+}
+.gate-seal:focus-visible {
+  outline: 2px solid #8d5264;
+  outline-offset: 14px;
+}
+.gate-floral-ring {
+  position: absolute;
+  inset: 0;
+  display: block;
+  border: 1px solid rgba(150, 91, 109, .62);
+  border-radius: 50%;
+  animation: gate-flower-rotate 24s linear infinite;
+  filter: drop-shadow(0 5px 12px rgba(113,57,75,.12));
+}
+.gate-floral-ring::before,
+.gate-floral-ring::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(169,110,125,.48);
+  border-radius: 50%;
+}
+.gate-floral-ring::after {
+  inset: 15px;
+  border-style: dashed;
+  border-color: rgba(169,110,125,.42);
+}
+.gate-flower-petal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 22px;
+  height: 42px;
+  margin: -21px 0 0 -11px;
+  border: 1px solid #a96e7d;
+  border-radius: 90% 90% 55% 55%;
+  background: linear-gradient(180deg, rgba(255,250,249,.9), rgba(237,193,206,.45));
+  transform: rotate(calc(var(--petal) * 30deg)) translateY(-91px);
+  transform-origin: center;
+}
+.gate-ring-inner {
+  position: absolute;
+  inset: 27px;
+  border: 1px solid rgba(169,110,125,.42);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,250,249,.92), rgba(247,229,233,.72));
+}
+.gate-monogram-fixed {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 5px;
+  color: #7b4656;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-size: clamp(44px, 8vw, 62px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: .025em;
+  text-shadow: 0 1px 0 rgba(255,255,255,.65);
+  pointer-events: none;
+}
+.gate-monogram-fixed i {
+  font-size: .48em;
+  font-weight: 400;
+  font-style: italic;
+}
+@keyframes gate-flower-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gate-floral-ring { animation: none; }
+}
