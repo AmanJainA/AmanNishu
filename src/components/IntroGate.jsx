@@ -24,9 +24,13 @@ export default function IntroGate() {
           disabled={opening}
           aria-label="Open Aman and Nishu's wedding invitation"
         >
-          <span className="gate-monogram">A <i>&amp;</i> N</span>
-          <span className="gate-seal-line" />
-          <span className="gate-open-label">OPEN INVITATION</span>
+          <span className="gate-floral-ring" aria-hidden="true">
+            {Array.from({ length: 12 }, (_, index) => (
+              <span className="gate-flower-petal" key={index} style={{ '--petal': index }} />
+            ))}
+            <span className="gate-ring-inner" />
+          </span>
+          <span className="gate-monogram-fixed">A <i>&amp;</i> N</span>
         </button>
         <p className="gate-caption">A celebration of love</p>
       </div>
