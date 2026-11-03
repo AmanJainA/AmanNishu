@@ -1001,3 +1001,231 @@ body { width: 100%; min-width: 320px; overflow-x: clip; }
   .gate-letter-n { font-size: 27vw; }
   .gate-ampersand { font-size: 11.5vw; }
 }
+
+/* Two-culture wedding gate with a raised circular invitation stamp */
+.wedding-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  background: #f8f4ed;
+}
+.gate-culture {
+  position: absolute;
+  inset-block: 0;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 1.35s cubic-bezier(.7,0,.2,1), opacity 1s ease;
+}
+.gate-culture-rajasthan {
+  left: 0;
+  color: #9d5c32;
+  background:
+    radial-gradient(ellipse at 50% 45%, rgba(255,245,225,.75), transparent 65%),
+    linear-gradient(145deg, #ead0ae 0%, #d9b18a 52%, #c78e65 100%);
+}
+.gate-culture-delhi {
+  right: 0;
+  color: #566b78;
+  background:
+    radial-gradient(ellipse at 50% 45%, rgba(255,255,255,.78), transparent 65%),
+    linear-gradient(145deg, #e4e8e6 0%, #cbd5d7 54%, #aebfc4 100%);
+}
+.gate-culture::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid currentColor;
+  opacity: .22;
+  pointer-events: none;
+}
+.gate-culture::after {
+  content: "";
+  position: absolute;
+  inset: 28px;
+  border: 1px solid currentColor;
+  opacity: .12;
+  pointer-events: none;
+}
+.gate-culture-art {
+  position: absolute;
+  width: min(74%, 430px);
+  aspect-ratio: 1;
+  opacity: .28;
+  filter: drop-shadow(0 8px 16px rgba(65,45,30,.08));
+}
+.gate-culture-art svg { width: 100%; height: 100%; }
+.gate-culture-copy {
+  position: absolute;
+  bottom: clamp(58px, 10vh, 104px);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+  padding: 0 12px;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+}
+.gate-culture-copy span {
+  font-size: clamp(8px, 1vw, 11px);
+  letter-spacing: .2em;
+}
+.gate-culture-copy strong {
+  font-size: clamp(17px, 2.5vw, 27px);
+  font-weight: 500;
+  letter-spacing: .18em;
+}
+.gate-culture-copy small {
+  font-size: clamp(8px, 1vw, 11px);
+  letter-spacing: .08em;
+}
+.gate-center {
+  position: relative;
+  z-index: 3;
+  width: min(34vw, 330px);
+  min-width: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transition: opacity .35s ease, transform .55s ease;
+}
+.gate-seal {
+  position: relative;
+  isolation: isolate;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  overflow: visible;
+  cursor: pointer;
+  background: radial-gradient(circle at 35% 25%, #fffefa 0%, #fbf5eb 58%, #f0e3d1 100%);
+  box-shadow:
+    0 22px 52px rgba(78, 57, 39, .23),
+    0 7px 18px rgba(78, 57, 39, .14),
+    inset 0 2px 8px rgba(255,255,255,.95),
+    inset 0 -5px 15px rgba(164,124,77,.12);
+  transition: transform .3s ease, box-shadow .3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.gate-seal:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 27px 60px rgba(78,57,39,.27), 0 8px 20px rgba(78,57,39,.16), inset 0 2px 8px rgba(255,255,255,.95);
+}
+.gate-seal:focus-visible { outline: 3px solid #a96e36; outline-offset: 8px; }
+.gate-stamp-rim {
+  position: absolute;
+  inset: 5px;
+  z-index: 1;
+  border: 1.5px solid rgba(185,126,58,.78);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.gate-stamp-inner {
+  position: absolute;
+  inset: 11px;
+  z-index: 1;
+  border: 1px solid rgba(185,126,58,.48);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.gate-floral-art {
+  position: absolute;
+  inset: 3%;
+  width: 94%;
+  height: 94%;
+  overflow: visible;
+}
+.gate-orbiting-art {
+  transform-box: view-box;
+  transform-origin: 382px 407px;
+  animation: gate-flower-orbit 34s linear infinite;
+}
+.gate-monogram-fixed {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: block;
+  color: #bd782c;
+  font-family: "Bodoni 72", "Bodoni MT", "Times New Roman", serif;
+  font-weight: 400;
+  line-height: .82;
+  pointer-events: none;
+}
+.gate-letter-a, .gate-letter-n, .gate-ampersand { position: absolute; display: block; }
+.gate-letter-a { left: 19.5%; top: 21%; font-size: clamp(104px, 11vw, 150px); }
+.gate-ampersand { left: 48.2%; top: 40.5%; color: #922f29; font-size: clamp(48px, 5vw, 66px); line-height: 1; }
+.gate-letter-n { left: 58.5%; top: 50%; font-size: clamp(104px, 11vw, 150px); }
+.gate-stamp-caption {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  bottom: 13%;
+  color: #9c7045;
+  font: 600 clamp(6px, .75vw, 8px)/1 Georgia, serif;
+  letter-spacing: .2em;
+  text-align: center;
+  pointer-events: none;
+}
+.gate-caption {
+  margin: 0;
+  color: #795d46;
+  font: italic clamp(11px, 1.3vw, 14px)/1.4 Georgia, serif;
+  letter-spacing: .05em;
+  text-align: center;
+  white-space: nowrap;
+}
+.gate-bottom-note {
+  position: absolute;
+  z-index: 2;
+  bottom: 22px;
+  left: 0;
+  right: 0;
+  color: #927657;
+  text-align: center;
+  font: 9px Georgia, serif;
+  letter-spacing: .24em;
+}
+.gate-bottom-note i { padding: 0 8px; color: #b47a3d; font-style: normal; }
+@keyframes gate-flower-orbit { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.wedding-gate.is-opening .gate-culture-rajasthan { transform: translateX(-101%); }
+.wedding-gate.is-opening .gate-culture-delhi { transform: translateX(101%); }
+.wedding-gate.is-opening .gate-center { opacity: 0; transform: scale(.82); }
+.wedding-gate.is-opening .gate-bottom-note { opacity: 0; transition: opacity .3s ease; }
+@media (max-width: 700px) {
+  .gate-center { width: min(54vw, 280px); min-width: 205px; gap: 8px; }
+  .gate-culture-art { width: 95%; opacity: .22; }
+  .gate-culture-copy { bottom: 9vh; gap: 5px; }
+  .gate-culture-copy span { font-size: 7px; letter-spacing: .12em; }
+  .gate-culture-copy strong { font-size: clamp(12px, 3vw, 18px); letter-spacing: .1em; }
+  .gate-culture-copy small { max-width: 95%; font-size: 7px; letter-spacing: .02em; }
+  .gate-letter-a, .gate-letter-n { font-size: clamp(94px, 19vw, 130px); }
+  .gate-ampersand { font-size: clamp(44px, 9vw, 58px); }
+  .gate-stamp-caption { bottom: 12%; font-size: 6px; }
+  .gate-caption { max-width: 88vw; white-space: normal; font-size: 11px; }
+}
+@media (max-width: 420px) {
+  .gate-center { width: 58vw; min-width: 190px; }
+  .gate-culture-copy { bottom: 7vh; }
+  .gate-culture-copy strong { font-size: 11px; }
+  .gate-culture-copy small { display: none; }
+  .gate-letter-a, .gate-letter-n { font-size: 27vw; }
+  .gate-ampersand { font-size: 12vw; }
+  .gate-bottom-note { bottom: 12px; font-size: 7px; letter-spacing: .12em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gate-orbiting-art { animation: none; }
+  .gate-culture, .gate-center { transition-duration: .01ms; }
+}
