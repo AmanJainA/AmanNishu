@@ -95,13 +95,15 @@ export default function IntroGate() {
   return (
     <div className={`wedding-gate ${opening ? 'is-opening' : ''}`} aria-label="Wedding invitation entrance">
       <div className="gate-culture gate-culture-rajasthan">
-        <div className="gate-rajasthan-collage" aria-label="Rajasthan landmarks collage">
-          <img className="rajasthan-tile tile-amer" src="https://rajasthanstourism.com/images/tour-images/jaipur/amer-fort-jaipur.webp" alt="Amer Fort, Jaipur" />
-          <img className="rajasthan-tile tile-hawa" src="https://rajasthanstourism.com/images/tour-images/jaipur/hawa-mahal-jaipur.webp" alt="Hawa Mahal, Jaipur" />
-          <img className="rajasthan-tile tile-jal" src="https://rajasthanstourism.com/images/tour-images/jaipur/Jpr-jalmahal1.webp" alt="Jal Mahal, Jaipur" />
-          <img className="rajasthan-tile tile-udaipur" src="https://rajasthanstourism.com/images/tour-images/udaipur/city-palace-udaipur.webp" alt="City Palace, Udaipur" />
-          <img className="rajasthan-tile tile-jaisalmer" src="https://rajasthanstourism.com/images/tour-images/Jaisalmer/Jaisalmer-Sonar-Fort-Day-View.webp" alt="Jaisalmer Fort" />
-          <img className="rajasthan-tile tile-ajmer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Ajmer_dargah_sharif.jpg" alt="Ajmer Sharif Dargah" />
+        <div className="gate-rajasthan-collage" aria-label="Rajasthan heritage collage">
+          <img className="rajasthan-tile tile-amer" src="https://rajasthanstourism.com/images/tour-images/jaipur/amer-fort-jaipur.webp" alt="Amer Fort, Jaipur" loading="eager" />
+          <img className="rajasthan-tile tile-hawa" src="https://rajasthanstourism.com/images/tour-images/jaipur/hawa-mahal-jaipur.webp" alt="Hawa Mahal, Jaipur" loading="eager" />
+          <img className="rajasthan-tile tile-jal" src="https://rajasthanstourism.com/images/tour-images/jaipur/Jpr-jalmahal1.webp" alt="Jal Mahal, Jaipur" loading="eager" />
+          <img className="rajasthan-tile tile-ajmer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Ajmer_dargah_sharif.jpg" alt="Ajmer Sharif Dargah, Ajmer" loading="eager" />
+          <img className="rajasthan-tile tile-udaipur" src="https://rajasthanstourism.com/images/tour-images/udaipur/city-palace-udaipur.webp" alt="City Palace, Udaipur" loading="eager" />
+          <img className="rajasthan-tile tile-badnore" src="https://pbs.twimg.com/media/E6_G3lvVkAUgI1f.jpg" alt="Badnore Fort, Bhilwara" loading="eager" />
+          <img className="rajasthan-tile tile-mandalgarh" src="https://rajras.in/wp-content/uploads/2016/09/Mandalgarh-fort.jpg" alt="Mandalgarh Fort, Bhilwara" loading="eager" />
+          <img className="rajasthan-tile tile-menal" src="https://images.bhaskarassets.com/thumb/730x0/web2images/521/2021/09/26/untitled-29_1632641919.jpg" alt="Menal temple ruins and waterfall, Bhilwara" loading="eager" />
         </div>
         <div className="gate-culture-copy"><span>THE LAND OF ROYALS</span><strong>RAJASTHAN</strong><small>Heritage · Tradition · Grandeur</small></div>
       </div>
