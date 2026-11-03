@@ -1278,3 +1278,90 @@ body { width: 100%; min-width: 320px; overflow-x: clip; }
   .gate-center { width: min(58vw, 245px); min-width: 184px; }
   .gate-culture-photo { opacity: .22; }
 }
+
+
+/* Refine the two-culture gate: show the supplied photos without extra illustrations */
+.gate-culture-photo {
+  z-index: 0;
+  opacity: 1;
+  filter: none;
+  transform: none;
+}
+.gate-culture-rajasthan,
+.gate-culture-delhi {
+  background: #eee;
+}
+.gate-culture-copy {
+  z-index: 2;
+  text-shadow: 0 2px 12px rgba(255,255,255,.78);
+}
+
+/* Keep the monogram and stamp details aligned with the circular floral wreath */
+.gate-seal {
+  width: min(34vw, 330px);
+  min-width: 0;
+  aspect-ratio: 1 / 1;
+  overflow: visible;
+}
+.gate-floral-art {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.gate-monogram-fixed {
+  z-index: 4;
+}
+.gate-letter-a {
+  left: 30%;
+  top: 33%;
+  font-size: clamp(58px, 7.2vw, 86px);
+}
+.gate-ampersand {
+  left: 47%;
+  top: 43%;
+  font-size: clamp(32px, 4vw, 48px);
+}
+.gate-letter-n {
+  left: 51%;
+  top: 47%;
+  font-size: clamp(58px, 7.2vw, 86px);
+}
+.gate-stamp-rim {
+  inset: 17%;
+  z-index: 3;
+  border-width: 1.5px;
+  pointer-events: none;
+}
+.gate-stamp-inner {
+  inset: 19%;
+  z-index: 3;
+  border-width: 1px;
+  pointer-events: none;
+}
+.gate-stamp-caption {
+  z-index: 5;
+  bottom: 23%;
+  font-size: clamp(6px, .7vw, 8px);
+}
+@media (max-width: 700px) {
+  .gate-seal {
+    width: min(54vw, 280px);
+  }
+  .gate-letter-a, .gate-letter-n {
+    font-size: clamp(52px, 10vw, 72px);
+  }
+  .gate-ampersand {
+    font-size: clamp(29px, 5.8vw, 40px);
+  }
+}
+@media (max-width: 420px) {
+  .gate-seal {
+    width: min(58vw, 245px);
+  }
+  .gate-letter-a, .gate-letter-n {
+    font-size: clamp(48px, 12vw, 64px);
+  }
+  .gate-ampersand {
+    font-size: clamp(27px, 6.8vw, 36px);
+  }
+}
