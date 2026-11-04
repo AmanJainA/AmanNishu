@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import StayForm from '../components/StayForm';
 import Preloader from '../components/Preloader';
 import Reveal from '../components/Reveal';
 import Countdown from '../components/Countdown';
@@ -153,48 +153,19 @@ export default function Card() {
         </div>
       </section>
 
-      <section className="invitation-stay-link-section" aria-label="Stay arrangement">
-        <div className="container text-center">
-          <p>Need help with your stay during the celebrations?</p>
-          <Link to="/arrangement" className="invitation-stay-link">Stay Arrangement</Link>
-        </div>
-      </section>
-
-      <section className="wpo-video-section p-0">
-        <h2 className="hidden">Wedding video</h2>
+      <section className="invitation-stay-section section-padding" id="stay-arrangement">
         <div className="container">
-          <Reveal className="row" animation="fadeInUp">
-            <div className="col col-lg-4 col-md-12 col-12">
-              <div className="video-wrap">
-                <div className="video-thumbnail">
-                  <video
-                    width="100%" height="100%" loop playsInline controls preload="metadata"
-                    poster={asset('images/wedding.jpeg')}
-                  >
-                    <source src={publicUrl('video/wedding.mp4')} type="video/mp4" />
-                  </video>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <footer className="wpo-site-footer-s2">
-        <div className="wpo-upper-footer">
-          <div className="container">
-            <div className="row align-items-center">
-              <div className="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                <div className="widget about-widget">
-                  <p>We can’t wait to see all of our beloved friends and relatives at wedding.</p>
-                </div>
-              </div>
-            </div>
+          <div className="invitation-stay-heading text-center">
+            <span>YOUR COMFORT IS OUR PRIORITY</span>
+            <h2>Stay Arrangement</h2>
+            <p>We would be delighted to help arrange your stay during the wedding celebrations.</p>
+          </div>
+          <div className="invitation-stay-form">
+            <StayForm mode="new" />
           </div>
         </div>
-        <div className="ft-shape-1"><img src={asset('images/footer-shape-1.svg')} alt="" /></div>
-        <div className="ft-shape-2"><img src={asset('images/footer-shape-2.svg')} alt="" /></div>
-      </footer>
+      </section>
+
     </div>
   );
 }
