@@ -1608,3 +1608,93 @@ body { width: 100%; min-width: 320px; overflow-x: clip; }
   .story-slide-art img { transition: transform .35s ease, box-shadow .35s ease; }
   .story-slide-art:hover img { transform: scale(1.015); box-shadow: 0 24px 54px rgba(0,0,0,.4); }
 }
+
+
+/* Our Beginning to Happy Ending — AMOLED night-sky finish, matched to the Canva storyboard */
+.our-beginning-section {
+  color: #f7eee8;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(116, 54, 64, .20), transparent 42%),
+    radial-gradient(ellipse at 8% 46%, rgba(183, 130, 91, .10), transparent 30%),
+    radial-gradient(ellipse at 92% 78%, rgba(154, 76, 93, .12), transparent 34%),
+    #050506;
+}
+.our-beginning-section::before {
+  border-color: rgba(224, 190, 151, .28);
+}
+.our-beginning-cover {
+  background:
+    radial-gradient(ellipse at center, rgba(143, 70, 82, .15), transparent 62%);
+}
+.our-beginning-kicker,
+.story-slide-number {
+  color: #d7b58d;
+}
+.story-cover-monogram,
+.story-ending-monogram {
+  color: #f2e2d5;
+  text-shadow: 0 0 34px rgba(226, 177, 158, .12);
+}
+.story-cover-monogram i,
+.story-slide-copy h3 em,
+.story-slide-ending h3 em,
+.story-ending-monogram i {
+  color: #d99da5;
+}
+.our-beginning-cover h2,
+.story-slide-copy h3,
+.story-slide-ending h3 {
+  color: #f4e7df;
+}
+.our-beginning-cover > p,
+.story-slide-ending > p {
+  color: #d8b7aa;
+}
+.story-cover-rule,
+.story-ending-rule {
+  background: linear-gradient(90deg, transparent, #d8b17e, #d99da5, #d8b17e, transparent);
+}
+.story-slide {
+  border-top-color: rgba(221, 184, 146, .20);
+}
+.story-slide-art img {
+  border-color: rgba(216, 177, 126, .52);
+  background: rgba(225, 195, 174, .045);
+  box-shadow: 0 20px 55px rgba(0, 0, 0, .58), 0 0 28px rgba(155, 77, 88, .08);
+}
+.story-city-list span {
+  border-color: rgba(216, 177, 126, .38);
+  color: #e6cdb5;
+  background: rgba(255, 255, 255, .018);
+}
+.story-slide-copy p {
+  color: rgba(247, 238, 232, .78);
+}
+.story-route {
+  color: #e5c8a9;
+}
+.story-route i {
+  background: linear-gradient(90deg, #bd866c, #e4c49f, #d99da5);
+}
+.story-route i::after {
+  color: #d99da5;
+}
+.story-slide-ending {
+  border-top-color: rgba(221, 184, 146, .20);
+  background: radial-gradient(ellipse at 50% 42%, rgba(133, 55, 69, .22), transparent 64%);
+}
+.story-ending-save,
+.story-ending-date {
+  color: #d9b58d;
+}
+.story-slide-ending strong {
+  color: #f4e5d9;
+}
+.story-ending-note {
+  color: #dda6ad;
+}
+@media (max-width: 700px) {
+  .our-beginning-section { padding: 30px 12px; }
+  .our-beginning-section::before { inset: 8px; }
+  .story-slide-art img { box-shadow: 0 12px 30px rgba(0,0,0,.48); }
+}
