@@ -39,15 +39,15 @@ function FloralEmblem() {
           <stop offset="100%" stopColor="#c98f9a" stopOpacity=".2" />
         </linearGradient>
         <clipPath id="gate-floral-circle-clip">
-          <circle cx="382" cy="407" r="262" />
+          <circle cx="382" cy="407" r="252" />
         </clipPath>
       </defs>
       <g className="gate-orbiting-art">
         {/* Raised wax seal is confined to this rotating circular artwork only. */}
-        <circle cx="382" cy="407" r="258" fill="url(#gate-wax-base)" />
-        <circle cx="382" cy="407" r="258" fill="url(#gate-wax-highlight)" />
-        <circle cx="382" cy="407" r="258" fill="url(#gate-wax-edge)" />
-        <circle cx="382" cy="407" r="253" fill="none" stroke="#f6c6b5" strokeOpacity=".28" strokeWidth="2" />
+        <circle cx="382" cy="407" r="248" fill="url(#gate-wax-base)" />
+        <circle cx="382" cy="407" r="248" fill="url(#gate-wax-highlight)" />
+        <circle cx="382" cy="407" r="248" fill="url(#gate-wax-edge)" />
+        <circle cx="382" cy="407" r="243" fill="none" stroke="#f6c6b5" strokeOpacity=".28" strokeWidth="2" />
         {/* Blush-peach colour is clipped strictly to the circular wreath. */}
         <g clipPath="url(#gate-floral-circle-clip)">
           {/* Sage leaves follow the ring and remain inside its edge. */}
@@ -78,8 +78,8 @@ function FloralEmblem() {
         <Flower x={614} y={551} scale={0.66} />
         {/* Fine paired gold lines define the exact outer edge of the blush circle. */}
         <g fill="none" strokeLinecap="round">
-          <circle cx="382" cy="407" r="266" stroke="#c18b45" strokeWidth="3" />
-          <circle cx="382" cy="407" r="258" stroke="#e4bd79" strokeWidth="2.5" />
+          <circle cx="382" cy="407" r="256" stroke="#c18b45" strokeWidth="3" />
+          <circle cx="382" cy="407" r="248" stroke="#e4bd79" strokeWidth="2.5" />
         </g>
       </g>
     </svg>
