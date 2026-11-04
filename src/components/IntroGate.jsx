@@ -29,11 +29,6 @@ function FloralEmblem() {
       <g className="gate-orbiting-art">
         {/* Blush-peach colour is clipped strictly to the circular wreath. */}
         <g clipPath="url(#gate-floral-circle-clip)">
-          <circle cx="382" cy="407" r="262" fill="#f3d5cc" opacity=".82" />
-          <circle cx="382" cy="407" r="250" fill="#f8e8df" opacity=".55" />
-          <g fill="none" stroke="#b89c70" strokeWidth="1.8" opacity=".72">
-            <path d="M382 145 A262 262 0 1 1 381.9 145" />
-          </g>
           {/* Sage leaves follow the ring and remain inside its edge. */}
           <g fill="#9a9a7a" stroke="#7f866b" strokeWidth="1.2">
             <path d="M183 218 Q139 182 137 145 Q183 164 195 205Z" />
