@@ -154,43 +154,73 @@ export default function Card() {
       </section>
 
       <section className="our-beginning-section" id="our-beginning">
-        <div className="our-beginning-glow our-beginning-glow-one"></div>
-        <div className="our-beginning-glow our-beginning-glow-two"></div>
-        <div className="container">
-          <div className="our-beginning-heading">
-            <span className="our-beginning-eyebrow">A STORY WRITTEN IN THE STARS</span>
-            <h2>Our Beginning <i>to</i> Happy Ending</h2>
-            <p>Two homes, two cultures, countless little moments — one beautiful journey.</p>
-          </div>
-          <div className="our-beginning-timeline">
-            <article className="journey-chapter journey-chapter-left">
-              <span className="journey-index">01</span>
-              <div><small>WHERE IT ALL BEGAN</small><h3>Two Homes, Two Cultures</h3>
-              <p>Across states and traditions, our journey began. Jaipur, Bijainagar and Delhi — different beginnings, one love connecting it all.</p>
-              <span className="journey-place">JAIPUR · BIJAINAGAR · DELHI</span></div>
-            </article>
-            <article className="journey-chapter journey-chapter-right">
-              <span className="journey-index">02</span>
-              <div><small>THE FIRST CHAPTER</small><h3>Our Story Began at a Wedding</h3>
-              <p>A meeting that turned into a memory, and a memory that became the start of our forever.</p></div>
-            </article>
-            <article className="journey-chapter journey-chapter-left">
-              <span className="journey-index">03</span>
-              <div><small>OUR FIRST JOURNEY TOGETHER</small><h3>Delhi to Banaras</h3>
-              <p>Different places, same heartbeat. Miles that brought us closer, and a new chapter that began on the same track.</p>
-              <span className="journey-place">DELHI ↔ BANARAS</span></div>
-            </article>
-            <article className="journey-chapter journey-chapter-right">
-              <span className="journey-index">04</span>
-              <div><small>THE LITTLE THINGS</small><h3>Our First Café, a Thousand Memories</h3>
-              <p>Simple moments, shared smiles and the kind of memories that quietly become everything.</p></div>
-            </article>
-            <article className="journey-chapter journey-chapter-final">
-              <span className="journey-index">05</span>
-              <div><small>THE NEXT CHAPTER</small><h3>Aman <i>&amp;</i> Nishu</h3>
-              <p>Are getting married</p><span className="journey-forever">SAVE THE DATE · FOREVER STARTS HERE</span></div>
-            </article>
-          </div>
+        <div className="our-beginning-inner">
+          <header className="our-beginning-cover">
+            <span className="our-beginning-kicker">A STORY WRITTEN IN THE STARS</span>
+            <div className="story-cover-monogram"><span>A</span><i>&amp;</i><span>N</span></div>
+            <h2>Together, Forever</h2>
+            <p>A journey of two hearts</p>
+            <span className="story-cover-rule"></span>
+          </header>
+
+          <article className="story-slide story-slide-origin">
+            <div className="story-slide-copy">
+              <span className="story-slide-number">01 / OUR BEGINNING</span>
+              <h3>Two Homes,<br/><em>Two Cultures</em></h3>
+              <p>Across states and traditions<br/>Our journey begins<br/>One love connects it all</p>
+              <div className="story-city-list"><span>Jaipur, Rajasthan</span><span>Bijainagar</span><span>Delhi</span></div>
+            </div>
+            <div className="story-slide-art story-origin-art">
+              <img src={asset('images/story/4.png')} alt="A memory from our beginning" loading="lazy"/>
+              <span className="story-art-caption">Different roots. One beautiful story.</span>
+            </div>
+          </article>
+
+          <article className="story-slide story-slide-meeting">
+            <div className="story-slide-art story-meeting-art">
+              <img src={asset('images/story/5.png')} alt="The wedding where our story began" loading="lazy"/>
+            </div>
+            <div className="story-slide-copy">
+              <span className="story-slide-number">02 / THE FIRST CHAPTER</span>
+              <h3>Our story began<br/><em>at a wedding...</em></h3>
+              <p>One celebration, one special meeting, and the beginning of a forever we never knew was waiting for us.</p>
+            </div>
+          </article>
+
+          <article className="story-slide story-slide-journey">
+            <div className="story-slide-copy">
+              <span className="story-slide-number">03 / MILES &amp; MEMORIES</span>
+              <h3>Our first journey together —<br/><em>Delhi to Banaras</em></h3>
+              <p>Different places, same heartbeat<br/>Miles that brought us closer<br/>A chapter that began on the same track<br/>To many more journeys ahead</p>
+              <div className="story-route"><span>DELHI</span><i></i><span>BANARAS</span></div>
+            </div>
+            <div className="story-slide-art story-travel-art">
+              <img src={asset('images/story/53.png')} alt="A memory from our Delhi to Banaras journey" loading="lazy"/>
+            </div>
+          </article>
+
+          <article className="story-slide story-slide-cafe">
+            <div className="story-slide-art story-cafe-art">
+              <img src={asset('images/story/6.png')} alt="Our first café memory" loading="lazy"/>
+            </div>
+            <div className="story-slide-copy">
+              <span className="story-slide-number">04 / LITTLE THINGS, BIG MEMORIES</span>
+              <h3>Our first café,<br/><em>a thousand little memories</em></h3>
+              <p>Small moments that became our favourite memories. And a thousand more still waiting to be made.</p>
+            </div>
+          </article>
+
+          <footer className="story-slide-ending">
+            <span className="story-slide-number">05 / THE NEXT CHAPTER</span>
+            <div className="story-ending-monogram">A <i>&amp;</i> N</div>
+            <h3>Aman <em>&amp;</em> Nishu</h3>
+            <p>Are getting married</p>
+            <span className="story-ending-rule"></span>
+            <span className="story-ending-save">Save the date</span>
+            <strong>Aman &amp; Nishu</strong>
+            <span className="story-ending-date">{dateLine}</span>
+            <span className="story-ending-note">We can’t wait to celebrate with you</span>
+          </footer>
         </div>
       </section>
 
