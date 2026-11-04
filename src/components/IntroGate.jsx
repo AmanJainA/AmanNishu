@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Flower({ x, y, scale = 1 }) {
   return (
@@ -89,10 +90,14 @@ function FloralEmblem() {
 export default function IntroGate() {
   const [opening, setOpening] = useState(false);
   const [closed, setClosed] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!opening) return undefined;
-    const timer = window.setTimeout(() => setClosed(true), 1550);
+    const timer = window.setTimeout(() => {
+      setClosed(true);
+      navigate('/card');
+    }, 1550);
     return () => window.clearTimeout(timer);
   }, [opening]);
 
