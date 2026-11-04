@@ -1485,3 +1485,109 @@ body { width: 100%; min-width: 320px; overflow-x: clip; }
 .wpo-story-section-s6 .wpo-story-wrap .wpo-story-item {
   margin-bottom: 10px !important;
 }
+
+
+/* Our Beginning to Happy Ending — AMOLED-inspired cinematic love story */
+.our-beginning-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(64px, 8vw, 112px) 18px;
+  color: #f7eee8;
+  background: #030305 url("https://i0.wp.com/wallpapers.techlomedia.in/wallpapers/amoled/AMOLED-wallpaper-53.jpg") center/cover no-repeat;
+}
+.our-beginning-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(0,0,0,.66), rgba(0,0,0,.82) 48%, rgba(0,0,0,.72));
+}
+.our-beginning-glow {
+  position: absolute;
+  z-index: -1;
+  width: 340px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: .16;
+  pointer-events: none;
+}
+.our-beginning-glow-one { top: 12%; left: -180px; background: #c77a43; }
+.our-beginning-glow-two { right: -180px; bottom: 8%; background: #a94b62; }
+.our-beginning-heading { max-width: 760px; margin: 0 auto 58px; text-align: center; }
+.our-beginning-eyebrow {
+  color: #d9ae78;
+  font: 600 10px/1.5 Georgia,serif;
+  letter-spacing: .28em;
+}
+.our-beginning-heading h2 {
+  margin: 14px 0;
+  color: #f8e7d4;
+  font: 400 clamp(32px, 5vw, 58px)/1.12 Georgia,serif;
+}
+.our-beginning-heading h2 i { color: #d99a9e; font-weight: 400; }
+.our-beginning-heading p { color: rgba(247,238,232,.72); font: 14px/1.8 Georgia,serif; }
+.our-beginning-timeline { position: relative; width: min(100%, 900px); margin: 0 auto; }
+.our-beginning-timeline::before {
+  content: ""; position: absolute; top: 8px; bottom: 20px; left: 50%;
+  width: 1px; transform: translateX(-50%);
+  background: linear-gradient(180deg, transparent, rgba(220,174,120,.8) 8%, rgba(220,174,120,.35) 90%, transparent);
+}
+.journey-chapter {
+  position: relative; display: flex; align-items: flex-start; gap: 18px;
+  width: 50%; padding: 0 42px 52px 0;
+}
+.journey-chapter:nth-child(even) { margin-left: 50%; padding: 0 0 52px 42px; }
+.journey-index {
+  position: absolute; top: 0; right: -17px; z-index: 1;
+  display: grid; place-items: center; width: 34px; height: 34px;
+  border: 1px solid rgba(221,174,122,.8); border-radius: 50%;
+  color: #f1c995; background: #080708; font: 12px Georgia,serif;
+  box-shadow: 0 0 22px rgba(213,153,102,.22);
+}
+.journey-chapter:nth-child(even) .journey-index { right: auto; left: -17px; }
+.journey-chapter > div {
+  width: 100%; padding: 22px 24px;
+  border: 1px solid rgba(221,174,122,.25);
+  background: linear-gradient(135deg, rgba(24,20,22,.82), rgba(8,8,11,.68));
+  box-shadow: 0 12px 38px rgba(0,0,0,.28);
+  backdrop-filter: blur(8px);
+}
+.journey-chapter small { color: #d6a875; font: 600 9px/1.5 Georgia,serif; letter-spacing: .2em; }
+.journey-chapter h3 { margin: 10px 0 9px; color: #f8e9dc; font: 400 clamp(21px, 2.4vw, 28px)/1.2 Georgia,serif; }
+.journey-chapter p { margin: 0; color: rgba(247,238,232,.72); font: 13px/1.8 Georgia,serif; }
+.journey-place,.journey-forever {
+  display: inline-block; margin-top: 14px; color: #dfa7aa;
+  font: 600 9px/1.5 Georgia,serif; letter-spacing: .16em;
+}
+.journey-chapter-final { width: 100%; margin: 0; padding: 0; justify-content: center; text-align: center; }
+.journey-chapter-final .journey-index { top: -17px; right: calc(50% - 17px); }
+.journey-chapter-final > div {
+  width: min(100%, 560px); margin: 28px auto 0; padding: 34px 24px;
+  border-color: rgba(222,171,123,.48);
+  background: radial-gradient(ellipse at center, rgba(118,53,59,.22), rgba(8,8,11,.92) 72%);
+}
+.journey-chapter-final h3 { font-size: clamp(34px, 5vw, 54px); letter-spacing: .04em; }
+.journey-chapter-final h3 i { color: #d98f98; font-style: normal; }
+.journey-chapter-final p { color: #e7c9b7; font-size: 17px; }
+@media (max-width: 700px) {
+  .our-beginning-section { padding: 56px 14px 64px; background-position: 55% center; }
+  .our-beginning-heading { margin-bottom: 42px; }
+  .our-beginning-timeline { padding-left: 18px; }
+  .our-beginning-timeline::before { left: 17px; transform: none; }
+  .journey-chapter,.journey-chapter:nth-child(even) {
+    width: 100%; margin-left: 0; padding: 0 0 28px 30px;
+  }
+  .journey-index,.journey-chapter:nth-child(even) .journey-index {
+    left: -17px; right: auto; width: 34px; height: 34px;
+  }
+  .journey-chapter > div { padding: 18px 17px; }
+  .journey-chapter-final { padding-left: 30px !important; text-align: left; }
+  .journey-chapter-final .journey-index { top: 0; left: -17px; right: auto; }
+  .journey-chapter-final > div { width: 100%; margin: 0; padding: 24px 18px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .journey-chapter > div { transition: border-color .25s ease, transform .25s ease; }
+  .journey-chapter > div:hover { transform: translateY(-3px); border-color: rgba(221,174,122,.58); }
+}
