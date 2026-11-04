@@ -1618,3 +1618,85 @@ body { width: 100%; min-width: 320px; overflow-x: clip; }
 @media (max-width: 420px) {
   .gate-center { width: min(72vw, 242px); }
 }
+
+
+/* Wax-seal finish for the A&N floral invitation emblem */
+.gate-seal {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 34% 27%, rgba(255,248,239,.96) 0%, rgba(247,224,211,.96) 34%, rgba(226,174,153,.98) 72%, #c98772 100%);
+  box-shadow:
+    inset 0 0 0 2px rgba(255,248,235,.94),
+    inset 0 0 0 5px rgba(176,104,82,.3),
+    inset 0 7px 15px rgba(255,255,255,.62),
+    inset 0 -12px 22px rgba(116,56,45,.22);
+  transform: translateZ(0);
+  transition: transform .35s ease, filter .35s ease;
+}
+.gate-seal::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 7px;
+  border: 1px solid rgba(255,248,238,.78);
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 0 2px rgba(173,103,82,.13),
+    0 0 0 1px rgba(255,255,255,.28);
+  pointer-events: none;
+}
+.gate-seal::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 25% 18%, rgba(255,255,255,.38), transparent 34%),
+    radial-gradient(ellipse at 78% 82%, rgba(116,55,45,.13), transparent 42%);
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+.gate-seal:hover {
+  transform: scale(1.025);
+  filter: saturate(1.04);
+  box-shadow:
+    inset 0 0 0 2px rgba(255,248,235,.94),
+    inset 0 0 0 5px rgba(176,104,82,.3),
+    inset 0 7px 15px rgba(255,255,255,.62),
+    inset 0 -12px 22px rgba(116,56,45,.22);
+}
+.gate-floral-art {
+  z-index: 2;
+  overflow: visible;
+}
+.gate-monogram-fixed {
+  z-index: 3;
+  color: #a85e45;
+  text-shadow:
+    0 1px 0 rgba(255,248,237,.82),
+    0 -1px 0 rgba(117,58,43,.16);
+}
+.gate-letter-a,
+.gate-letter-n {
+  color: #b87932;
+}
+.gate-ampersand {
+  color: #963d35;
+}
+@media (max-width: 700px) {
+  .gate-seal {
+    box-shadow:
+      inset 0 0 0 1.5px rgba(255,248,235,.94),
+      inset 0 0 0 4px rgba(176,104,82,.3),
+      inset 0 5px 12px rgba(255,255,255,.58),
+      inset 0 -9px 17px rgba(116,56,45,.2);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gate-orbiting-art { animation: none !important; }
+}
