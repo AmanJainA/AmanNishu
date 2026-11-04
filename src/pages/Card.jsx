@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Preloader from '../components/Preloader';
 import Reveal from '../components/Reveal';
 import Countdown from '../components/Countdown';
@@ -149,6 +150,13 @@ export default function Card() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="invitation-stay-link-section" aria-label="Stay arrangement">
+        <div className="container text-center">
+          <p>Need help with your stay during the celebrations?</p>
+          <Link to="/arrangement" className="invitation-stay-link">Stay Arrangement</Link>
         </div>
       </section>
 
