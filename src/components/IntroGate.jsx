@@ -18,37 +18,30 @@ function Flower({ x, y, scale = 1 }) {
 function FloralEmblem() {
   return (
     <svg className="gate-floral-art" viewBox="0 0 764 814" role="presentation" aria-hidden="true">
-      {/* The two close circular guide lines stay fixed behind the moving flowers. */}
-      <g fill="none" stroke="#b99a70" strokeWidth="2" opacity="0.88">
-        <circle cx="382" cy="407" r="258" />
-        <circle cx="382" cy="407" r="266" />
-      </g>
       <g className="gate-orbiting-art">
-        <Flower x={382} y={141} scale={0.88} />
-        <Flower x={570} y={219} scale={0.72} />
-        <Flower x={648} y={407} scale={0.9} />
-        <Flower x={570} y={595} scale={0.72} />
-        <Flower x={382} y={673} scale={0.88} />
-        <Flower x={194} y={595} scale={0.72} />
-        <Flower x={116} y={407} scale={0.9} />
-        <Flower x={194} y={219} scale={0.72} />
-        <g fill="#9b9b7b" stroke="#81866c" strokeWidth="1.2">
-          <path d="M270 177 C250 150 250 132 260 112 C286 136 288 157 270 177Z" />
-          <path d="M494 637 C514 664 514 682 504 702 C478 678 476 657 494 637Z" />
-          <path d="M612 300 C642 284 659 288 674 302 C648 323 627 320 612 300Z" />
-          <path d="M152 514 C122 530 105 526 90 512 C116 491 137 494 152 514Z" />
-          <path d="M489 177 C509 150 509 132 499 112 C473 136 471 157 489 177Z" />
-          <path d="M275 637 C255 664 255 682 265 702 C291 678 293 657 275 637Z" />
+        <g fill="none" stroke="#b9a17b" strokeWidth="2" strokeLinecap="round">
+          <path d="M118 300 C80 225 115 174 181 155 C222 143 259 153 290 174" />
+          <path d="M646 520 C682 587 645 650 584 675 C535 694 481 680 444 652" />
         </g>
+        <g fill="#9b9b7b" stroke="#81866c" strokeWidth="1.2">
+          <path d="M75 310 C34 283 23 260 20 237 C59 245 80 268 75 310Z" />
+          <path d="M100 353 C54 347 35 329 23 305 C65 303 91 321 100 353Z" />
+          <path d="M135 390 C104 424 78 426 51 415 C74 382 105 376 135 390Z" />
+          <path d="M677 552 C718 526 740 531 757 547 C724 574 696 575 677 552Z" />
+          <path d="M650 608 C697 610 719 628 730 653 C686 660 660 640 650 608Z" />
+          <path d="M609 647 C634 687 627 711 608 732 C581 695 585 667 609 647Z" />
+        </g>
+        <g fill="none" stroke="#b6a17e" strokeWidth="2" strokeLinecap="round">
+          <path d="M65 430 C83 465 82 500 71 531 M89 421 C105 466 108 489 102 515 M121 410 C137 450 137 480 130 503" />
+          <path d="M690 430 C675 468 681 495 696 525 M661 448 C645 483 646 510 656 536 M630 467 C613 500 615 527 626 550" />
+        </g>
+        <Flower x={133} y={292} scale={1.18} />
+        <Flower x={188} y={218} scale={0.68} />
+        <Flower x={630} y={574} scale={1.12} />
+        <Flower x={574} y={632} scale={0.68} />
         <g fill="#d9b889">
-          <circle cx="306" cy="154" r="4"/><circle cx="326" cy="145" r="3"/>
-          <circle cx="458" cy="154" r="4"/><circle cx="438" cy="145" r="3"/>
-          <circle cx="635" cy="333" r="4"/><circle cx="644" cy="353" r="3"/>
-          <circle cx="635" cy="481" r="4"/><circle cx="644" cy="461" r="3"/>
-          <circle cx="458" cy="660" r="4"/><circle cx="438" cy="669" r="3"/>
-          <circle cx="306" cy="660" r="4"/><circle cx="326" cy="669" r="3"/>
-          <circle cx="129" cy="481" r="4"/><circle cx="120" cy="461" r="3"/>
-          <circle cx="129" cy="333" r="4"/><circle cx="120" cy="353" r="3"/>
+          <circle cx="54" cy="195" r="4"/><circle cx="75" cy="178" r="3"/><circle cx="98" cy="164" r="3"/>
+          <circle cx="708" cy="390" r="4"/><circle cx="725" cy="413" r="3"/><circle cx="738" cy="438" r="3"/>
         </g>
       </g>
     </svg>
