@@ -22,11 +22,32 @@ function FloralEmblem() {
   return (
     <svg className="gate-floral-art" viewBox="0 0 764 814" role="presentation" aria-hidden="true">
       <defs>
+        <radialGradient id="gate-wax-base" cx="32%" cy="24%" r="78%">
+          <stop offset="0%" stopColor="#f4b7aa" />
+          <stop offset="38%" stopColor="#e88b8b" />
+          <stop offset="72%" stopColor="#cf5268" />
+          <stop offset="100%" stopColor="#9e2948" />
+        </radialGradient>
+        <radialGradient id="gate-wax-highlight" cx="28%" cy="18%" r="72%">
+          <stop offset="0%" stopColor="#fff0df" stopOpacity=".62" />
+          <stop offset="48%" stopColor="#ffd8ce" stopOpacity=".18" />
+          <stop offset="100%" stopColor="#ffd8ce" stopOpacity="0" />
+        </radialGradient>
+        <linearGradient id="gate-wax-edge" x1="0" y1="0" x2="0.9" y2="1">
+          <stop offset="0%" stopColor="#ffe0d3" stopOpacity=".55" />
+          <stop offset="45%" stopColor="#d65b70" stopOpacity="0" />
+          <stop offset="100%" stopColor="#761a38" stopOpacity=".38" />
+        </linearGradient>
         <clipPath id="gate-floral-circle-clip">
           <circle cx="382" cy="407" r="262" />
         </clipPath>
       </defs>
       <g className="gate-orbiting-art">
+        {/* Raised wax seal is confined to this rotating circular artwork only. */}
+        <circle cx="382" cy="407" r="258" fill="url(#gate-wax-base)" />
+        <circle cx="382" cy="407" r="258" fill="url(#gate-wax-highlight)" />
+        <circle cx="382" cy="407" r="258" fill="url(#gate-wax-edge)" />
+        <circle cx="382" cy="407" r="253" fill="none" stroke="#f6c6b5" strokeOpacity=".28" strokeWidth="2" />
         {/* Blush-peach colour is clipped strictly to the circular wreath. */}
         <g clipPath="url(#gate-floral-circle-clip)">
           {/* Sage leaves follow the ring and remain inside its edge. */}
