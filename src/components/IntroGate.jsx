@@ -39,7 +39,7 @@ function FloralEmblem() {
           <stop offset="100%" stopColor="#c98f9a" stopOpacity=".2" />
         </linearGradient>
         <clipPath id="gate-floral-circle-clip">
-          <circle cx="382" cy="407" r="232" />
+          <circle cx="382" cy="407" r="350" />
         </clipPath>
       </defs>
       <g className="gate-orbiting-art">
