@@ -119,15 +119,12 @@ export default function IntroGate() {
           disabled={opening}
           aria-label="Open Aman and Nishu's wedding invitation"
         >
-          <span className="gate-stamp-rim" aria-hidden="true" />
-          <span className="gate-stamp-inner" aria-hidden="true" />
           <FloralEmblem />
           <span className="gate-monogram-fixed" aria-hidden="true">
             <span className="gate-letter-a">A</span>
             <span className="gate-ampersand">&amp;</span>
             <span className="gate-letter-n">N</span>
           </span>
-          <span className="gate-stamp-caption">TWO PLACES, ONE STORY</span>
         </button>
       </div>
       <div className="gate-bottom-note">RAJASTHAN <i>✦</i> DELHI <i>✦</i> TOGETHER, FOREVER</div>
