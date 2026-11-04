@@ -153,6 +153,17 @@ export default function Card() {
         </div>
       </section>
 
+      <section className="wpo-video-section p-0 invitation-video-section" aria-label="Wedding video">
+        <div className="container-fluid p-0">
+          <div className="invitation-video-frame">
+            <video controls playsInline preload="metadata" poster={asset('images/wedding.jpeg')}>
+              <source src={publicUrl('video/wedding.mp4')} type="video/mp4" />
+              Your browser does not support the wedding video.
+            </video>
+          </div>
+        </div>
+      </section>
+
       <section className="invitation-stay-section section-padding" id="stay-arrangement">
         <div className="container">
           <div className="invitation-stay-heading text-center">
@@ -165,6 +176,15 @@ export default function Card() {
           </div>
         </div>
       </section>
+
+      <footer className="wpo-site-footer-s2 invitation-card-footer">
+        <div className="container text-center">
+          <div className="invitation-footer-monogram">A <span>&amp;</span> N</div>
+          <p>With love and blessings,</p>
+          <h3>Aman &amp; Nishu</h3>
+          <span>We look forward to celebrating with you</span>
+        </div>
+      </footer>
 
     </div>
   );
