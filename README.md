@@ -1,35 +1,45 @@
-# Aman & Nishu – Wedding Invitation (React)
+# Aman & Nishu — Wedding Invitation
 
-React (Vite) version of the original PHP site. Same design (the original theme CSS, fonts and images are reused),
-rebuilt as components and checked at 1440 / 1024 / 768 / 390 / 360 px with no horizontal scrolling.
+A responsive React 18 + Vite wedding website published to GitHub Pages.
 
-## Run
+## Run locally
+
 ```bash
-npm install
-npm run dev        # http://localhost:5173  (demo mode: form data saved in your browser only)
-npm run build      # outputs dist/
+npm ci
+npm run dev
+npm run build
+npm run preview
 ```
 
-## Pages
-| Route | Original |
+## Routes
+
+| Route | Purpose |
 |---|---|
-| `/` | index.php |
-| `/card` | card.php (countdown, events, video) |
-| `/arrangement` | arrangement.php |
-| `/edit-arrangement` | editarrangement.php (+ information.php lookup) |
-| `/video` | video.php |
+| `/` | Wedding home and invitation links |
+| `/card` | Countdown, Supabase-managed function cards and wedding video |
+| `/arrangement` | Guest stay-arrangement form |
+| `/edit-arrangement` | Find and update a submitted stay arrangement |
+| `/video` | Full-screen wedding video |
+| `/admin` | Admin login and dashboard |
 
-Old `.php` links already shared with guests (e.g. `/card.php`) redirect to the new routes.
+Legacy `.php` guest links are redirected by the React router to their current routes.
 
-## Editing content
-Names, date line, countdown target and the six events live in `src/data/wedding.js`.
+## Content and data
 
-## Saving stay arrangements (PHP + MySQL)
-`api/` holds prepared-statement replacements for the original inline queries and uses the same `entry` table.
-1. Copy `.env.example` to `.env` and set `VITE_API_URL=/api`, then `npm run build`.
-2. Upload the contents of `dist/` plus the `api/` folder to the same domain (`dist/.htaccess` handles routing).
-3. DB credentials default to the original (`localhost / root / empty / data`); override via `DB_HOST`, `DB_USER`, `DB_PASS`, `DB_NAME`.
+- Couple names, date line and countdown target: `src/data/wedding.js`.
+- Wedding function cards: Supabase, read by `src/pages/Card.jsx` and managed in `/admin`.
+- Guest stay arrangements: Supabase Edge Function calls in `src/services/api.js`.
+- Admin actions: `src/services/adminApi.js`.
+- Shared Supabase project URL and public anon key: `src/services/config.js`.
 
-Without `VITE_API_URL`, a production build shows an error on submit instead of silently losing data.
+The Supabase anon key is a public client key. Privileged operations must remain protected by the Edge Function and database policies; never put a service-role key in this repository.
 
-The admin panel (`admin1/`) is not part of this port; keep using it as-is with the same database.
+## GitHub Pages deployment
+
+Pushing to `main` runs `.github/workflows/deploy.yml`. The workflow builds the Vite app, creates the SPA fallback file and publishes `dist/` to the `gh-pages` branch.
+
+The project-site base path is configured in `vite.config.js` as `/AmanNishu/`.
+
+## Legacy PHP files
+
+The `api/` directory contains the earlier PHP/MySQL implementation retained for reference or a PHP-hosted deployment. GitHub Pages does not execute PHP; the current GitHub Pages site uses the Supabase Edge Function integration described above.
