@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { PHONE_PATTERN, lookupEntry, submitEntry, updateEntry } from '../services/api';
 
 const EMPTY = {
@@ -19,7 +18,8 @@ function Field({ label, children, className = 'col-md-6 fv-row' }) {
 
 /** mode="new" -> "For Stay Arrangement", mode="edit" -> "Edit Stay Arrangement" */
 export default function StayForm({ mode }) {
-  const isEdit = mode === 'edit';
+  const [editing, setEditing] = useState(mode === 'edit');
+  const isEdit = editing;
   const [v, setV] = useState(EMPTY);
   const [locked, setLocked] = useState(false); // edit: number found, field read-only
   const [notice, setNotice] = useState(null); // { type: 'success' | 'danger', text }
@@ -231,9 +231,27 @@ export default function StayForm({ mode }) {
           </button>
         </div>
       </form>
-      {!isEdit && (
-        <p className="text-center">
-          <Link to="/edit-arrangement">Click here to edit your stay arrangement</Link>
+      {!isEdit ? (
+        <p className="text-center mt-3">
+          <button type="button" className="stay-form-link" onClick={() => {
+            setV(EMPTY);
+            setLocked(false);
+            setNotice(null);
+            setEditing(true);
+          }}>
+            Click here to edit your stay arrangement
+          </button>
+        </p>
+      ) : (
+        <p className="text-center mt-3">
+          <button type="button" className="stay-form-link" onClick={() => {
+            setV(EMPTY);
+            setLocked(false);
+            setNotice(null);
+            setEditing(false);
+          }}>
+            Back to new stay arrangement
+          </button>
         </p>
       )}
     </div>
