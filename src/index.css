@@ -1698,3 +1698,101 @@ body { width: 100%; min-width: 320px; overflow-x: clip; }
   .our-beginning-section::before { inset: 8px; }
   .story-slide-art img { box-shadow: 0 12px 30px rgba(0,0,0,.48); }
 }
+
+
+/* One-page Canva storyboard: a compact visual story, not a multi-slide carousel. */
+.canva-story-section {
+  position: relative; isolation: isolate; overflow: hidden;
+  padding: clamp(48px, 7vw, 88px) 20px;
+  color: #f5e9df;
+  background:
+    radial-gradient(ellipse at 12% 20%, rgba(166,91,94,.18), transparent 34%),
+    radial-gradient(ellipse at 88% 76%, rgba(193,145,94,.12), transparent 38%),
+    #090809;
+}
+.canva-story-section::before {
+  content: ""; position: absolute; inset: 12px;
+  border: 1px solid rgba(216,181,139,.25); pointer-events: none;
+}
+.canva-story-inner { width: min(100%, 1120px); margin: 0 auto; }
+.canva-story-heading { max-width: 760px; margin: 0 auto 34px; text-align: center; }
+.canva-story-heading > span,
+.canva-story-finale > span {
+  color: #d8b487; font: 600 9px/1.7 Georgia,serif; letter-spacing: .25em;
+}
+.canva-story-heading h2 {
+  margin: 15px 0 12px; color: #f4e6dc;
+  font: 400 clamp(30px, 5vw, 54px)/1.12 Georgia,serif;
+}
+.canva-story-heading h2 em { color: #d79da2; font-weight: 400; }
+.canva-story-heading p {
+  max-width: 590px; margin: 0 auto; color: rgba(245,233,223,.72);
+  font: 14px/1.9 Georgia,serif;
+}
+.canva-story-gallery {
+  display: grid; grid-template-columns: 1.2fr .8fr 1fr;
+  grid-template-rows: 220px 220px; gap: 14px;
+}
+.canva-story-photo {
+  position: relative; min-width: 0; min-height: 0; margin: 0;
+  overflow: hidden; border: 1px solid rgba(216,181,139,.42);
+  background: #1a1414; box-shadow: 0 14px 35px rgba(0,0,0,.32);
+}
+.canva-story-photo img {
+  display: block; width: 100%; height: 100%; object-fit: cover;
+  transition: transform .55s ease; filter: saturate(.9);
+}
+.canva-story-photo:hover img { transform: scale(1.045); }
+.canva-story-photo::after {
+  content: ""; position: absolute; inset: 35% 0 0;
+  background: linear-gradient(transparent, rgba(8,6,7,.76));
+}
+.canva-story-photo figcaption {
+  position: absolute; z-index: 1; left: 15px; right: 15px; bottom: 13px;
+  color: #f6e7dc; font: italic 12px Georgia,serif; text-align: center;
+}
+.canva-story-photo-main { grid-column: 1; grid-row: 1 / 3; }
+.canva-story-photo-wedding { grid-column: 2; grid-row: 1; }
+.canva-story-photo-travel { grid-column: 3; grid-row: 1; }
+.canva-story-photo-cafe { grid-column: 2 / 4; grid-row: 2; }
+.canva-story-photo-main img { object-position: center; }
+.canva-story-details { max-width: 790px; margin: 32px auto 0; text-align: center; }
+.canva-story-places {
+  display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px;
+  color: #e4c8a8; font: 600 9px Georgia,serif; letter-spacing: .18em;
+}
+.canva-story-places i { color: #d79da2; font-style: normal; }
+.canva-story-details > p {
+  max-width: 630px; margin: 18px auto 0; color: rgba(245,233,223,.7);
+  font: italic 14px/1.9 Georgia,serif;
+}
+.canva-story-finale {
+  margin-top: 34px; padding-top: 28px;
+  border-top: 1px solid rgba(216,181,139,.23);
+}
+.canva-story-finale h3 {
+  margin: 8px 0 0; color: #f4e6dc; font: 400 clamp(36px,6vw,58px) Georgia,serif;
+}
+.canva-story-finale h3 em { color: #d79da2; font-size: .65em; }
+.canva-story-finale p { margin: 2px 0 12px; color: #d9b3a9; font: italic 17px Georgia,serif; }
+.canva-story-finale strong,.canva-story-finale small {
+  display: block; color: #e3c59f; font: 600 10px/1.9 Georgia,serif; letter-spacing: .15em;
+}
+.canva-story-finale small { color: #cfa8a0; font-weight: 400; }
+@media (max-width: 700px) {
+  .canva-story-section { padding: 44px 16px; }
+  .canva-story-section::before { inset: 8px; }
+  .canva-story-heading { margin-bottom: 25px; }
+  .canva-story-heading p { font-size: 13px; }
+  .canva-story-gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 240px 150px 150px; gap: 9px; }
+  .canva-story-photo-main { grid-column: 1 / 3; grid-row: 1; }
+  .canva-story-photo-wedding { grid-column: 1; grid-row: 2; }
+  .canva-story-photo-travel { grid-column: 2; grid-row: 2; }
+  .canva-story-photo-cafe { grid-column: 1 / 3; grid-row: 3; }
+  .canva-story-photo figcaption { left: 8px; right: 8px; bottom: 9px; font-size: 10px; }
+  .canva-story-details { margin-top: 25px; }
+  .canva-story-places { gap: 8px; font-size: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .canva-story-photo img { transition: none; }
+}
