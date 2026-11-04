@@ -23,20 +23,20 @@ function FloralEmblem() {
     <svg className="gate-floral-art" viewBox="0 0 764 814" role="presentation" aria-hidden="true">
       <defs>
         <radialGradient id="gate-wax-base" cx="32%" cy="24%" r="78%">
-          <stop offset="0%" stopColor="#f4b7aa" />
-          <stop offset="38%" stopColor="#e88b8b" />
-          <stop offset="72%" stopColor="#cf5268" />
-          <stop offset="100%" stopColor="#9e2948" />
+          <stop offset="0%" stopColor="#fff5e9" />
+          <stop offset="38%" stopColor="#f4e1cb" />
+          <stop offset="72%" stopColor="#f1cfc5" />
+          <stop offset="100%" stopColor="#e9b9b8" />
         </radialGradient>
         <radialGradient id="gate-wax-highlight" cx="28%" cy="18%" r="72%">
-          <stop offset="0%" stopColor="#fff0df" stopOpacity=".62" />
-          <stop offset="48%" stopColor="#ffd8ce" stopOpacity=".18" />
-          <stop offset="100%" stopColor="#ffd8ce" stopOpacity="0" />
+          <stop offset="0%" stopColor="#fffaf2" stopOpacity=".82" />
+          <stop offset="48%" stopColor="#f9e8df" stopOpacity=".32" />
+          <stop offset="100%" stopColor="#f9e8df" stopOpacity="0" />
         </radialGradient>
         <linearGradient id="gate-wax-edge" x1="0" y1="0" x2="0.9" y2="1">
-          <stop offset="0%" stopColor="#ffe0d3" stopOpacity=".55" />
-          <stop offset="45%" stopColor="#d65b70" stopOpacity="0" />
-          <stop offset="100%" stopColor="#761a38" stopOpacity=".38" />
+          <stop offset="0%" stopColor="#fff3e6" stopOpacity=".48" />
+          <stop offset="55%" stopColor="#eabfc0" stopOpacity=".04" />
+          <stop offset="100%" stopColor="#c98f9a" stopOpacity=".2" />
         </linearGradient>
         <clipPath id="gate-floral-circle-clip">
           <circle cx="382" cy="407" r="262" />
