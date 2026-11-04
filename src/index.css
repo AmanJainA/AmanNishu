@@ -1405,3 +1405,50 @@ body { width: 100%; min-width: 320px; overflow-x: clip; }
   opacity: .92;
 }
 .wedding-gate.is-opening .gate-bottom-note { opacity: 0; transition: opacity .25s ease; }
+
+
+/* Integrated stay form: part of the invitation-card page, not a separate page link. */
+.invitation-stay-section {
+  position: relative;
+  padding: clamp(42px, 6vw, 78px) 16px;
+  background: linear-gradient(180deg, #fbf6f0 0%, #f7eee5 100%);
+}
+.invitation-stay-heading { max-width: 760px; margin: 0 auto 30px; }
+.invitation-stay-heading > span {
+  display: block; color: #a17b54;
+  font: 600 10px/1.6 Georgia, serif; letter-spacing: .2em;
+}
+.invitation-stay-heading h2 {
+  margin: 9px 0 10px; color: #805b42;
+  font: 500 clamp(28px, 4vw, 42px)/1.15 Georgia, serif;
+}
+.invitation-stay-heading p { margin: 0; color: #806f60; font-size: 14px; }
+.invitation-stay-form {
+  width: min(100%, 940px); margin: 0 auto;
+  padding: clamp(20px, 4vw, 42px);
+  background: rgba(255,255,255,.9);
+  border: 1px solid rgba(183,145,105,.32);
+  box-shadow: 0 12px 35px rgba(92,66,43,.08);
+}
+.invitation-stay-form .wpo-contact-form-area {
+  width: 100%; max-width: none; padding: 0;
+  background: transparent; box-shadow: none;
+}
+.invitation-stay-form .wpo-section-title { margin-bottom: 24px; text-align: center; }
+.invitation-stay-form .wpo-section-title h3 { color: #805b42; font-family: Georgia, serif; }
+.invitation-stay-form .row { row-gap: 14px; }
+.invitation-stay-form .form-control {
+  min-height: 46px; border: 1px solid rgba(155,119,83,.3);
+  border-radius: 3px; background: #fffdfa;
+}
+.invitation-stay-form .form-control:focus {
+  border-color: #b58a5b; box-shadow: 0 0 0 3px rgba(181,138,91,.12);
+}
+.invitation-stay-form .btn-primary { border-color: #956c48; background: #956c48; }
+.invitation-stay-form .btn-primary:hover { border-color: #795638; background: #795638; }
+@media (max-width: 575px) {
+  .invitation-stay-section { padding: 38px 12px; }
+  .invitation-stay-heading { margin-bottom: 22px; }
+  .invitation-stay-form { padding: 18px 12px; }
+  .invitation-stay-form .row > [class*="col-"] { width: 100%; }
+}
