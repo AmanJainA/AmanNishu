@@ -39,15 +39,15 @@ function FloralEmblem() {
           <stop offset="100%" stopColor="#c98f9a" stopOpacity=".2" />
         </linearGradient>
         <clipPath id="gate-floral-circle-clip">
-          <circle cx="382" cy="407" r="252" />
+          <circle cx="382" cy="407" r="232" />
         </clipPath>
       </defs>
       <g className="gate-orbiting-art">
         {/* Raised wax seal is confined to this rotating circular artwork only. */}
-        <circle cx="382" cy="407" r="248" fill="url(#gate-wax-base)" />
-        <circle cx="382" cy="407" r="248" fill="url(#gate-wax-highlight)" />
-        <circle cx="382" cy="407" r="248" fill="url(#gate-wax-edge)" />
-        <circle cx="382" cy="407" r="243" fill="none" stroke="#f6c6b5" strokeOpacity=".28" strokeWidth="2" />
+        <circle cx="382" cy="407" r="228" fill="url(#gate-wax-base)" />
+        <circle cx="382" cy="407" r="228" fill="url(#gate-wax-highlight)" />
+        <circle cx="382" cy="407" r="228" fill="url(#gate-wax-edge)" />
+        <circle cx="382" cy="407" r="223" fill="none" stroke="#f6c6b5" strokeOpacity=".28" strokeWidth="2" />
         {/* Blush-peach colour is clipped strictly to the circular wreath. */}
         <g clipPath="url(#gate-floral-circle-clip)">
           {/* Sage leaves follow the ring and remain inside its edge. */}
@@ -72,14 +72,14 @@ function FloralEmblem() {
           </g>
         </g>
         {/* Roses sit over the ring so each bloom remains whole and follows its curve. */}
-        <Flower x={196} y={218} scale={1.42} />
-        <Flower x={568} y={596} scale={1.42} />
-        <Flower x={150} y={263} scale={0.66} />
-        <Flower x={614} y={551} scale={0.66} />
+        <Flower x={213} y={232} scale={1.42} />
+        <Flower x={551} y={582} scale={1.42} />
+        <Flower x={168} y={275} scale={0.66} />
+        <Flower x={596} y={539} scale={0.66} />
         {/* Fine paired gold lines define the exact outer edge of the blush circle. */}
         <g fill="none" strokeLinecap="round">
-          <circle cx="382" cy="407" r="256" stroke="#c18b45" strokeWidth="3" />
-          <circle cx="382" cy="407" r="248" stroke="#e4bd79" strokeWidth="2.5" />
+          <circle cx="382" cy="407" r="236" stroke="#c18b45" strokeWidth="3" />
+          <circle cx="382" cy="407" r="228" stroke="#e4bd79" strokeWidth="2.5" />
         </g>
       </g>
     </svg>
