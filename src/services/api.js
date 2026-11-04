@@ -1,13 +1,11 @@
-const SUPABASE_URL = 'https://wrssvnvagpnvlwhnqqta.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indyc3N2bnZhZ3Budmx3aG5xcXRhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTEzMDQ4ODMsImV4cCI6MjEwNjg4MDg4M30.c4y-GS54rHPRhuEeohnDoYOYzR7OvR_8CkUH8QRYNQ0';
-const ENDPOINT = `${SUPABASE_URL}/functions/v1/amanishu-admin`;
+import { ADMIN_ENDPOINT, SUPABASE_ANON_KEY } from './config';
 
 export const PHONE_PATTERN = /^[6789][0-9]{9}$/;
 
 async function post(action, body) {
   let response;
   try {
-    response = await fetch(ENDPOINT, {
+    response = await fetch(ADMIN_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', apikey: SUPABASE_ANON_KEY },
       body: JSON.stringify({ action, ...body }),
@@ -24,18 +22,15 @@ async function post(action, body) {
   return data;
 }
 
-/** Look up a guest's saved stay arrangement by registered contact number. */
 export async function lookupEntry(contactno) {
   const data = await post('guest-lookup', { contactno });
   return data.entry || null;
 }
 
-/** Save a new guest stay arrangement in Supabase. */
 export async function submitEntry(entry) {
   return post('guest-submit', entry);
 }
 
-/** Update the guest's existing stay arrangement in Supabase. */
 export async function updateEntry(entry) {
   return post('guest-update', entry);
 }
