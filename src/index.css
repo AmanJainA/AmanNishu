@@ -1479,3 +1479,9 @@ body { width: 100%; min-width: 320px; overflow-x: clip; }
   .invitation-video-frame { padding: 10px 0; }
   .invitation-card-footer { padding: 36px 14px; }
 }
+
+
+/* Consistent 10px breathing room below each wedding function card. */
+.wpo-story-section-s6 .wpo-story-wrap .wpo-story-item {
+  margin-bottom: 10px !important;
+}
