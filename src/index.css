@@ -1392,3 +1392,16 @@ body { width: 100%; min-width: 320px; overflow-x: clip; }
 @media (prefers-reduced-motion: reduce) {
   .gate-orbiting-art { animation: none !important; }
 }
+
+/* Invitation reveal: the two gate leaves part from the centre on activation. */
+.wedding-gate.is-opening .gate-culture-rajasthan,
+.wedding-gate.is-opening .gate-panel-left {
+  transform: translateX(-102%);
+  opacity: .92;
+}
+.wedding-gate.is-opening .gate-culture-delhi,
+.wedding-gate.is-opening .gate-panel-right {
+  transform: translateX(102%);
+  opacity: .92;
+}
+.wedding-gate.is-opening .gate-bottom-note { opacity: 0; transition: opacity .25s ease; }
