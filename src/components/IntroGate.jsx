@@ -73,15 +73,15 @@ function FloralEmblem() {
           </g>
         </g>
         {/* Roses sit over the ring so each bloom remains whole and follows its curve. */}
-        <Flower x={213} y={232} scale={1.42} />
-        <Flower x={551} y={582} scale={1.42} />
-        <Flower x={168} y={275} scale={0.66} />
-        <Flower x={596} y={539} scale={0.66} />
         {/* Fine paired gold lines define the exact outer edge of the blush circle. */}
         <g fill="none" strokeLinecap="round">
           <circle cx="382" cy="407" r="236" stroke="#c18b45" strokeWidth="3" />
           <circle cx="382" cy="407" r="228" stroke="#e4bd79" strokeWidth="2.5" />
         </g>
+        <Flower x={213} y={232} scale={1.42} />
+        <Flower x={551} y={582} scale={1.42} />
+        <Flower x={168} y={275} scale={0.66} />
+        <Flower x={596} y={539} scale={0.66} />
       </g>
     </svg>
   );
