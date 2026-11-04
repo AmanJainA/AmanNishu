@@ -50,15 +50,16 @@ function FloralEmblem() {
             <path d="M610 560 Q588 579 571 597 M588 577 Q568 597 550 612 M571 594 Q551 613 534 628" />
           </g>
           {/* Main roses sit directly on the circular path, diagonally opposite. */}
-          <Flower x={196} y={218} scale={1.42} />
-          <Flower x={568} y={596} scale={1.42} />
-          <Flower x={150} y={263} scale={0.66} />
-          <Flower x={614} y={551} scale={0.66} />
           <g fill="#d9b889">
             {Array.from({length:8},(_,i)=><circle key={`bud-a-${i}`} cx={146+i*13} cy={174+i*8} r={i%3===0?2.8:1.8}/> )}
             {Array.from({length:8},(_,i)=><circle key={`bud-n-${i}`} cx={618-i*13} cy={640-i*8} r={i%3===0?2.8:1.8}/> )}
           </g>
         </g>
+        {/* Roses sit over the ring so each bloom remains whole and follows its curve. */}
+        <Flower x={196} y={218} scale={1.42} />
+        <Flower x={568} y={596} scale={1.42} />
+        <Flower x={150} y={263} scale={0.66} />
+        <Flower x={614} y={551} scale={0.66} />
         {/* Fine paired gold lines define the exact outer edge of the blush circle. */}
         <g fill="none" strokeLinecap="round">
           <circle cx="382" cy="407" r="266" stroke="#c18b45" strokeWidth="3" />
