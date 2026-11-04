@@ -153,49 +153,6 @@ export default function Card() {
         </div>
       </section>
 
-      <section className="canva-story-section" id="our-story">
-        <div className="canva-story-inner">
-          <header className="canva-story-heading">
-            <span>A STORY WRITTEN IN THE STARS</span>
-            <h2>Two homes. Two cultures.<br /><em>One beautiful story.</em></h2>
-            <p>From different roots and familiar traditions to shared journeys and little memories — every moment brought us closer.</p>
-          </header>
-
-          <div className="canva-story-gallery">
-            <figure className="canva-story-photo canva-story-photo-main">
-              <img src={asset('images/story/4.png')} alt="A memory from the beginning of Aman and Nishu's story" loading="lazy" />
-              <figcaption>Where our story began</figcaption>
-            </figure>
-            <figure className="canva-story-photo canva-story-photo-wedding">
-              <img src={asset('images/story/5.png')} alt="The wedding where Aman and Nishu first met" loading="lazy" />
-              <figcaption>One celebration. A new beginning.</figcaption>
-            </figure>
-            <figure className="canva-story-photo canva-story-photo-travel">
-              <img src={asset('images/story/53.png')} alt="A memory from the Delhi to Banaras journey" loading="lazy" />
-              <figcaption>Delhi to Banaras</figcaption>
-            </figure>
-            <figure className="canva-story-photo canva-story-photo-cafe">
-              <img src={asset('images/story/6.png')} alt="Aman and Nishu's first café memory" loading="lazy" />
-              <figcaption>Our first café memory</figcaption>
-            </figure>
-          </div>
-
-          <div className="canva-story-details">
-            <div className="canva-story-places">
-              <span>JAIPUR</span><i>✦</i><span>BIJAINAGAR</span><i>✦</i><span>DELHI</span>
-            </div>
-            <p>Different places, the same heartbeat. Miles that brought us closer, a thousand little memories, and a lifetime still waiting to unfold.</p>
-            <div className="canva-story-finale">
-              <span>THE NEXT CHAPTER</span>
-              <h3>Aman <em>&amp;</em> Nishu</h3>
-              <p>Are getting married</p>
-              <strong>8 – 10 February 2027</strong>
-              <small>Bijainagar</small>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="wpo-video-section p-0 invitation-video-section" aria-label="Wedding video">
         <div className="container-fluid p-0">
           <div className="invitation-video-frame">
