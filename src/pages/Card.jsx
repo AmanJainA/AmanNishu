@@ -124,7 +124,7 @@ export default function Card() {
             {rows.map((row, r) => (
               <div className="row" key={r}>
                 {row.map((ev, i) => (
-                  <div className="col col-lg-4 col-md-12 col-12" key={ev.id}>
+                  <div className="col col-lg-4 col-md-12 col-12 mb-3" key={ev.id}>
                     <Reveal
                       className="wpo-story-item"
                       duration={DURATIONS[i % DURATIONS.length]}
@@ -149,6 +149,47 @@ export default function Card() {
                 ))}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="our-beginning-section" id="our-beginning">
+        <div className="our-beginning-glow our-beginning-glow-one"></div>
+        <div className="our-beginning-glow our-beginning-glow-two"></div>
+        <div className="container">
+          <div className="our-beginning-heading">
+            <span className="our-beginning-eyebrow">A STORY WRITTEN IN THE STARS</span>
+            <h2>Our Beginning <i>to</i> Happy Ending</h2>
+            <p>Two homes, two cultures, countless little moments — one beautiful journey.</p>
+          </div>
+          <div className="our-beginning-timeline">
+            <article className="journey-chapter journey-chapter-left">
+              <span className="journey-index">01</span>
+              <div><small>WHERE IT ALL BEGAN</small><h3>Two Homes, Two Cultures</h3>
+              <p>Across states and traditions, our journey began. Jaipur, Bijainagar and Delhi — different beginnings, one love connecting it all.</p>
+              <span className="journey-place">JAIPUR · BIJAINAGAR · DELHI</span></div>
+            </article>
+            <article className="journey-chapter journey-chapter-right">
+              <span className="journey-index">02</span>
+              <div><small>THE FIRST CHAPTER</small><h3>Our Story Began at a Wedding</h3>
+              <p>A meeting that turned into a memory, and a memory that became the start of our forever.</p></div>
+            </article>
+            <article className="journey-chapter journey-chapter-left">
+              <span className="journey-index">03</span>
+              <div><small>OUR FIRST JOURNEY TOGETHER</small><h3>Delhi to Banaras</h3>
+              <p>Different places, same heartbeat. Miles that brought us closer, and a new chapter that began on the same track.</p>
+              <span className="journey-place">DELHI ↔ BANARAS</span></div>
+            </article>
+            <article className="journey-chapter journey-chapter-right">
+              <span className="journey-index">04</span>
+              <div><small>THE LITTLE THINGS</small><h3>Our First Café, a Thousand Memories</h3>
+              <p>Simple moments, shared smiles and the kind of memories that quietly become everything.</p></div>
+            </article>
+            <article className="journey-chapter journey-chapter-final">
+              <span className="journey-index">05</span>
+              <div><small>THE NEXT CHAPTER</small><h3>Aman <i>&amp;</i> Nishu</h3>
+              <p>Are getting married</p><span className="journey-forever">SAVE THE DATE · FOREVER STARTS HERE</span></div>
+            </article>
           </div>
         </div>
       </section>
