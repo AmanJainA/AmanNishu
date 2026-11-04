@@ -21,38 +21,48 @@ function Flower({ x, y, scale = 1 }) {
 function FloralEmblem() {
   return (
     <svg className="gate-floral-art" viewBox="0 0 764 814" role="presentation" aria-hidden="true">
+      <defs>
+        <clipPath id="gate-floral-circle-clip">
+          <circle cx="382" cy="407" r="262" />
+        </clipPath>
+      </defs>
       <g className="gate-orbiting-art">
-        {/* Fine double gold wreath, following the reference artwork. */}
+        {/* Blush-peach colour is clipped strictly to the circular wreath. */}
+        <g clipPath="url(#gate-floral-circle-clip)">
+          <circle cx="382" cy="407" r="262" fill="#f3d5cc" opacity=".82" />
+          <circle cx="382" cy="407" r="250" fill="#f8e8df" opacity=".55" />
+          <g fill="none" stroke="#b89c70" strokeWidth="1.8" opacity=".72">
+            <path d="M382 145 A262 262 0 1 1 381.9 145" />
+          </g>
+          {/* Sage leaves follow the ring and remain inside its edge. */}
+          <g fill="#9a9a7a" stroke="#7f866b" strokeWidth="1.2">
+            <path d="M183 218 Q139 182 137 145 Q183 164 195 205Z" />
+            <path d="M207 198 Q184 151 199 119 Q228 159 220 193Z" />
+            <path d="M229 183 Q223 137 246 111 Q260 153 244 185Z" />
+            <path d="M581 596 Q625 632 627 669 Q581 650 569 609Z" />
+            <path d="M557 616 Q580 663 565 695 Q536 655 544 621Z" />
+            <path d="M535 631 Q541 677 518 703 Q504 661 520 629Z" />
+            <path d="M156 269 Q119 252 104 221 Q148 225 166 253Z" />
+            <path d="M608 545 Q645 562 660 593 Q616 589 598 561Z" />
+          </g>
+          <g fill="none" stroke="#b89c70" strokeWidth="1.6" strokeLinecap="round">
+            <path d="M154 254 Q176 235 193 217 M176 237 Q196 217 214 202 M193 220 Q213 201 230 187" />
+            <path d="M610 560 Q588 579 571 597 M588 577 Q568 597 550 612 M571 594 Q551 613 534 628" />
+          </g>
+          {/* Main roses sit directly on the circular path, diagonally opposite. */}
+          <Flower x={196} y={218} scale={1.42} />
+          <Flower x={568} y={596} scale={1.42} />
+          <Flower x={150} y={263} scale={0.66} />
+          <Flower x={614} y={551} scale={0.66} />
+          <g fill="#d9b889">
+            {Array.from({length:8},(_,i)=><circle key={`bud-a-${i}`} cx={146+i*13} cy={174+i*8} r={i%3===0?2.8:1.8}/> )}
+            {Array.from({length:8},(_,i)=><circle key={`bud-n-${i}`} cx={618-i*13} cy={640-i*8} r={i%3===0?2.8:1.8}/> )}
+          </g>
+        </g>
+        {/* Fine paired gold lines define the exact outer edge of the blush circle. */}
         <g fill="none" strokeLinecap="round">
           <circle cx="382" cy="407" r="266" stroke="#c18b45" strokeWidth="3" />
           <circle cx="382" cy="407" r="258" stroke="#e4bd79" strokeWidth="2.5" />
-        </g>
-        {/* Soft sage foliage behind the two diagonal rose clusters. */}
-        <g fill="#9a9a7a" stroke="#7f866b" strokeWidth="1.5">
-          <path d="M88 254 C39 225 29 192 31 165 C79 183 101 213 88 254Z" />
-          <path d="M111 301 C58 292 37 267 27 238 C78 243 106 265 111 301Z" />
-          <path d="M130 354 C86 386 54 382 28 366 C65 332 99 331 130 354Z" />
-          <path d="M169 196 C139 147 149 114 170 91 C198 137 194 170 169 196Z" />
-          <path d="M209 178 C193 126 211 97 237 80 C252 132 237 164 209 178Z" />
-          <path d="M676 560 C725 589 735 622 733 649 C685 631 663 601 676 560Z" />
-          <path d="M653 513 C706 522 727 547 737 576 C686 571 658 549 653 513Z" />
-          <path d="M634 460 C678 428 710 432 736 448 C699 482 665 483 634 460Z" />
-          <path d="M595 618 C625 667 615 700 594 723 C566 677 570 644 595 618Z" />
-          <path d="M555 636 C571 688 553 717 527 734 C512 682 527 650 555 636Z" />
-        </g>
-        <g fill="none" stroke="#b89c70" strokeWidth="2" strokeLinecap="round">
-          <path d="M51 391 C75 437 76 473 67 509 M78 381 C104 428 106 463 98 493 M108 367 C135 410 139 447 132 478" />
-          <path d="M713 423 C689 377 688 341 697 305 M686 433 C660 386 658 351 666 321 M656 447 C629 404 625 367 632 336" />
-          <path d="M134 177 C167 151 200 143 235 148 M535 666 C568 692 601 700 636 695" />
-        </g>
-        {/* Upper-left and lower-right bouquets frame the initials, as in the reference. */}
-        <Flower x={126} y={285} scale={1.75} />
-        <Flower x={192} y={211} scale={1.02} />
-        <Flower x={630} y={568} scale={1.72} />
-        <Flower x={565} y={630} scale={1.02} />
-        <g fill="#d9b889">
-          {Array.from({length:18},(_,i)=><circle key={i} cx={70+(i%6)*22} cy={145+Math.floor(i/6)*18} r={i%3===0?3:2}/>)}
-          {Array.from({length:18},(_,i)=><circle key={i} cx={575+(i%6)*22} cy={660+Math.floor(i/6)*16} r={i%3===0?3:2}/>)}
         </g>
       </g>
     </svg>
