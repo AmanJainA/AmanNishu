@@ -19,8 +19,6 @@ function FloralEmblem() {
   return (
     <svg className="gate-floral-art" viewBox="0 0 764 814" role="presentation" aria-hidden="true">
       <g className="gate-orbiting-art">
-        <circle cx="382" cy="407" r="270" fill="none" stroke="#c98739" strokeWidth="2.5" />
-        <circle cx="382" cy="407" r="273" fill="none" stroke="#e9bd78" strokeWidth="2" />
         <g fill="none" stroke="#b9a17b" strokeWidth="2" strokeLinecap="round">
           <path d="M118 300 C80 225 115 174 181 155 C222 143 259 153 290 174" />
           <path d="M646 520 C682 587 645 650 584 675 C535 694 481 680 444 652" />
