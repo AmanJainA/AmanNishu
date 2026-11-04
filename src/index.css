@@ -1341,24 +1341,6 @@ body { width: 100%; min-width: 320px; overflow-x: clip; }
   transform-origin: 382px 407px;
   animation: gate-flower-orbit 32s linear infinite;
 }
-.gate-monogram-fixed {
-  z-index: 4;
-}
-.gate-letter-a {
-  left: 30%;
-  top: 33%;
-  font-size: clamp(58px, 7.2vw, 86px);
-}
-.gate-ampersand {
-  left: 47%;
-  top: 43%;
-  font-size: clamp(32px, 4vw, 48px);
-}
-.gate-letter-n {
-  left: 51%;
-  top: 47%;
-  font-size: clamp(58px, 7.2vw, 86px);
-}
 .gate-stamp-rim,
 .gate-stamp-inner,
 .gate-stamp-caption {
