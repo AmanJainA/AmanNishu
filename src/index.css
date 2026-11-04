@@ -1440,3 +1440,61 @@ body { width: 100%; min-width: 320px; overflow-x: clip; }
 @media (prefers-reduced-motion: reduce) {
   .gate-orbiting-art { animation: none !important; }
 }
+
+
+/* Match the attached A & N floral artwork: ivory canvas, gold double wreath,
+   opposite-corner blush roses, and a compact raised pink/crimson wax seal. */
+.wedding-gate { background: #fffdfb !important; }
+.gate-culture-rajasthan,
+.gate-culture-delhi {
+  background: linear-gradient(135deg, #f4dfbd 0%, #e8c28f 52%, #d4a66b 100%) !important;
+}
+.gate-seal {
+  border: 0 !important;
+  outline: 0 !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  background:
+    radial-gradient(ellipse at 29% 21%, rgba(255,220,211,.9) 0%, transparent 38%),
+    radial-gradient(ellipse at 76% 82%, rgba(111,12,40,.42), transparent 48%),
+    radial-gradient(circle at 48% 43%, #ed9a9b 0%, #df6476 48%, #c63b59 78%, #a52647 100%) !important;
+  box-shadow:
+    inset 0 5px 12px rgba(255,239,231,.58),
+    inset 0 -10px 20px rgba(91,8,34,.3),
+    inset 4px 0 10px rgba(255,210,201,.2),
+    inset -5px -2px 12px rgba(91,8,34,.2) !important;
+}
+.gate-seal::before {
+  content: none !important;
+  display: none !important;
+}
+.gate-seal::after {
+  inset: 0 !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background:
+    radial-gradient(ellipse at 24% 16%, rgba(255,250,242,.2), transparent 37%),
+    radial-gradient(ellipse at 79% 83%, rgba(81,7,28,.16), transparent 44%) !important;
+}
+.gate-seal:hover {
+  transform: none !important;
+  filter: none !important;
+  box-shadow:
+    inset 0 5px 12px rgba(255,239,231,.58),
+    inset 0 -10px 20px rgba(91,8,34,.3),
+    inset 4px 0 10px rgba(255,210,201,.2),
+    inset -5px -2px 12px rgba(91,8,34,.2) !important;
+}
+.gate-floral-art { z-index: 2; }
+.gate-orbiting-art {
+  transform-box: view-box;
+  transform-origin: 382px 407px;
+  animation: gate-flower-orbit 42s linear infinite;
+}
+.gate-monogram-fixed { z-index: 4; }
+.gate-letter-a, .gate-letter-n { color: #bd792f !important; }
+.gate-ampersand { color: #96352f !important; }
+@media (prefers-reduced-motion: reduce) {
+  .gate-orbiting-art { animation: none !important; }
+}
