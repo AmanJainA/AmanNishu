@@ -50,36 +50,6 @@ function FloralEmblem() {
   );
 }
 
-function RajasthanArt() {
-  return (
-    <svg viewBox="0 0 420 420" aria-hidden="true">
-      <g fill="none" stroke="currentColor" strokeWidth="2.2" opacity=".72">
-        <path d="M54 330V178h32v-48h24v48h28v-75h28v75h26v-48h24v48h34v152M38 330h250M68 178h194M106 130h24m50-27h24" />
-        <path d="M72 330v-65h34v65m34 0v-88h42v88m38 0v-65h34v65" />
-        <path d="M88 130q34-42 68 0m-20-42q20-32 40 0m34 42q25-37 50 0" />
-        <path d="M300 330q-15-50 18-78q18-14 35 0q28 28 11 78m-48-42h42m-35-18q20 16 39 0" />
-        <path d="M300 252l-12-30m63 30l16-30m-58 108l-10 20m43-20l12 20" />
-      </g>
-      <g fill="currentColor" opacity=".7"><circle cx="102" cy="208" r="5"/><circle cx="205" cy="208" r="5"/><circle cx="151" cy="154" r="5"/></g>
-    </svg>
-  );
-}
-
-function DelhiArt() {
-  return (
-    <svg viewBox="0 0 420 420" aria-hidden="true">
-      <g fill="none" stroke="currentColor" strokeWidth="2.2" opacity=".72" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M65 330h290M90 330V220q0-96 120-150q120 54 120 150v110M118 330V224q0-72 92-116q92 44 92 116v106" />
-        <path d="M164 330v-75q0-46 46-46t46 46v75M180 330v-72q0-30 30-30t30 30v72" />
-        <path d="M120 222h184M140 180h160M170 145h100M190 104h60" />
-        <path d="M210 54V25m-12 18h24M50 330V220m-10 110h30m-20-110h10M370 330V220m-10 110h30m-20-110h10" />
-        <path d="M35 350h350M85 365h250" />
-      </g>
-      <g fill="currentColor" opacity=".7"><circle cx="210" cy="92" r="5"/><circle cx="145" cy="198" r="4"/><circle cx="275" cy="198" r="4"/></g>
-    </svg>
-  );
-}
-
 export default function IntroGate() {
   const [opening, setOpening] = useState(false);
   const [closed, setClosed] = useState(false);
