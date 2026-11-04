@@ -1418,13 +1418,23 @@ body { width: 100%; min-width: 320px; overflow-x: clip; }
 }
 
 
-/* Minimal floral seal: no oversized rose disc, only a fine 2px outline. */
+/* Raised rose-crimson wax sits INSIDE the floral circle; no outer rim. */
 .gate-seal {
   border: 0 !important;
   outline: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  overflow: visible !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  background:
+    radial-gradient(ellipse at 31% 23%, rgba(255,226,215,.82) 0%, rgba(255,226,215,0) 36%),
+    radial-gradient(ellipse at 73% 79%, rgba(104,12,39,.38) 0%, rgba(104,12,39,0) 48%),
+    radial-gradient(circle at 48% 43%, #efaaa3 0%, #e77d83 42%, #cf4c65 73%, #a92c4b 100%) !important;
+  box-shadow:
+    inset 0 7px 13px rgba(255,238,226,.48),
+    inset 0 -12px 22px rgba(91,8,34,.32),
+    inset 7px 0 15px rgba(255,211,196,.18),
+    inset -7px -3px 16px rgba(91,8,34,.22),
+    0 9px 22px rgba(105,38,52,.13) !important;
+  transform: none !important;
 }
 .gate-seal::before,
 .gate-seal::after {
@@ -1434,9 +1444,14 @@ body { width: 100%; min-width: 320px; overflow-x: clip; }
 .gate-seal:hover {
   transform: none !important;
   filter: none !important;
-  box-shadow: none !important;
+  box-shadow:
+    inset 0 7px 13px rgba(255,238,226,.48),
+    inset 0 -12px 22px rgba(91,8,34,.32),
+    inset 7px 0 15px rgba(255,211,196,.18),
+    inset -7px -3px 16px rgba(91,8,34,.22),
+    0 9px 22px rgba(105,38,52,.13) !important;
 }
-.gate-floral-art { overflow: visible; }
+.gate-floral-art { overflow: hidden; }
 .gate-monogram-fixed { z-index: 4; }
 .gate-letter-a, .gate-letter-n { color: #bd792f !important; }
 .gate-ampersand { color: #96352f !important; }
