@@ -22,8 +22,12 @@ export default function IntroGate() {
   return (
     <main className={`wedding-gate royal-door-gate ${opening ? 'is-opening' : ''}`} aria-label="Aman and Nishu wedding invitation">
       <div className="royal-door-card">
-        <div className="royal-door-panel royal-door-left" style={{ backgroundImage: `url("${artwork}")` }} />
-        <div className="royal-door-panel royal-door-right" style={{ backgroundImage: `url("${artwork}")` }} />
+        <div className="royal-door-panel royal-door-left">
+          <img src={artwork} alt="" className="royal-door-image royal-door-image-left" draggable="false" />
+        </div>
+        <div className="royal-door-panel royal-door-right">
+          <img src={artwork} alt="" className="royal-door-image royal-door-image-right" draggable="false" />
+        </div>
         <button
           className="royal-door-open"
           type="button"
