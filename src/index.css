@@ -2229,3 +2229,66 @@ body:has(.royal-door-gate),
 .royal-door-open { pointer-events: auto; }
 .invitation-reveal-page { padding: 0 !important; }
 @media (max-width: 600px) { .invitation-reveal-page { padding: 0 !important; } }
+
+
+/* Interactive champagne scratch layer over the live wedding countdown. */
+.countdown-scratch-stage {
+  position: relative;
+  width: 100%;
+  max-width: 620px;
+  margin-inline: auto;
+  isolation: isolate;
+}
+.countdown-scratch-stage #clock { position: relative; z-index: 1; }
+.countdown-scratch-cover {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 76px;
+  cursor: crosshair;
+  touch-action: none;
+  border-radius: 4px;
+}
+.countdown-scratch-stage.is-revealed #clock {
+  animation: countdown-reveal .7s ease both;
+}
+@keyframes countdown-reveal {
+  from { opacity: .55; transform: scale(.97); filter: blur(3px); }
+  to { opacity: 1; transform: scale(1); filter: blur(0); }
+}
+
+/* The inside face of the palace doors carries a matching Jaipur-gold finish. */
+.royal-door-panel::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 3.5% 5%;
+  pointer-events: none;
+  border: 1px solid rgba(235,198,130,.72);
+  outline: 1px solid rgba(116,68,39,.35);
+  outline-offset: -7px;
+  background:
+    radial-gradient(ellipse at 50% 9%, rgba(255,226,170,.34), transparent 34%),
+    radial-gradient(circle at 50% 50%, transparent 48%, rgba(87,48,30,.12) 100%);
+  box-shadow: inset 0 0 24px rgba(73,39,23,.22), 0 0 12px rgba(229,185,112,.18);
+  opacity: .9;
+}
+.royal-door-left::before,
+.royal-door-right::before {
+  content: "✦";
+  position: absolute;
+  z-index: 3;
+  top: 7%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,224,164,.92);
+  font: 18px Georgia,serif;
+  text-shadow: 0 1px 5px rgba(67,37,22,.65);
+  pointer-events: none;
+}
+@media (max-width: 600px) {
+  .countdown-scratch-cover { min-height: 70px; }
+  .royal-door-panel::after { inset: 2.5% 3%; }
+}
