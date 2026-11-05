@@ -1938,7 +1938,8 @@ body:has(.royal-door-gate),
   padding: 0 !important;
   display: block !important;
   overflow: hidden !important;
-  background: #f1e7df !important;
+  background: transparent !important;
+  pointer-events: none;
 }
 .royal-door-card {
   position: absolute !important;
@@ -1974,9 +1975,11 @@ body:has(.royal-door-gate),
   object-fit: fill !important;
   object-position: center !important;
 }
-.royal-door-open {
+ .royal-door-open {
   border-radius: 0 !important;
+  pointer-events: auto;
 }
+.royal-door-panel { pointer-events: none; }
 @media (max-width: 600px), (max-height: 700px) {
   .royal-door-card {
     width: 100vw !important;
@@ -1991,7 +1994,7 @@ body:has(.royal-door-gate),
   min-height: 100vh;
   min-height: 100svh;
   width: 100%;
-  padding: clamp(22px, 5vw, 54px) 16px;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2112,7 +2115,6 @@ body:has(.royal-door-gate),
   font: italic 12px/1.7 Georgia,serif;
 }
 @media (max-width: 600px) {
-  .invitation-reveal-page { padding: 22px 15px; }
   .invitation-reveal-frame { padding: 25px 15px; }
   .invitation-reveal-kicker { font-size: 8px; letter-spacing: .16em; }
   .invitation-reveal-frame h1 { font-size: clamp(37px, 10vw, 52px); }
@@ -2220,3 +2222,10 @@ body:has(.royal-door-gate),
     transition-duration: .01ms !important;
   }
 }
+
+/* Keep the invitation underneath the doors and reveal it through the opening. */
+.royal-door-gate { background: transparent !important; }
+.royal-door-card, .royal-door-panel { pointer-events: none; }
+.royal-door-open { pointer-events: auto; }
+.invitation-reveal-page { padding: 0 !important; }
+@media (max-width: 600px) { .invitation-reveal-page { padding: 0 !important; } }
