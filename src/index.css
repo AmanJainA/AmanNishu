@@ -1850,3 +1850,66 @@ body { width: 100%; min-width: 320px; overflow-x: clip; }
 .royal-door-left { left: 0; }
 .royal-door-right { right: 0; }
 .royal-door-panel svg { display: none !important; }
+
+
+/* Final image-led invitation gate: each half is its own full-height door leaf. */
+.royal-door-card {
+  position: relative;
+  width: min(88vmin, 900px);
+  height: min(88vmin, 900px);
+  aspect-ratio: 1 / 1;
+  overflow: visible;
+  isolation: isolate;
+}
+.royal-door-panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  overflow: hidden;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: #f1e7df;
+  transition: transform 1.55s cubic-bezier(.72,0,.18,1), filter 1.3s ease;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+.royal-door-left { left: 0; right: auto; transform-origin: left center; }
+.royal-door-right { right: 0; left: auto; transform-origin: right center; }
+.royal-door-image {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: fill !important;
+  object-position: center center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  user-select: none;
+  pointer-events: none;
+}
+.royal-door-open { z-index: 10; }
+.royal-door-gate.is-opening .royal-door-left {
+  transform: translateX(-101%) rotateY(-9deg);
+}
+.royal-door-gate.is-opening .royal-door-right {
+  transform: translateX(101%) rotateY(9deg);
+}
+@media (max-width: 600px) {
+  .royal-door-card {
+    width: min(94vw, 82vh);
+    height: min(94vw, 82vh);
+  }
+}
+@media (max-height: 520px) and (orientation: landscape) {
+  .royal-door-card {
+    width: min(82vh, 78vw);
+    height: min(82vh, 78vw);
+  }
+}
