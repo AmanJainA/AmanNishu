@@ -2154,3 +2154,69 @@ body:has(.royal-door-gate),
 .invitation-embedded-card > footer {
   width: 100%;
 }
+
+
+/* Cinematic gate-to-invitation reveal */
+.invitation-cinematic-entry {
+  min-height: 100vh;
+  animation: invitation-page-appear 900ms ease both;
+}
+.invitation-cinematic-entry .static-hero-s5 {
+  overflow: hidden;
+}
+.invitation-cinematic-entry .wpo-static-hero-inner {
+  animation: invitation-copy-appear 900ms 250ms ease both;
+}
+.invitation-cinematic-entry .wpo-hero-img {
+  animation: invitation-couple-arrive 1500ms 100ms cubic-bezier(.2,.75,.25,1) both;
+  transform-origin: center center;
+}
+.invitation-cinematic-entry .wpo-story-section-s6 {
+  animation: invitation-events-appear 1000ms 850ms ease both;
+}
+.invitation-cinematic-entry .invitation-video-section,
+.invitation-cinematic-entry .invitation-stay-section,
+.invitation-cinematic-entry .invitation-card-footer {
+  animation: invitation-lower-content-appear 900ms 1100ms ease both;
+}
+@keyframes invitation-page-appear {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes invitation-copy-appear {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes invitation-couple-arrive {
+  0% { opacity: 0; transform: translateY(-13vh) scale(.78); }
+  55% { opacity: 1; transform: translateY(0) scale(1.035); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes invitation-events-appear {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes invitation-lower-content-appear {
+  from { opacity: .35; }
+  to { opacity: 1; }
+}
+@media (max-width: 767px) {
+  .invitation-cinematic-entry .wpo-hero-img {
+    animation-duration: 1250ms;
+  }
+  .invitation-cinematic-entry .wpo-hero-img img {
+    max-width: min(78vw, 340px);
+    height: auto;
+    object-fit: contain;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .invitation-cinematic-entry,
+  .invitation-cinematic-entry *,
+  .invitation-cinematic-entry *::before,
+  .invitation-cinematic-entry *::after {
+    animation-duration: .01ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: .01ms !important;
+  }
+}
