@@ -439,17 +439,71 @@ not a separate page link. */
 .invitation-video-section{ background: #f8f0e9; }
 .invitation-video-frame{ width: 100%; max-width: 1120px; margin: 0 auto; padding: clamp(12px, 3vw, 28px); }
 .invitation-video-frame video{ display: block; width: 100%; max-height: 680px; object-fit: contain; background: #1c1715; }
-.invitation-card-footer{
-  padding: 46px 16px 42px;
+.invitation-card-footer {
+  padding: 18px 16px;
   color: #f8eee4;
-  text-align: center;
   background: linear-gradient(135deg, #553a35, #8c5c57);
 }
-.invitation-card-footer p{ margin: 10px 0 4px; color: #f4e1cb; }
-.invitation-card-footer h3{ margin: 0 0 8px; color: #fff7ef; font: 500 30px Georgia,serif; }
-.invitation-card-footer span{ color: #f4e1cb; }
-.invitation-footer-monogram{ color: #f4e1cb; font: 500 34px Georgia,serif; letter-spacing: .12em; }
-.invitation-footer-monogram span{ color: #e9b8b8; }
+.invitation-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: clamp(10px, 2vw, 26px);
+  white-space: nowrap;
+}
+.invitation-footer-inner > * + * {
+  position: relative;
+  padding-left: clamp(10px, 2vw, 26px);
+}
+.invitation-footer-inner > * + *::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  color: rgba(244,225,203,.75);
+  font-size: 9px;
+  transform: translateY(-50%);
+}
+.invitation-footer-monogram {
+  flex: 0 0 auto;
+  color: #f4e1cb;
+  font: 500 25px Georgia,serif;
+  letter-spacing: .1em;
+}
+.invitation-footer-monogram span { color: #e9b8b8; }
+.invitation-footer-blessing,
+.invitation-footer-message {
+  color: #f4e1cb;
+  font-size: 12px;
+  letter-spacing: .025em;
+}
+.invitation-footer-couple {
+  color: #fff7ef;
+  font: 500 21px Georgia,serif;
+}
+@media (max-width: 767px) {
+  .invitation-card-footer { padding: 15px 10px; }
+  .invitation-footer-inner {
+    gap: 7px;
+    justify-content: center;
+    white-space: normal;
+  }
+  .invitation-footer-inner > * + * { padding-left: 8px; }
+  .invitation-footer-inner > * + *::before { font-size: 7px; }
+  .invitation-footer-monogram { font-size: 18px; }
+  .invitation-footer-couple { font-size: 16px; }
+  .invitation-footer-blessing,
+  .invitation-footer-message { font-size: 10px; }
+}
+@media (max-width: 420px) {
+  .invitation-footer-inner { gap: 5px; }
+  .invitation-footer-inner > * + * { padding-left: 6px; }
+  .invitation-footer-monogram { font-size: 16px; }
+  .invitation-footer-couple { font-size: 14px; }
+  .invitation-footer-blessing,
+  .invitation-footer-message { font-size: 9px; }
+}
 .stay-form-link{
   padding: 0; border: 0; border-bottom: 1px solid currentColor;
   color: #956c48; background: transparent; cursor: pointer;
