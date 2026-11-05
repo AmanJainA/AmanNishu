@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 export default function IntroGate() {
   const [opening, setOpening] = useState(false);
   const [closed, setClosed] = useState(false);
   const [imagesReady, setImagesReady] = useState(false);
-  const navigate = useNavigate();
+  const navigateToInvitation = () => {
+    window.history.pushState({}, '', `${import.meta.env.BASE_URL}invite`);
+    window.dispatchEvent(new PopStateEvent('popstate'));
+  };
 
   const imageBase = `${import.meta.env.BASE_URL}assets/images/`;
   const leftImage = `${imageBase}aman-nishu-gate-left.jpg`;
@@ -28,15 +30,6 @@ export default function IntroGate() {
     right.src = rightImage;
     return () => { mounted = false; };
   }, [leftImage, rightImage]);
-
-  useEffect(() => {
-    if (!opening) return undefined;
-    const timer = window.setTimeout(() => {
-      setClosed(true);
-      navigate('/invite');
-    }, 1900);
-    return () => window.clearTimeout(timer);
-  }, [opening, navigate]);
 
   if (closed) return null;
 
@@ -64,7 +57,11 @@ export default function IntroGate() {
         <button
           className="royal-door-open"
           type="button"
-          onClick={() => setOpening(true)}
+          onClick={() => {
+            navigateToInvitation();
+            setOpening(true);
+            window.setTimeout(() => setClosed(true), 1650);
+          }}
           disabled={opening || !imagesReady}
           aria-label="Open Aman and Nishu wedding invitation"
         >
