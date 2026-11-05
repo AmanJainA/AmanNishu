@@ -33,7 +33,7 @@ export default function IntroGate() {
     if (!opening) return undefined;
     const timer = window.setTimeout(() => {
       setClosed(true);
-      navigate('/card');
+      navigate('/invite');
     }, 1550);
     return () => window.clearTimeout(timer);
   }, [opening, navigate]);
