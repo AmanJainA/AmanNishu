@@ -77,9 +77,10 @@ function PalaceScene() {
       <path d="M540 399 C518 420 481 425 469 458 L451 482 L465 506 L456 548 L476 574 L470 625 L496 647 L540 662 L584 647 L610 625 L604 574 L624 548 L615 506 L629 482 L611 458 C599 425 562 420 540 399Z" fill="#2f211b" stroke="url(#door-gold)" strokeWidth="9"/>
       <path d="M540 424 C521 443 490 444 482 470 L470 489 L484 508 L476 543 L495 565 L491 610 L540 634 L589 610 L585 565 L604 543 L596 508 L610 489 L598 470 C590 444 559 443 540 424Z" fill="#6f321f" stroke="#d7b66f" strokeWidth="4"/>
       <path d="M489 476 Q540 447 591 476 M486 585 Q540 616 594 585" fill="none" stroke="#e4c77e" strokeWidth="3"/>
-      <text x="540" y="520" textAnchor="middle" fill="#f8e8c6" fontFamily="Georgia,serif" fontSize="22" letterSpacing="3">AMAN</text>
-      <text x="540" y="550" textAnchor="middle" fill="#f8e8c6" fontFamily="Georgia,serif" fontSize="16" letterSpacing="4">&amp;</text>
-      <text x="540" y="580" textAnchor="middle" fill="#f8e8c6" fontFamily="Georgia,serif" fontSize="22" letterSpacing="3">NISHU</text>
+      <path d="M500 494 Q520 475 540 494 Q560 475 580 494" fill="none" stroke="#e9d39c" strokeWidth="2"/>
+      <text x="540" y="558" textAnchor="middle" fill="#f4d99c" fontFamily="Bodoni 72, Georgia,serif" fontSize="82" letterSpacing="-8">A&amp;N</text>
+      <path d="M508 575 Q540 590 572 575" fill="none" stroke="#e9d39c" strokeWidth="2"/>
+      <text x="540" y="606" textAnchor="middle" fill="#f8e8c6" fontFamily="Georgia,serif" fontSize="15" letterSpacing="2">AMAN &amp; NISHU</text>
       <path d="M516 463 Q540 440 564 463 M516 601 Q540 623 564 601" fill="none" stroke="#e9d39c" strokeWidth="2"/>
       {/* Bottom floral border */}
       <path d="M158 904 H922" stroke="#8d5352" strokeWidth="5"/>
