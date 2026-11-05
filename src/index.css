@@ -1913,3 +1913,74 @@ body { width: 100%; min-width: 320px; overflow-x: clip; }
     height: min(82vh, 78vw);
   }
 }
+
+
+/* Full-screen gate: remove the square/card constraint and fill the viewport. */
+html:has(.royal-door-gate),
+body:has(.royal-door-gate),
+#root:has(.royal-door-gate) {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  overflow: hidden !important;
+}
+.royal-door-gate {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  min-height: 100vh !important;
+  min-height: 100dvh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+  overflow: hidden !important;
+  background: #f1e7df !important;
+}
+.royal-door-card {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  max-width: none !important;
+  max-height: none !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  aspect-ratio: auto !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  filter: none !important;
+  overflow: hidden !important;
+}
+.royal-door-panel {
+  top: 0 !important;
+  bottom: 0 !important;
+  height: 100% !important;
+  width: 50% !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.royal-door-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: fill !important;
+  object-position: center !important;
+}
+.royal-door-open {
+  border-radius: 0 !important;
+}
+@media (max-width: 600px), (max-height: 700px) {
+  .royal-door-card {
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+  }
+}
