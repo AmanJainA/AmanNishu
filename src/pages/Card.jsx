@@ -26,7 +26,7 @@ const resolveEventImage = (value) => {
   return publicUrl(value.replace(/^\/+/, ''));
 };
 
-export default function Card() {
+export default function Card({ embedded = false }) {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -69,8 +69,8 @@ export default function Card() {
   );
 
   return (
-    <div className="page-wrapper">
-      <Preloader />
+    <div className={embedded ? 'invitation-embedded-card' : 'page-wrapper'}>
+      {!embedded && <Preloader />
 
       <section className="static-hero-s5">
         <div className="hero-container">
