@@ -2122,3 +2122,35 @@ body:has(.royal-door-gate),
   .invitation-scratch-wrap,.invitation-scratch-date { min-height: 108px; }
   .invitation-scratch-date { padding: 12px 8px; }
 }
+
+
+/* After the scratch card is partly cleared, reveal the complete original Card page below it. */
+.invitation-reveal-page {
+  min-height: 100vh;
+  min-height: 100svh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 34px;
+  overflow: visible;
+}
+.invitation-reveal-frame {
+  flex: 0 0 auto;
+  margin: clamp(12px, 3vh, 30px) auto 0;
+}
+.invitation-reveal-card-content {
+  width: 100%;
+  min-width: 0;
+  margin-top: 8px;
+}
+.invitation-embedded-card {
+  width: 100%;
+  max-width: 100%;
+  overflow: visible;
+  background: #fff;
+}
+.invitation-embedded-card > section,
+.invitation-embedded-card > footer {
+  width: 100%;
+}
