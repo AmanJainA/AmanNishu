@@ -17,24 +17,18 @@ export default function IntroGate() {
 
   if (closed) return null;
 
-  const artwork = `${process.env.PUBLIC_URL}/assets/images/aman-nishu-gate.jpg`;
+  const base = `${process.env.PUBLIC_URL}/assets/images/`;
 
   return (
     <main className={`wedding-gate royal-door-gate ${opening ? 'is-opening' : ''}`} aria-label="Aman and Nishu wedding invitation">
       <div className="royal-door-card">
         <div className="royal-door-panel royal-door-left">
-          <img src={artwork} alt="" className="royal-door-image royal-door-image-left" draggable="false" />
+          <img src={`${base}aman-nishu-gate-left.jpg`} alt="" className="royal-door-image" draggable="false" />
         </div>
         <div className="royal-door-panel royal-door-right">
-          <img src={artwork} alt="" className="royal-door-image royal-door-image-right" draggable="false" />
+          <img src={`${base}aman-nishu-gate-right.jpg`} alt="" className="royal-door-image" draggable="false" />
         </div>
-        <button
-          className="royal-door-open"
-          type="button"
-          onClick={() => setOpening(true)}
-          disabled={opening}
-          aria-label="Open Aman and Nishu wedding invitation"
-        >
+        <button className="royal-door-open" type="button" onClick={() => setOpening(true)} disabled={opening} aria-label="Open Aman and Nishu wedding invitation">
           <span>OPEN INVITATION</span>
           <small>Aman &amp; Nishu · Tap to enter</small>
         </button>
