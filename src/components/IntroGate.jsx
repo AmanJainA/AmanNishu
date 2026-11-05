@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function IntroGate() {
   const [opening, setOpening] = useState(false);
   const [closed, setClosed] = useState(false);
   const [imagesReady, setImagesReady] = useState(false);
-  const navigateToInvitation = () => {
-    window.history.pushState({}, '', `${import.meta.env.BASE_URL}invite`);
-    window.dispatchEvent(new PopStateEvent('popstate'));
-  };
+  const navigate = useNavigate();
 
   const imageBase = `${import.meta.env.BASE_URL}assets/images/`;
   const leftImage = `${imageBase}aman-nishu-gate-left.jpg`;
@@ -58,7 +56,7 @@ export default function IntroGate() {
           className="royal-door-open"
           type="button"
           onClick={() => {
-            navigateToInvitation();
+            navigate('/invite');
             setOpening(true);
             window.setTimeout(() => setClosed(true), 1650);
           }}
