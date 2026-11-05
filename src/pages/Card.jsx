@@ -178,11 +178,11 @@ export default function Card({ embedded = false }) {
       </section>
 
       <footer className="wpo-site-footer-s2 invitation-card-footer">
-        <div className="container invitation-footer-inner">
+        <div className="container text-center">
           <div className="invitation-footer-monogram">A <span>&amp;</span> N</div>
-          <span className="invitation-footer-blessing">With love and blessings</span>
-          <span className="invitation-footer-couple">Aman &amp; Nishu</span>
-          <span className="invitation-footer-message">We look forward to celebrating with you</span>
+          <p>With love and blessings,</p>
+          <h3>Aman &amp; Nishu</h3>
+          <span>We look forward to celebrating with you</span>
         </div>
       </footer>
 
