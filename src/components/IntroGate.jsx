@@ -7,7 +7,7 @@ export default function IntroGate() {
   const [imagesReady, setImagesReady] = useState(false);
   const navigate = useNavigate();
 
-  const imageBase = `${process.env.PUBLIC_URL}/assets/images/`;
+  const imageBase = `${import.meta.env.BASE_URL}assets/images/`;
   const leftImage = `${imageBase}aman-nishu-gate-left.jpg`;
   const rightImage = `${imageBase}aman-nishu-gate-right.jpg`;
 
