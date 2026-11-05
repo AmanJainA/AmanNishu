@@ -1,10 +1,12 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import Card from '../pages/Card';
 import { asset } from '../utils/asset';
 import { coupleTitle, dateLine } from '../data/wedding';
 
 export default function InvitationReveal() {
   const canvasRef = useRef(null);
   const drawingRef = useRef(false);
+  const [isRevealed, setIsRevealed] = useState(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -47,6 +49,12 @@ export default function InvitationReveal() {
     ctx.beginPath();
     ctx.arc(x, y, 23, 0, Math.PI * 2);
     ctx.fill();
+    const pixels = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+    let cleared = 0;
+    for (let i = 3; i < pixels.length; i += 4) {
+      if (pixels[i] < 16) cleared++;
+    }
+    if (cleared / (pixels.length / 4) >= 0.28) setIsRevealed(true);
   };
 
   return (
@@ -89,6 +97,7 @@ export default function InvitationReveal() {
         </div>
         <p className="invitation-reveal-footnote">A new chapter begins — we can’t wait to celebrate with you.</p>
       </div>
+      {isRevealed && <div className="invitation-reveal-card-content"><Card embedded /></div>}
     </main>
   );
 }
