@@ -1807,3 +1807,24 @@ body { width: 100%; min-width: 320px; overflow-x: clip; }
 @media (prefers-reduced-motion: reduce) {
   .royal-door-panel { transition-duration: .01ms; }
 }
+
+
+/* Use the supplied invitation artwork itself, split into two animated door leaves. */
+.royal-door-panel {
+  background-repeat: no-repeat !important;
+  background-size: 200% 100% !important;
+  background-color: #f1e7df;
+}
+.royal-door-left { background-position: left center !important; }
+.royal-door-right { background-position: right center !important; }
+.royal-door-panel svg { display: none !important; }
+.royal-door-card {
+  width: min(88vmin, 900px);
+  height: min(88vmin, 900px);
+}
+@media (max-width: 600px) {
+  .royal-door-card {
+    width: min(96vw, 82vh);
+    height: min(96vw, 82vh);
+  }
+}
