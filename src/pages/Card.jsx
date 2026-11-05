@@ -70,7 +70,7 @@ export default function Card({ embedded = false }) {
 
   return (
     <div className={embedded ? 'invitation-embedded-card' : 'page-wrapper'}>
-      {!embedded && <Preloader />
+      {!embedded && <Preloader />}
 
       <section className="static-hero-s5">
         <div className="hero-container">
