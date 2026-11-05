@@ -3,6 +3,7 @@ import ScrollToTop from './components/ScrollToTop';
 import IntroGate from './components/IntroGate';
 import Home from './pages/Home';
 import Card from './pages/Card';
+import InvitationReveal from './components/InvitationReveal';
 import Arrangement from './pages/Arrangement';
 import Video from './pages/Video';
 import Admin from './pages/Admin';
@@ -14,6 +15,7 @@ export default function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/invite" element={<InvitationReveal />} />
         <Route path="/card" element={<Card />} />
         <Route path="/arrangement" element={<Arrangement mode="new" />} />
         <Route path="/edit-arrangement" element={<Arrangement mode="edit" />} />
