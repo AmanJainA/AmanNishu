@@ -87,6 +87,56 @@ function FloralEmblem() {
   );
 }
 
+
+function RoyalMonogramArt() {
+  return (
+    <svg className="royal-gate-art" viewBox="0 0 420 570" aria-hidden="true">
+      <defs>
+        <linearGradient id="royal-gold" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#8b561b"/><stop offset=".45" stopColor="#d4a34e"/><stop offset="1" stopColor="#9c6726"/>
+        </linearGradient>
+        <linearGradient id="royal-peacock" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#1a7890"/><stop offset=".5" stopColor="#176276"/><stop offset="1" stopColor="#164a55"/>
+        </linearGradient>
+      </defs>
+      <path className="royal-arch-line" d="M28 548V180 Q28 150 55 139 L83 127 Q105 116 112 88 Q120 47 210 22 Q300 47 308 88 Q315 116 337 127 L365 139 Q392 150 392 180 V548Z"/>
+      <path className="royal-arch-inner" d="M39 540V183 Q39 158 62 149 L88 138 Q115 126 123 91 Q132 57 210 36 Q288 57 297 91 Q305 126 332 138 L358 149 Q381 158 381 183 V540Z"/>
+      <g className="royal-mandala" fill="none" stroke="#d9b98b" strokeWidth="1" opacity=".28">
+        <circle cx="210" cy="250" r="102"/><circle cx="210" cy="250" r="88"/>
+        {Array.from({length:16},(_,i)=><ellipse key={i} cx="210" cy="164" rx="12" ry="38" transform={`rotate(${i*22.5} 210 250)`}/>)}
+      </g>
+      <g fill="none" stroke="#a7a77e" strokeWidth="1.5" opacity=".75" strokeLinecap="round">
+        <path d="M38 365 Q75 325 83 270 Q95 230 124 209 M48 407 Q82 374 92 331 M66 447 Q108 410 112 366"/>
+        <path d="M382 350 Q344 316 337 265 Q327 229 297 207 M372 402 Q338 365 328 324 M354 446 Q312 408 308 366"/>
+      </g>
+      <g fill="#8e9b78" opacity=".78">
+        <path d="M72 333 Q35 299 38 274 Q76 286 82 321Z"/><path d="M91 296 Q57 259 66 236 Q101 259 101 286Z"/>
+        <path d="M100 390 Q58 370 52 342 Q94 349 108 377Z"/><path d="M347 326 Q385 291 382 265 Q344 279 338 314Z"/>
+        <path d="M329 294 Q363 256 354 233 Q319 257 319 284Z"/><path d="M320 390 Q362 368 368 340 Q326 348 312 377Z"/>
+      </g>
+      <g fill="#d78d9d" stroke="#c77d8d" strokeWidth="1">
+        <g transform="translate(73 420)"><circle r="9"/>{Array.from({length:7},(_,i)=><ellipse key={i} cy="-15" rx="5" ry="13" transform={`rotate(${i*51.4})`}/>)}</g>
+        <g transform="translate(350 405)"><circle r="8"/>{Array.from({length:7},(_,i)=><ellipse key={i} cy="-14" rx="5" ry="12" transform={`rotate(${i*51.4})`}/>)}</g>
+        <g transform="translate(323 455) scale(.7)"><circle r="8"/>{Array.from({length:7},(_,i)=><ellipse key={i} cy="-14" rx="5" ry="12" transform={`rotate(${i*51.4})`}/>)}</g>
+      </g>
+      <g className="royal-peacock" transform="translate(255 455)">
+        <path d="M-10 40 Q-54 12 -69 -40 Q-75 -79 -45 -99 Q-15 -111 3 -82 Q18 -56 2 -27 Q-5 -10 8 4" fill="none" stroke="#176276" strokeWidth="3"/>
+        <path d="M-5 27 Q-34 -8 -24 -43 Q-16 -69 2 -73 Q23 -72 29 -48 Q36 -22 14 -4 L28 25Z" fill="url(#royal-peacock)"/>
+        <path d="M8 -65 Q21 -96 42 -84 Q52 -77 43 -65 Q35 -58 24 -67" fill="url(#royal-peacock)"/>
+        <path d="M43 -83 L52 -99 L56 -81Z" fill="#b88b3d"/>
+        <circle cx="39" cy="-76" r="2.5" fill="#f8e5b7"/>
+        <path d="M-7 25 Q-45 57 -68 67 M4 27 Q-20 61 -36 77" fill="none" stroke="#8a6c3c" strokeWidth="2"/>
+        {Array.from({length:7},(_,i)=><g key={i} transform={`translate(${-10+i*10} ${18+Math.abs(3-i)*5}) rotate(${-30+i*10})`}><ellipse rx="7" ry="19" fill="#176276"/><ellipse cy="-5" rx="3" ry="8" fill="#d4a34e"/><circle cy="-6" r="2.5" fill="#286c58"/></g>)}
+      </g>
+      <path d="M45 516 H375" stroke="#9c555c" strokeWidth="2"/>
+      <path d="M45 522 H375" stroke="#c39a5d" strokeWidth="1"/>
+      <g fill="#a0525c">
+        {Array.from({length:15},(_,i)=><path key={i} d={`M${54+i*22} 527 l5 6 -5 6 -5 -6Z`}/>)}
+      </g>
+    </svg>
+  );
+}
+
 export default function IntroGate() {
   const [opening, setOpening] = useState(false);
   const [closed, setClosed] = useState(false);
@@ -130,12 +180,12 @@ export default function IntroGate() {
           disabled={opening}
           aria-label="Open Aman and Nishu's wedding invitation"
         >
-          <FloralEmblem />
-          <span className="gate-monogram-fixed" aria-hidden="true">
-            <span className="gate-letter-a">A</span>
-            <span className="gate-ampersand">&amp;</span>
-            <span className="gate-letter-n">N</span>
-          </span>
+          <div className="royal-gate-card" aria-hidden="true">
+            <RoyalMonogramArt />
+            <div className="royal-gate-monogram">A<span>N</span></div>
+            <div className="royal-gate-names">Aman <i>&amp;</i> Nishu</div>
+            <div className="royal-gate-tagline">TWO HEARTS · ONE JOURNEY</div>
+          </div>
         </button>
       </div>
       <div className="gate-bottom-note">RAJASTHAN <i>✦</i> DELHI <i>✦</i> TOGETHER, FOREVER</div>
