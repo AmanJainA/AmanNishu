@@ -1698,3 +1698,112 @@ body { width: 100%; min-width: 320px; overflow-x: clip; }
   .our-beginning-section::before { inset: 8px; }
   .story-slide-art img { box-shadow: 0 12px 30px rgba(0,0,0,.48); }
 }
+
+
+/* Ornate double-door invitation inspired by the supplied palace reference */
+.royal-door-gate {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 99999 !important;
+  display: grid !important;
+  place-items: center !important;
+  overflow: hidden !important;
+  background: #f1e7df !important;
+}
+.royal-door-card {
+  position: relative;
+  width: min(88vmin, 900px);
+  height: min(88vmin, 900px);
+  aspect-ratio: 1 / 1;
+  overflow: visible;
+  filter: drop-shadow(0 20px 24px rgba(65,49,34,.28));
+  perspective: 1800px;
+}
+.royal-door-panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  overflow: hidden;
+  background: #eee2d2;
+  transition: transform 1.55s cubic-bezier(.72,0,.18,1), filter 1.3s ease;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+.royal-door-left { left: 0; transform-origin: left center; }
+.royal-door-right { right: 0; transform-origin: right center; }
+.royal-door-panel svg {
+  position: absolute;
+  top: 0;
+  width: 200%;
+  height: 100%;
+  max-width: none;
+  display: block;
+}
+.royal-door-left svg { left: 0; }
+.royal-door-right svg { right: 0; }
+.royal-door-open {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  padding: 0 0 4.5%;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #78572f;
+  cursor: pointer;
+  font-family: Georgia, serif;
+}
+.royal-door-open span {
+  padding: 9px 20px;
+  border: 1px solid rgba(157,119,65,.62);
+  background: rgba(249,240,221,.88);
+  box-shadow: 0 3px 12px rgba(75,52,29,.12);
+  font-size: clamp(9px, 1.15vmin, 12px);
+  letter-spacing: .24em;
+}
+.royal-door-open small {
+  color: #806b4c;
+  font-size: clamp(8px, .95vmin, 10px);
+  letter-spacing: .12em;
+}
+.royal-door-open:focus-visible {
+  outline: 2px solid #8f5e35;
+  outline-offset: -8px;
+}
+.royal-door-gate.is-opening .royal-door-left {
+  transform: translateX(-101%) rotateY(-12deg);
+  filter: brightness(.92);
+}
+.royal-door-gate.is-opening .royal-door-right {
+  transform: translateX(101%) rotateY(12deg);
+  filter: brightness(.92);
+}
+.royal-door-gate.is-opening .royal-door-open {
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+@media (max-width: 600px) {
+  .royal-door-card {
+    width: min(94vw, 78vh);
+    height: min(94vw, 78vh);
+  }
+  .royal-door-open { padding-bottom: 4%; }
+  .royal-door-open span {
+    padding: 7px 13px;
+    letter-spacing: .16em;
+    font-size: 8px;
+  }
+  .royal-door-open small { font-size: 7px; }
+}
+@media (max-height: 520px) and (orientation: landscape) {
+  .royal-door-card { width: min(82vh, 78vw); height: min(82vh, 78vw); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .royal-door-panel { transition-duration: .01ms; }
+}
