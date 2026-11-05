@@ -1828,3 +1828,25 @@ body { width: 100%; min-width: 320px; overflow-x: clip; }
     height: min(96vw, 82vh);
   }
 }
+
+
+/* Separate original artwork halves: exact centre seam and plaque alignment. */
+.royal-door-panel {
+  width: 50%;
+  overflow: hidden;
+  background: #f1e7df;
+}
+.royal-door-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: fill;
+  user-select: none;
+  pointer-events: none;
+}
+.royal-door-left { left: 0; }
+.royal-door-right { right: 0; }
+.royal-door-panel svg { display: none !important; }
