@@ -34,7 +34,7 @@ export default function IntroGate() {
     const timer = window.setTimeout(() => {
       setClosed(true);
       navigate('/invite');
-    }, 1550);
+    }, 1900);
     return () => window.clearTimeout(timer);
   }, [opening, navigate]);
 
