@@ -126,7 +126,7 @@ export default function Card({ embedded = false }) {
                 {row.map((ev, i) => (
                   <div className="col col-lg-4 col-md-12 col-12 mb-3" key={ev.id}>
                     <Reveal
-                      className="wpo-story-item"
+                      className={`wpo-story-item ${/mehndi/i.test(ev.title) ? 'wpo-story-item-mehndi' : ''}`}
                       duration={DURATIONS[i % DURATIONS.length]}
                       style={{ boxShadow: '5px 5px 15px rgba(0,0,0,.3)', padding: '15px 0px' }}
                     >
