@@ -1,0 +1,872 @@
+/* Page-level additions on top of the original theme CSS */
+.blink-style{ color: blue !important; animation: blink-text 1.9s linear infinite; }
+@keyframes blink-text{ 0% { opacity: .4; } 50% { opacity: 1; } 100% { opacity: .4; } }
+.video-thumbnail{ position: relative; display: block; width: 100%; max-width: 100%; }
+.video-thumbnail video,
+.video-thumbnail img{ display: block; width: 100%; height: auto; }
+.video-page{
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.video-page video{
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100vh;
+  max-height: 100dvh;
+  object-fit: contain;
+}
+img,
+video,
+iframe{ max-width: 100%; }
+html{ width: 100%; overflow-x: clip; scroll-behavior: smooth; }
+body{ width: 100%; min-width: 320px; overflow-x: clip; }
+*,
+*::before,
+*::after{ box-sizing: border-box; }
+.page-wrapper{ width: 100%; max-width: 100%; overflow: clip; }
+#root{ width: 100%; min-height: 100vh; }
+/* Stay arrangement pages */
+#rsvp{
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-position: center top !important;
+  background-attachment: scroll;
+  background-size: cover !important;
+}
+#rsvp .wpo-contact-section-inner{ width: 100%; }
+#rsvp .wpo-contact-section-wrapper,
+#rsvp .wpo-contact-form-area{ width: 100%; max-width: 100%; }
+#rsvp .wpo-contact-form-area select,
+#rsvp .wpo-contact-form-area input,
+#rsvp .wpo-contact-form-area textarea{ max-width: 100%; min-width: 0; }
+#rsvp .container-fluid{ width: 100%; }
+#rsvp .row{ margin-left: 0; margin-right: 0; }
+/* Shared media and layout safeguards */
+.container,
+.container-fluid,
+.hero-container,
+.hero-inner,
+.hero-inner-wrap,
+.wpo-event-wrap,
+.wpo-event-item{
+  min-width: 0;
+}
+.wpo-story-img img,
+.wpo-hero-img img,
+.wpo-story-img-inner img{ display: block; max-width: 100%; height: auto; }
+.wpo-story-item{ height: 100%; }
+.wpo-story-content{ overflow-wrap: anywhere; }
+.wpo-story-content h2{ overflow-wrap: anywhere; }
+.wpo-contact-form-area input,
+.wpo-contact-form-area select,
+.wpo-contact-form-area textarea,
+#rsvp input,
+#rsvp select,
+#rsvp textarea{
+  width: 100%;
+  max-width: 100%;
+}
+/* Large tablets and compact laptops */
+@media (max-width: 1199px){
+  .wpo-invitation-area-s2,
+  .static-hero-s5 { overflow: hidden; }
+  .wpo-event-wrap { width: min(100%, 1000px); margin-left: auto; margin-right: auto; }
+  .wpo-event-item { max-width: 100%; }
+  .static-hero-s5 .hero-inner-wrap { padding-left: 24px; padding-right: 24px; }
+  .static-hero-s5 .wpo-static-hero-inner { padding-top: 35px; padding-bottom: 35px; }
+  .static-hero-s5 .wpo-hero-img img { width: 100%; height: auto; object-fit: contain; }
+  .wpo-story-section-s6 .wpo-story-item { margin-bottom: 28px; }
+}
+/* Tablets */
+@media (max-width: 991px){
+  .wpo-invitation-area-s2 {
+    min-height: 100vh;
+    min-height: 100svh;
+    height: auto;
+    padding: 56px 22px;
+    background-position: center center !important;
+  }
+  .wpo-invitation-area-s2 .hero-container,
+  .wpo-invitation-area-s2 .hero-inner { min-height: inherit; height: auto; }
+  .wpo-invitation-area-s2 .wpo-event-wrap { width: 100%; max-width: 760px; margin: 0 auto; }
+  .wpo-invitation-area-s2 .wpo-event-item { width: 100%; padding: 54px 42px; }
+  .wpo-invitation-area-s2 .wpo-event-text { width: 100%; max-width: 100%; }
+  .wpo-invitation-area-s2 .wpo-event-text h2 {
+    font-size: clamp(38px, 7vw, 64px);
+    line-height: 1.12;
+    overflow-wrap: anywhere;
+  }
+  .wpo-invitation-area-s2 .wpo-event-text p { font-size: clamp(14px, 2vw, 18px); line-height: 1.6; }
+  .wpo-invitation-area-s2 .wpo-event-text ul { padding-left: 0; }
+  .wpo-invitation-area-s2 .wpo-event-text ul li { line-height: 1.65; }
+  .wpo-invitation-area-s2 .frame-shape-1,
+  .wpo-invitation-area-s2 .frame-shape-2 { max-width: 24%; }
+  .wpo-invitation-area-s2 .frame-shape-1 img,
+  .wpo-invitation-area-s2 .frame-shape-2 img { width: 100%; height: auto; }
+
+  .static-hero-s5 { min-height: auto; padding: 55px 0 35px; }
+  .static-hero-s5 .hero-container,
+  .static-hero-s5 .hero-inner { height: auto; min-height: 0; }
+  .static-hero-s5 .hero-inner-wrap { padding: 0 22px; }
+  .static-hero-s5 .wpo-static-hero-inner { text-align: center; padding: 25px 10px; }
+  .static-hero-s5 .wpo-static-hero-inner h2 { font-size: clamp(38px, 7vw, 62px); line-height: 1.15; }
+  .static-hero-s5 .wpo-static-hero-inner p { font-size: clamp(15px, 2vw, 19px); line-height: 1.6; }
+  .static-hero-s5 .wpo-hero-img { max-width: 560px; margin: 10px auto 0; padding: 0 18px; }
+  .static-hero-s5 .wpo-hero-img img { width: 100%; max-height: 56vh; object-fit: contain; }
+  .static-hero-s5 .shape-frame { max-width: 22%; }
+  .static-hero-s5 .shape-frame img { width: 100%; height: auto; }
+
+  .wpo-story-section-s6 { padding-top: 60px; padding-bottom: 45px; }
+  .wpo-story-section-s6 .wpo-story-wrap > .row { display: flex; flex-wrap: wrap; }
+  .wpo-story-section-s6 .wpo-story-wrap > .row > [class*="col-"] {
+    flex: 0 0 50%;
+    width: 50%;
+    max-width: 50%;
+  }
+  .wpo-story-item { margin-left: 0; margin-right: 0; }
+  .wpo-story-img-inner { overflow: hidden; }
+  .wpo-story-img-inner img { width: 100%; object-fit: cover; }
+  .wpo-story-content { padding-left: 14px; padding-right: 14px; }
+
+  #rsvp { padding: 55px 20px; background-position: center center !important; }
+  #rsvp .wpo-contact-section-inner { padding: 0; }
+  #rsvp .container-fluid { padding-left: 0; padding-right: 0; }
+  #rsvp .row { justify-content: center; }
+  #rsvp .row > [class*="col-"] { flex: 0 0 100%; width: 100%; max-width: 620px; }
+  #rsvp .wpo-contact-section-wrapper { margin: 0 auto; }
+}
+/* Phones */
+@media (max-width: 767px){
+  .wpo-invitation-area-s2 { padding: 38px 14px; }
+  .wpo-invitation-area-s2 .wpo-event-item {
+    padding: 42px 22px;
+    border-width: 1px;
+  }
+  .wpo-invitation-area-s2 .wpo-event-text h2 { font-size: clamp(34px, 9vw, 48px); }
+  .wpo-invitation-area-s2 .wpo-event-text p { font-size: 13px; letter-spacing: .04em; }
+  .wpo-invitation-area-s2 .wpo-event-text ul li { font-size: 14px; margin-bottom: 14px; }
+  .wpo-invitation-area-s2 .wpo-event-text ul li br { display: none; }
+  .wpo-invitation-area-s2 .wpo-event-text ul li:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+  }
+  .wpo-invitation-area-s2 .wpo-event-text ul li:last-child a { display: inline-block; margin: 0 !important; }
+  .wpo-invitation-area-s2 .shape-1,
+  .wpo-invitation-area-s2 .shape-2,
+  .wpo-invitation-area-s2 .shape-3,
+  .wpo-invitation-area-s2 .shape-4 { width: 42px; }
+  .wpo-invitation-area-s2 .shape-1 img,
+  .wpo-invitation-area-s2 .shape-2 img,
+  .wpo-invitation-area-s2 .shape-3 img,
+  .wpo-invitation-area-s2 .shape-4 img { width: 100%; height: auto; }
+  .wpo-invitation-area-s2 .frame-shape-1,
+  .wpo-invitation-area-s2 .frame-shape-2 { display: none; }
+
+  .static-hero-s5 { padding: 35px 0 20px; }
+  .static-hero-s5 .hero-inner-wrap { padding: 0 12px; }
+  .static-hero-s5 .wpo-static-hero-inner { padding: 18px 4px; }
+  .static-hero-s5 .wpo-static-hero-inner h2 { font-size: clamp(34px, 9vw, 48px); }
+  .static-hero-s5 .wpo-static-hero-inner p { font-size: 14px; }
+  .static-hero-s5 .wpo-static-hero-inner .shape img { max-width: min(180px, 55vw); height: auto; }
+  .static-hero-s5 .wpo-hero-img { padding: 0 8px; }
+  .static-hero-s5 .wpo-hero-img img { max-height: 48vh; }
+  .static-hero-s5 .shape-frame { display: none; }
+
+  .clock-grids { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .clock-grids > * { min-width: 0; }
+
+  .wpo-story-section-s6 { padding-top: 42px; padding-bottom: 30px; }
+  .wpo-story-section-s6 .container { padding-left: 14px; padding-right: 14px; }
+  .wpo-story-section-s6 .wpo-story-wrap > .row > [class*="col-"] {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+  .wpo-story-item { max-width: 520px; margin: 0 auto 24px; }
+  .wpo-story-content h2 { font-size: clamp(23px, 6vw, 30px); line-height: 1.25; }
+  .wpo-story-content p { overflow-wrap: anywhere; }
+  .wpo-video-section { padding: 24px 0 !important; }
+  .wpo-video-section .container { padding-left: 14px; padding-right: 14px; }
+  .wpo-video-section .col,
+  .wpo-video-section [class*="col-"] { width: 100%; max-width: 100%; }
+  .wpo-video-section video { display: block; width: 100%; height: auto; }
+
+  #rsvp { padding: 35px 12px; }
+  #rsvp .wpo-contact-section-wrapper { padding-left: 0; padding-right: 0; }
+  #rsvp .wpo-contact-form-area { padding-left: 18px; padding-right: 18px; }
+  #rsvp .wpo-contact-form-area h2,
+  #rsvp .wpo-contact-form-area h3 { font-size: clamp(25px, 7vw, 34px); line-height: 1.25; }
+  #rsvp .wpo-contact-form-area .form-group { width: 100%; margin-bottom: 14px; }
+  #rsvp .wpo-contact-form-area .row { margin-left: -7px; margin-right: -7px; }
+  #rsvp .wpo-contact-form-area .row > [class*="col-"] { padding-left: 7px; padding-right: 7px; }
+  #rsvp .form-control { min-height: 46px; font-size: 16px; }
+  #rsvp textarea.form-control { min-height: 110px; }
+  #rsvp button, #rsvp .theme-btn { max-width: 100%; white-space: normal; }
+
+  .video-page { padding: 0; }
+  .video-page video { width: 100%; height: auto; max-height: 100dvh; object-fit: contain; }
+  .wpo-site-footer-s2 .wpo-upper-footer { padding-left: 12px; padding-right: 12px; text-align: center; }
+}
+/* Small phones */
+@media (max-width: 575px){
+  .container, .container-fluid { padding-left: 12px; padding-right: 12px; }
+  .wpo-invitation-area-s2 { padding: 28px 10px; }
+  .wpo-invitation-area-s2 .wpo-event-item { padding: 38px 16px; }
+  .wpo-invitation-area-s2 .wpo-event-text h2 { font-size: clamp(30px, 9vw, 42px); }
+  .wpo-invitation-area-s2 .wpo-event-text ul li { font-size: 13px; }
+  .wpo-invitation-area-s2 .shape-1,
+  .wpo-invitation-area-s2 .shape-2,
+  .wpo-invitation-area-s2 .shape-3,
+  .wpo-invitation-area-s2 .shape-4 { width: 30px; }
+
+  .static-hero-s5 .wpo-static-hero-inner h2 { font-size: clamp(30px, 9vw, 42px); }
+  .static-hero-s5 .wpo-hero-img img { max-height: 42vh; }
+  .clock-grids { gap: 6px; }
+  .clock-grids > * { flex: 1 1 68px; }
+
+  .wpo-story-content { padding: 14px 12px; }
+  .wpo-story-content h2 { font-size: 24px; }
+  .wpo-story-content p { font-size: 14px; line-height: 1.5; }
+
+  #rsvp .wpo-contact-form-area { padding-left: 12px; padding-right: 12px; }
+  #rsvp .wpo-contact-form-area .row > [class*="col-"] { flex: 0 0 100%; width: 100%; max-width: 100%; }
+  #rsvp .wpo-contact-form-area label { overflow-wrap: anywhere; }
+}
+/* Very narrow devices */
+@media (max-width: 360px){
+  .wpo-invitation-area-s2 .wpo-event-item { padding: 32px 12px; }
+  .wpo-invitation-area-s2 .wpo-event-text h2 { font-size: 29px; }
+  .static-hero-s5 .wpo-static-hero-inner h2 { font-size: 29px; }
+  #rsvp .wpo-contact-form-area { padding-left: 8px; padding-right: 8px; }
+}
+/* Respect device accessibility preferences */
+@media (prefers-reduced-motion: reduce){
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+/* Card page: keep each caricature centered on its story-shape artwork */
+.wpo-story-section-s6 .wpo-story-wrap .wpo-story-item .wpo-story-img{
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: min(100%, 350px) !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+}
+.wpo-story-section-s6 .wpo-story-wrap .wpo-story-item .wpo-story-img .flower-shape{
+  position: absolute !important;
+  inset: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  transform: none !important;
+  z-index: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.wpo-story-section-s6 .wpo-story-wrap .wpo-story-item .wpo-story-img .flower-shape img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.wpo-story-section-s6 .wpo-story-wrap .wpo-story-item .wpo-story-img .wpo-story-img-inner{
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 78%;
+  height: 78%;
+  margin: 0 auto;
+  overflow: visible;
+  border-radius: 0;
+}
+.wpo-story-section-s6 .wpo-story-wrap .wpo-story-item .wpo-story-img .wpo-story-img-inner img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 0;
+}
+@media (max-width: 575px){.wpo-story-section-s6 .wpo-story-wrap .wpo-story-item .wpo-story-img{
+    width: min(100%, 320px) !important;
+  }
+
+}
+/* Keep both home-page actions on one row and center the invitation card on phones */
+@media (max-width: 767px){
+  .wpo-invitation-area-s2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 24px 10px;
+  }
+
+  .wpo-invitation-area-s2 > .hero-container,
+  .wpo-invitation-area-s2 .hero-inner {
+    width: 100%;
+    min-height: 0;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .wpo-invitation-area-s2 .hero-container > .hero-inner > .container,
+  .wpo-invitation-area-s2 .wpo-event-wrap,
+  .wpo-invitation-area-s2 .wpo-event-item {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .wpo-invitation-area-s2 .wpo-event-text ul li.home-action-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(8px, 3vw, 18px);
+    white-space: nowrap;
+  }
+
+  .wpo-invitation-area-s2 .home-action-links a {
+    display: inline-block;
+    flex: 0 0 auto;
+    margin: 0 !important;
+    font-size: clamp(11px, 3.1vw, 14px);
+    white-space: nowrap;
+  }
+}
+@media (max-width: 360px){.wpo-invitation-area-s2 .home-action-links{
+    gap: 7px !important;
+  }
+.wpo-invitation-area-s2 .home-action-links a{
+    font-size: 10.5px;
+    letter-spacing: -0.02em;
+  }
+
+}
+/* Invitation reveal: the two gate leaves part from the centre on activation. */
+.wedding-gate.is-opening .gate-culture-rajasthan,
+.wedding-gate.is-opening .gate-panel-left{
+  transform: translateX(-102%);
+  opacity: .92;
+}
+.wedding-gate.is-opening .gate-culture-delhi,
+.wedding-gate.is-opening .gate-panel-right{
+  transform: translateX(102%);
+  opacity: .92;
+}
+.wedding-gate.is-opening .gate-bottom-note{ opacity: 0; transition: opacity .25s ease; }
+/* Integrated stay form: part of the invitation-card page,
+not a separate page link. */
+.invitation-stay-section{
+  position: relative;
+  padding: clamp(42px, 6vw, 78px) 16px;
+  background: linear-gradient(180deg, #fbf6f0 0%, #f7eee5 100%);
+}
+.invitation-stay-heading{ max-width: 760px; margin: 0 auto 30px; }
+.invitation-stay-heading > span{
+  display: block; color: #a17b54;
+  font: 600 10px/1.6 Georgia, serif; letter-spacing: .2em;
+}
+.invitation-stay-heading h2{
+  margin: 9px 0 10px; color: #805b42;
+  font: 500 clamp(28px, 4vw, 42px)/1.15 Georgia, serif;
+}
+.invitation-stay-heading p{ margin: 0; color: #806f60; font-size: 14px; }
+.invitation-stay-form{
+  width: min(100%, 940px); margin: 0 auto;
+  padding: clamp(20px, 4vw, 42px);
+  background: rgba(255,255,255,.9);
+  border: 1px solid rgba(183,145,105,.32);
+  box-shadow: 0 12px 35px rgba(92,66,43,.08);
+}
+.invitation-stay-form .wpo-contact-form-area{
+  width: 100%; max-width: none; padding: 0;
+  background: transparent; box-shadow: none;
+}
+.invitation-stay-form .wpo-section-title{ margin-bottom: 24px; text-align: center; }
+.invitation-stay-form .wpo-section-title h3{ color: #805b42; font-family: Georgia, serif; }
+.invitation-stay-form .row{ row-gap: 14px; }
+.invitation-stay-form .form-control{
+  min-height: 46px; border: 1px solid rgba(155,119,83,.3);
+  border-radius: 3px; background: #fffdfa;
+}
+.invitation-stay-form .form-control:focus{
+  border-color: #b58a5b; box-shadow: 0 0 0 3px rgba(181,138,91,.12);
+}
+.invitation-stay-form .btn-primary{ border-color: #956c48; background: #956c48; }
+.invitation-stay-form .btn-primary:hover{ border-color: #795638; background: #795638; }
+@media (max-width: 575px){.invitation-stay-section{ padding: 38px 12px; }
+.invitation-stay-heading{ margin-bottom: 22px; }
+.invitation-stay-form{ padding: 18px 12px; }
+.invitation-stay-form .row > [class*="col-"]{ width: 100%; }
+
+}
+/* Wedding video and invitation footer restored on the card page. */
+.invitation-video-section{ background: #f8f0e9; }
+.invitation-video-frame{ width: 100%; max-width: 1120px; margin: 0 auto; padding: clamp(12px, 3vw, 28px); }
+.invitation-video-frame video{ display: block; width: 100%; max-height: 680px; object-fit: contain; background: #1c1715; }
+.invitation-card-footer{
+  padding: 46px 16px 42px;
+  color: #f8eee4;
+  text-align: center;
+  background: linear-gradient(135deg, #553a35, #8c5c57);
+}
+.invitation-card-footer p{ margin: 10px 0 4px; color: #f4e1cb; }
+.invitation-card-footer h3{ margin: 0 0 8px; color: #fff7ef; font: 500 30px Georgia,serif; }
+.invitation-card-footer span{ color: #f4e1cb; }
+.invitation-footer-monogram{ color: #f4e1cb; font: 500 34px Georgia,serif; letter-spacing: .12em; }
+.invitation-footer-monogram span{ color: #e9b8b8; }
+.stay-form-link{
+  padding: 0; border: 0; border-bottom: 1px solid currentColor;
+  color: #956c48; background: transparent; cursor: pointer;
+  font: inherit; text-decoration: none;
+}
+.stay-form-link:hover{ color: #795638; }
+@media (max-width: 575px){.invitation-video-frame{ padding: 10px 0; }
+.invitation-card-footer{ padding: 36px 14px; }
+
+}
+/* Consistent 10px breathing room below each wedding function card. */
+.wpo-story-section-s6 .wpo-story-wrap .wpo-story-item{
+  margin-bottom: 10px !important;
+}
+
+/* Ornate double-door invitation inspired by the supplied palace reference */
+.royal-door-gate {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 99999 !important;
+  display: grid !important;
+  place-items: center !important;
+  overflow: hidden !important;
+  background: #f1e7df !important;
+}
+.royal-door-card {
+  position: relative;
+  width: min(88vmin, 900px);
+  height: min(88vmin, 900px);
+  aspect-ratio: 1 / 1;
+  overflow: visible;
+  filter: drop-shadow(0 20px 24px rgba(65,49,34,.28));
+  perspective: 1800px;
+}
+.royal-door-panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  overflow: hidden;
+  background: #eee2d2;
+  transition: transform 1.55s cubic-bezier(.72,0,.18,1), filter 1.3s ease;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+.royal-door-left { left: 0; transform-origin: left center; }
+.royal-door-right { right: 0; transform-origin: right center; }
+.royal-door-open {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  padding: 0 0 4.5%;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #78572f;
+  cursor: pointer;
+  font-family: Georgia, serif;
+}
+.royal-door-open span {
+  padding: 9px 20px;
+  border: 1px solid rgba(157,119,65,.62);
+  background: rgba(249,240,221,.88);
+  box-shadow: 0 3px 12px rgba(75,52,29,.12);
+  font-size: clamp(9px, 1.15vmin, 12px);
+  letter-spacing: .24em;
+}
+.royal-door-open small {
+  color: #806b4c;
+  font-size: clamp(8px, .95vmin, 10px);
+  letter-spacing: .12em;
+}
+.royal-door-open:focus-visible {
+  outline: 2px solid #8f5e35;
+  outline-offset: -8px;
+}
+.royal-door-gate.is-opening .royal-door-left {
+  transform: translateX(-101%) rotateY(-12deg);
+  filter: brightness(.92);
+}
+.royal-door-gate.is-opening .royal-door-right {
+  transform: translateX(101%) rotateY(12deg);
+  filter: brightness(.92);
+}
+.royal-door-gate.is-opening .royal-door-open {
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+@media (max-width: 600px) {
+  .royal-door-card {
+    width: min(94vw, 78vh);
+    height: min(94vw, 78vh);
+  }
+  .royal-door-open { padding-bottom: 4%; }
+  .royal-door-open span {
+    padding: 7px 13px;
+    letter-spacing: .16em;
+    font-size: 8px;
+  }
+  .royal-door-open small { font-size: 7px; }
+}
+@media (max-height: 520px) and (orientation: landscape) {
+  .royal-door-card { width: min(82vh, 78vw); height: min(82vh, 78vw); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .royal-door-panel { transition-duration: .01ms; }
+}
+
+/* Use the supplied invitation artwork itself, split into two animated door leaves. */
+.royal-door-panel {
+  background-repeat: no-repeat !important;
+  background-size: 200% 100% !important;
+  background-color: #f1e7df;
+}
+.royal-door-left { background-position: left center !important; }
+.royal-door-right { background-position: right center !important; }
+.royal-door-card {
+  width: min(88vmin, 900px);
+  height: min(88vmin, 900px);
+}
+@media (max-width: 600px) {
+  .royal-door-card {
+    width: min(96vw, 82vh);
+    height: min(96vw, 82vh);
+  }
+}
+
+/* Separate original artwork halves: exact centre seam and plaque alignment. */
+.royal-door-panel {
+  width: 50%;
+  overflow: hidden;
+  background: #f1e7df;
+}
+.royal-door-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: fill;
+  user-select: none;
+  pointer-events: none;
+}
+.royal-door-left { left: 0; }
+.royal-door-right { right: 0; }
+/* Final image-led invitation gate: each half is its own full-height door leaf. */
+.royal-door-card {
+  position: relative;
+  width: min(88vmin, 900px);
+  height: min(88vmin, 900px);
+  aspect-ratio: 1 / 1;
+  overflow: visible;
+  isolation: isolate;
+}
+.royal-door-panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  overflow: hidden;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: #f1e7df;
+  transition: transform 1.55s cubic-bezier(.72,0,.18,1), filter 1.3s ease;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+.royal-door-left { left: 0; right: auto; transform-origin: left center; }
+.royal-door-right { right: 0; left: auto; transform-origin: right center; }
+.royal-door-image {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: fill !important;
+  object-position: center center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  user-select: none;
+  pointer-events: none;
+}
+.royal-door-open { z-index: 10; }
+.royal-door-gate.is-opening .royal-door-left {
+  transform: translateX(-101%) rotateY(-9deg);
+}
+.royal-door-gate.is-opening .royal-door-right {
+  transform: translateX(101%) rotateY(9deg);
+}
+@media (max-width: 600px) {
+  .royal-door-card {
+    width: min(94vw, 82vh);
+    height: min(94vw, 82vh);
+  }
+}
+@media (max-height: 520px) and (orientation: landscape) {
+  .royal-door-card {
+    width: min(82vh, 78vw);
+    height: min(82vh, 78vw);
+  }
+}
+
+/* Full-screen gate: remove the square/card constraint and fill the viewport. */
+html:has(.royal-door-gate),
+body:has(.royal-door-gate),
+#root:has(.royal-door-gate) {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  overflow: hidden !important;
+}
+.royal-door-gate {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  min-height: 100vh !important;
+  min-height: 100dvh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+  overflow: hidden !important;
+  background: transparent !important;
+  pointer-events: none;
+}
+.royal-door-card {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  max-width: none !important;
+  max-height: none !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  aspect-ratio: auto !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  filter: none !important;
+  overflow: hidden !important;
+}
+.royal-door-panel {
+  top: 0 !important;
+  bottom: 0 !important;
+  height: 100% !important;
+  width: 50% !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.royal-door-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: fill !important;
+  object-position: center !important;
+}
+ .royal-door-open {
+  border-radius: 0 !important;
+  pointer-events: auto;
+}
+.royal-door-panel { pointer-events: none; }
+@media (max-width: 600px), (max-height: 700px) {
+  .royal-door-card {
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+  }
+}
+
+/* Cinematic gate-to-invitation reveal */
+.invitation-cinematic-entry {
+  min-height: 100vh;
+  animation: invitation-page-appear 900ms ease both;
+}
+.invitation-cinematic-entry .static-hero-s5 {
+  overflow: hidden;
+}
+.invitation-cinematic-entry .wpo-static-hero-inner {
+  animation: invitation-copy-appear 900ms 250ms ease both;
+}
+.invitation-cinematic-entry .wpo-hero-img {
+  animation: invitation-couple-arrive 1500ms 100ms cubic-bezier(.2,.75,.25,1) both;
+  transform-origin: center center;
+}
+.invitation-cinematic-entry .wpo-story-section-s6 {
+  animation: invitation-events-appear 1000ms 850ms ease both;
+}
+.invitation-cinematic-entry .invitation-video-section,
+.invitation-cinematic-entry .invitation-stay-section,
+.invitation-cinematic-entry .invitation-card-footer {
+  animation: invitation-lower-content-appear 900ms 1100ms ease both;
+}
+@keyframes invitation-page-appear {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes invitation-copy-appear {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes invitation-couple-arrive {
+  0% { opacity: 0; transform: translateY(-13vh) scale(.78); }
+  55% { opacity: 1; transform: translateY(0) scale(1.035); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes invitation-events-appear {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes invitation-lower-content-appear {
+  from { opacity: .35; }
+  to { opacity: 1; }
+}
+@media (max-width: 767px) {
+  .invitation-cinematic-entry .wpo-hero-img {
+    animation-duration: 1250ms;
+  }
+  .invitation-cinematic-entry .wpo-hero-img img {
+    max-width: min(78vw, 340px);
+    height: auto;
+    object-fit: contain;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .invitation-cinematic-entry,
+  .invitation-cinematic-entry *,
+  .invitation-cinematic-entry *::before,
+  .invitation-cinematic-entry *::after {
+    animation-duration: .01ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* The invitation is visible beneath the doors while they open. */
+.royal-door-gate { background: transparent !important; }
+.royal-door-card, .royal-door-panel { pointer-events: none; }
+.royal-door-open { pointer-events: auto; }
+
+/* Embedded invitation page layout. */
+.invitation-reveal-page {
+  min-height: 100vh;
+  min-height: 100svh;
+  height: auto;
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 34px;
+  overflow: visible;
+}
+.invitation-embedded-card {
+  width: 100%;
+  max-width: 100%;
+  overflow: visible;
+  background: #fff;
+}
+.invitation-embedded-card > section,
+.invitation-embedded-card > footer { width: 100%; }
+
+
+/* Mehndi function: decorative background only; retain the website's existing caricature artwork. */
+.wpo-story-section-s6 .wpo-story-item-mehndi {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgba(145, 104, 75, .22);
+  border-radius: 18px;
+  background-image:
+    linear-gradient(rgba(255, 248, 231, .68), rgba(255, 248, 231, .78)),
+    url("https://i.pinimg.com/736x/59/a8/1e/59a81ea1abfa5db7fd50deed99cf7c0f.jpg") !important;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.wpo-story-section-s6 .wpo-story-item-mehndi .wpo-story-img,
+.wpo-story-section-s6 .wpo-story-item-mehndi .wpo-story-content {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Haldi function card: use the supplied reference as the card background.
+   The existing event caricature remains unchanged in its image area. */
+.wpo-story-section-s6 .wpo-story-item-haldi {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgba(171, 126, 43, .28);
+  border-radius: 18px;
+  background-image:
+    linear-gradient(rgba(255, 250, 226, .64), rgba(255, 248, 215, .72)),
+    url("https://i.pinimg.com/736x/d5/59/b2/d559b222e5add33c9e7a748f39405ef9.jpg") !important;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.wpo-story-section-s6 .wpo-story-item-haldi .wpo-story-img,
+.wpo-story-section-s6 .wpo-story-item-haldi .wpo-story-content {
+  position: relative;
+  z-index: 1;
+}
