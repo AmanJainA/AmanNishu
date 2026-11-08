@@ -827,3 +827,24 @@ body:has(.royal-door-gate),
 }
 .invitation-embedded-card > section,
 .invitation-embedded-card > footer { width: 100%; }
+
+
+/* Mehndi function: decorative background only; retain the website's existing caricature artwork. */
+.wpo-story-section-s6 .wpo-story-item-mehndi {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgba(145, 104, 75, .22);
+  border-radius: 18px;
+  background-image:
+    linear-gradient(rgba(255, 248, 231, .68), rgba(255, 248, 231, .78)),
+    url("https://i.pinimg.com/736x/59/a8/1e/59a81ea1abfa5db7fd50deed99cf7c0f.jpg") !important;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.wpo-story-section-s6 .wpo-story-item-mehndi .wpo-story-img,
+.wpo-story-section-s6 .wpo-story-item-mehndi .wpo-story-content {
+  position: relative;
+  z-index: 1;
+}
