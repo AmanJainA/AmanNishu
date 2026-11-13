@@ -75,6 +75,13 @@ export default function Card({ embedded = false }) {
       <section className="embroidery-intro-band" aria-label="Wedding invitation theme">
         <div className="embroidery-topline"><span>RANGILO RAJASTHAN</span><i>✿</i><span>DILLI KI DUAAYEIN</span></div>
         <p>Two cities, two families, one beautiful beginning</p>
+        <div className="embroidery-event-facts" aria-label="Wedding details">
+          <span><small>DATES</small>8–10 February 2027</span>
+          <i aria-hidden="true"></i>
+          <span><small>CELEBRATION</small>Three days together</span>
+          <i aria-hidden="true"></i>
+          <span><small>LOCATION</small>Bijainagar, Rajasthan</span>
+        </div>
       </section>
 
       <section className="static-hero-s5 embroidery-hero">
@@ -145,8 +152,7 @@ export default function Card({ embedded = false }) {
                       className={`wpo-story-item embroidery-event-card ${/mehndi/i.test(ev.title) ? 'wpo-story-item-mehndi' : ''}`}
                       duration={DURATIONS[i % DURATIONS.length]}
                     >
-                      <div className="embroidery-card-stitch" aria-hidden="true"><span>✿</span><span>✦</span><span>✿</span></div>
-                      <div className="embroidery-card-label">A CELEBRATION OF LOVE</div>
+                      <div className="embroidery-card-label">A MOMENT TO CELEBRATE</div>
                       <div className="wpo-story-img">
                         <div className="wpo-story-img-inner">
                           {ev.image && <img src={ev.image} alt={ev.title} />}
@@ -161,7 +167,6 @@ export default function Card({ embedded = false }) {
                         {ev.time && <p className="embroidery-event-time">{ev.time}</p>}
                         {ev.venue && <p className="embroidery-event-venue"><span aria-hidden="true">⌖</span> {ev.venue}</p>}
                       </div>
-                      <div className="embroidery-card-foot" aria-hidden="true">✿ &nbsp; WITH LOVE &nbsp; ✿</div>
                     </Reveal>
                   </div>
                 ))}
@@ -175,9 +180,8 @@ export default function Card({ embedded = false }) {
         <div className="embroidery-cultural-inner">
           <span className="embroidery-cultural-kicker">JAIPUR • BIJAINAGAR • DELHI</span>
           <h2>Rooted in tradition, stitched with love</h2>
-          <p>Inspired by Rajasthan’s colourful phad and gota-patti craft, the graceful jharokhas of Jaipur, and Delhi’s timeless architectural elegance — bringing our two worlds together.</p>
-          <div className="embroidery-cultural-motifs"><span>❋</span><span>✥</span><span>❋</span></div>
-          <p className="embroidery-blessing">Your presence will make our celebration complete.</p>
+          <p>Our celebration brings together the warmth of Rajasthan and the spirit of Delhi. The invitation takes its quiet cues from Jaipur’s jharokhas, delicate gota-patti work and traditional textile patterns — a small tribute to the places and families that make our story.</p>
+          <p className="embroidery-blessing">With the love of our families, we look forward to welcoming you.</p>
         </div>
       </section>
 
