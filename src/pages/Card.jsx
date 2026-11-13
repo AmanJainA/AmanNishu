@@ -72,7 +72,7 @@ export default function Card({ embedded = false }) {
     <div className={embedded ? 'invitation-embedded-card' : 'page-wrapper'}>
       {!embedded && <Preloader />}
 
-      <section className="static-hero-s5">
+      <section className="static-hero-s5 invitation-hero">
         <div className="hero-container">
           <div className="hero-inner">
             <div className="container-fluid">
@@ -112,7 +112,7 @@ export default function Card({ embedded = false }) {
         </div>
       </section>
 
-      <section className="wpo-story-section-s6 section-padding" id="story">
+      <section className="wpo-story-section-s6 section-padding invitation-functions" id="story">
         <div className="container">
           <div className="wpo-section-title"></div>
           <div className="wpo-story-wrap">
