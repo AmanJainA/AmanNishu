@@ -72,7 +72,7 @@ export default function Card({ embedded = false }) {
     <div className={embedded ? 'invitation-embedded-card' : 'page-wrapper'}>
       {!embedded && <Preloader />}
 
-      <section className="static-hero-s5 invitation-hero">
+      <section className="static-hero-s5">
         <div className="hero-container">
           <div className="hero-inner">
             <div className="container-fluid">
@@ -112,7 +112,7 @@ export default function Card({ embedded = false }) {
         </div>
       </section>
 
-      <section className="wpo-story-section-s6 section-padding invitation-functions" id="story">
+      <section className="wpo-story-section-s6 section-padding" id="story">
         <div className="container">
           <div className="wpo-section-title"></div>
           <div className="wpo-story-wrap">
@@ -126,23 +126,24 @@ export default function Card({ embedded = false }) {
                 {row.map((ev, i) => (
                   <div className="col col-lg-4 col-md-12 col-12 mb-3" key={ev.id}>
                     <Reveal
-                      className={`wpo-story-item invitation-function-card ${/mehndi/i.test(ev.title) ? 'function-mehndi' : ''} ${/haldi/i.test(ev.title) ? 'function-haldi' : ''} ${/mangal geet/i.test(ev.title) ? 'function-mangal-geet' : ''} ${/sagai|lagan/i.test(ev.title) ? 'function-sagai' : ''} ${/mahila sangeet/i.test(ev.title) ? 'function-sangeet' : ''} ${/kalash/i.test(ev.title) ? 'function-kalash' : ''} ${/nikashi/i.test(ev.title) ? 'function-nikashi' : ''} ${/varmala/i.test(ev.title) ? 'function-varmala' : ''} ${/fere/i.test(ev.title) ? 'function-fere' : ''}`}
+                      className={`wpo-story-item ${/mehndi/i.test(ev.title) ? 'wpo-story-item-mehndi' : ''}`}
                       duration={DURATIONS[i % DURATIONS.length]}
+                      style={{ boxShadow: '5px 5px 15px rgba(0,0,0,.3)', padding: '15px 0px' }}
                     >
-                      <div className="invitation-function-decoration" aria-hidden="true">
-                        <span>✦</span><i>❧</i><span>✦</span>
-                      </div>
-                      <div className="wpo-story-content invitation-function-details">
-                        <span className="invitation-function-date">{ev.date}</span>
-                        <h2>{ev.title}</h2>
-                        <p className="invitation-function-time">{ev.time}</p>
-                        {ev.venue && <p className="invitation-function-venue">{ev.venue}</p>}
-                      </div>
-                      {ev.image && (
-                        <div className="invitation-function-caricature">
-                          <img src={ev.image} alt={`${ev.title} wedding caricature`} loading="lazy" />
+                      <div className="wpo-story-img">
+                        <div className="wpo-story-img-inner">
+                          {ev.image && <img src={ev.image} alt={ev.title} />}
                         </div>
-                      )}
+                        <div className="flower-shape">
+                          <img src={asset('images/story/story-shape.png')} alt="" />
+                        </div>
+                      </div>
+                      <div className="wpo-story-content">
+                        <span>{ev.date}</span>
+                        <h2>{ev.title}</h2>
+                        <p>{ev.time}</p>
+                        <p>{ev.venue}</p>
+                      </div>
                     </Reveal>
                   </div>
                 ))}
