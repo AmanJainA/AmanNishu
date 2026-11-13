@@ -72,8 +72,18 @@ export default function Card({ embedded = false }) {
     <div className={embedded ? 'invitation-embedded-card' : 'page-wrapper'}>
       {!embedded && <Preloader />}
 
-      <section className="static-hero-s5">
-        <div className="hero-container">
+      <section className="embroidery-intro-band" aria-label="Wedding invitation theme">
+        <div className="embroidery-topline"><span>RANGILO RAJASTHAN</span><i>✿</i><span>DILLI KI DUAAYEIN</span></div>
+        <p>Two cities, two families, one beautiful beginning</p>
+      </section>
+
+      <section className="static-hero-s5 embroidery-hero">
+        <div className="embroidery-hero-frame">
+          <span className="embroidery-corner embroidery-corner-tl">✿</span>
+          <span className="embroidery-corner embroidery-corner-tr">✿</span>
+          <span className="embroidery-corner embroidery-corner-bl">✿</span>
+          <span className="embroidery-corner embroidery-corner-br">✿</span>
+          <div className="hero-container">
           <div className="hero-inner">
             <div className="container-fluid">
               <div className="hero-inner-wrap">
@@ -109,12 +119,18 @@ export default function Card({ embedded = false }) {
           <div className="shape-frame">
             <img src={asset('images/slider/frame.png')} alt="" />
           </div>
+          </div>
         </div>
       </section>
 
-      <section className="wpo-story-section-s6 section-padding" id="story">
+      <section className="wpo-story-section-s6 section-padding embroidery-events" id="story">
         <div className="container">
-          <div className="wpo-section-title"></div>
+          <div className="embroidery-section-heading">
+            <span>THE CELEBRATIONS</span>
+            <h2>Threads of joy, moments to cherish</h2>
+            <p>From our homes in Rajasthan and Delhi, with love woven into every celebration.</p>
+            <div className="embroidery-rule"><i>✿</i></div>
+          </div>
           <div className="wpo-story-wrap">
             {loading && <p className="text-center">Loading wedding events...</p>}
             {!loading && error && <p className="text-center" role="alert">{error}</p>}
@@ -126,10 +142,11 @@ export default function Card({ embedded = false }) {
                 {row.map((ev, i) => (
                   <div className="col col-lg-4 col-md-12 col-12 mb-3" key={ev.id}>
                     <Reveal
-                      className={`wpo-story-item ${/mehndi/i.test(ev.title) ? 'wpo-story-item-mehndi' : ''}`}
+                      className={`wpo-story-item embroidery-event-card ${/mehndi/i.test(ev.title) ? 'wpo-story-item-mehndi' : ''}`}
                       duration={DURATIONS[i % DURATIONS.length]}
-                      style={{ boxShadow: '5px 5px 15px rgba(0,0,0,.3)', padding: '15px 0px' }}
                     >
+                      <div className="embroidery-card-stitch" aria-hidden="true"><span>✿</span><span>✦</span><span>✿</span></div>
+                      <div className="embroidery-card-label">A CELEBRATION OF LOVE</div>
                       <div className="wpo-story-img">
                         <div className="wpo-story-img-inner">
                           {ev.image && <img src={ev.image} alt={ev.title} />}
@@ -138,18 +155,29 @@ export default function Card({ embedded = false }) {
                           <img src={asset('images/story/story-shape.png')} alt="" />
                         </div>
                       </div>
-                      <div className="wpo-story-content">
-                        <span>{ev.date}</span>
+                      <div className="wpo-story-content embroidery-event-copy">
+                        <span className="embroidery-event-date">{ev.date}</span>
                         <h2>{ev.title}</h2>
-                        <p>{ev.time}</p>
-                        <p>{ev.venue}</p>
+                        {ev.time && <p className="embroidery-event-time">{ev.time}</p>}
+                        {ev.venue && <p className="embroidery-event-venue"><span aria-hidden="true">⌖</span> {ev.venue}</p>}
                       </div>
+                      <div className="embroidery-card-foot" aria-hidden="true">✿ &nbsp; WITH LOVE &nbsp; ✿</div>
                     </Reveal>
                   </div>
                 ))}
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="embroidery-cultural-note">
+        <div className="embroidery-cultural-inner">
+          <span className="embroidery-cultural-kicker">JAIPUR • BIJAINAGAR • DELHI</span>
+          <h2>Rooted in tradition, stitched with love</h2>
+          <p>Inspired by Rajasthan’s colourful phad and gota-patti craft, the graceful jharokhas of Jaipur, and Delhi’s timeless architectural elegance — bringing our two worlds together.</p>
+          <div className="embroidery-cultural-motifs"><span>❋</span><span>✥</span><span>❋</span></div>
+          <p className="embroidery-blessing">Your presence will make our celebration complete.</p>
         </div>
       </section>
 
@@ -177,7 +205,7 @@ export default function Card({ embedded = false }) {
         </div>
       </section>
 
-      <footer className="wpo-site-footer-s2 invitation-card-footer">
+      <footer className="wpo-site-footer-s2 invitation-card-footer embroidery-footer">
         <div className="container text-center">
           <div className="invitation-footer-monogram">A <span>&amp;</span> N</div>
           <p>With love and blessings,</p>
