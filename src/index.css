@@ -994,3 +994,132 @@ body:has(.royal-door-gate),
 @media(prefers-reduced-motion:reduce){
   .embroidery-event-card,.embroidery-event-card *{transition:none!important}
 }
+
+
+/* Minimal, gentle refinement: clear information first, embroidery as a quiet detail. */
+.embroidery-intro-band{
+  padding:20px 16px 18px;
+  background:#fbf7f0;
+}
+.embroidery-topline{
+  gap:14px;
+  color:#986b55;
+  font-size:9px;
+  letter-spacing:.19em;
+}
+.embroidery-topline i{font-size:13px;color:#b58b5b}
+.embroidery-intro-band p{
+  margin-top:6px;
+  color:#76695e;
+  font-size:13px;
+}
+.embroidery-event-facts{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:18px;
+  margin:17px auto 0;
+  color:#654f43;
+  font:13px/1.45 Georgia,serif;
+}
+.embroidery-event-facts span{display:flex;align-items:center;gap:7px}
+.embroidery-event-facts small{
+  color:#a47755;
+  font:600 8px/1.4 Arial,sans-serif;
+  letter-spacing:.13em;
+}
+.embroidery-event-facts i{
+  width:3px;height:3px;border-radius:50%;background:#c39a68;
+}
+.embroidery-hero{
+  padding-top:20px;
+  background:#fbf7f0;
+}
+.embroidery-hero-frame{
+  border:1px solid rgba(159,116,83,.28);
+  outline:1px solid rgba(191,157,112,.18);
+  outline-offset:-7px;
+  background:rgba(255,255,255,.38);
+}
+.embroidery-hero-frame:before,.embroidery-hero-frame:after{display:none}
+.embroidery-corner{color:#b48a61;font-size:17px}
+.embroidery-events{
+  background:linear-gradient(180deg,#fffdf9 0%,#faf5ed 100%);
+}
+.embroidery-events:before,.embroidery-events:after{display:none}
+.embroidery-section-heading{margin-bottom:38px}
+.embroidery-section-heading>span,.embroidery-cultural-kicker{
+  color:#9b7255;
+  font-size:9px;
+  letter-spacing:.2em;
+}
+.embroidery-section-heading h2,.embroidery-cultural-inner h2{
+  color:#62483d;
+}
+.embroidery-section-heading p{color:#817267}
+.embroidery-rule{margin-top:17px}
+.embroidery-rule:before,.embroidery-rule:after{
+  width:48px;border-top:1px solid rgba(176,139,96,.45)
+}
+.embroidery-rule i{font-size:12px;color:#b58b5b}
+.embroidery-event-card{
+  padding:19px 16px 18px!important;
+  border:1px solid rgba(157,117,85,.28)!important;
+  border-radius:3px!important;
+  background:#fffdfa!important;
+  box-shadow:0 5px 18px rgba(78,57,42,.055),inset 0 0 0 3px rgba(193,151,87,.045)!important;
+}
+.embroidery-event-card:before{
+  inset:6px;
+  border:1px solid rgba(163,125,91,.17);
+}
+.embroidery-card-label{
+  margin-bottom:9px;
+  color:#a18468;
+  font-size:8px;
+  letter-spacing:.16em;
+}
+.embroidery-event-card .wpo-story-img{width:min(100%,270px)!important}
+.embroidery-event-copy .embroidery-event-date{
+  border-color:rgba(174,126,66,.35);
+  background:#faf4e9;
+  color:#876344;
+}
+.embroidery-event-copy h2{color:#704a40}
+.embroidery-event-copy .embroidery-event-time{color:#65574d}
+.embroidery-event-copy .embroidery-event-venue{color:#82766b}
+.embroidery-cultural-note{
+  padding:58px 18px;
+  background:#f5eee4;
+}
+.embroidery-cultural-inner{
+  border:1px solid rgba(155,119,86,.3);
+  outline:none;
+  background:rgba(255,253,248,.72);
+}
+.embroidery-cultural-inner>p{
+  color:#75675b;
+  line-height:1.8;
+}
+.embroidery-cultural-inner .embroidery-blessing{
+  margin-top:15px;
+  color:#8c6550;
+}
+.embroidery-footer{
+  border-top:2px solid rgba(239,205,151,.35);
+}
+.embroidery-footer:before{display:none}
+@media(max-width:767px){
+  .embroidery-intro-band{padding:15px 12px}
+  .embroidery-event-facts{gap:8px 13px;margin-top:13px;font-size:11px}
+  .embroidery-event-facts small{font-size:7px}
+  .embroidery-event-facts i{display:none}
+  .embroidery-hero{padding:14px 9px 30px}
+  .embroidery-hero-frame{padding:10px 7px}
+  .embroidery-corner{font-size:14px}
+  .embroidery-section-heading{margin-bottom:27px}
+  .embroidery-event-card{padding:14px 11px!important}
+  .embroidery-cultural-note{padding:38px 13px}
+  .embroidery-cultural-inner{padding:25px 17px}
+}
