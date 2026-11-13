@@ -848,3 +848,149 @@ body:has(.royal-door-gate),
   position: relative;
   z-index: 1;
 }
+
+
+/* ── Aman & Nishu: embroidered Rajasthan × Delhi invitation ── */
+.embroidery-intro-band{
+  position:relative; z-index:1; padding:22px 16px 8px; text-align:center;
+  color:#7e3f35; background:#fbf5eb;
+}
+.embroidery-topline{
+  display:flex; align-items:center; justify-content:center; gap:18px;
+  color:#9a493e; font:600 10px/1.4 Georgia,serif; letter-spacing:.24em;
+}
+.embroidery-topline i{color:#c18a38;font-size:18px;font-style:normal}
+.embroidery-intro-band p{
+  margin:7px 0 0; color:#8b7461; font:italic 13px/1.5 Georgia,serif; letter-spacing:.04em;
+}
+.embroidery-hero{
+  position:relative; padding:38px clamp(14px,4vw,58px) 62px;
+  background:
+    radial-gradient(ellipse at 50% 0%,rgba(208,164,102,.12),transparent 58%),
+    #fbf5eb;
+}
+.embroidery-hero-frame{
+  position:relative; max-width:1440px; margin:0 auto; padding:clamp(18px,3vw,38px);
+  border:1px solid rgba(160,91,61,.48);
+  outline:1px dashed rgba(185,139,68,.62); outline-offset:-8px;
+  background:rgba(255,252,245,.55);
+}
+.embroidery-hero-frame:before,.embroidery-hero-frame:after{
+  content:"";position:absolute;left:50%;width:72px;height:12px;transform:translateX(-50%);
+  background:radial-gradient(circle,#b64e43 2px,transparent 2.7px) 0 0/12px 12px repeat-x;
+}
+.embroidery-hero-frame:before{top:-6px}.embroidery-hero-frame:after{bottom:-6px}
+.embroidery-corner{position:absolute;z-index:2;color:#b34e42;font-size:25px;line-height:1}
+.embroidery-corner-tl{top:8px;left:10px}.embroidery-corner-tr{top:8px;right:10px}
+.embroidery-corner-bl{bottom:8px;left:10px}.embroidery-corner-br{bottom:8px;right:10px}
+.embroidery-hero .static-hero-s5,.embroidery-hero .hero-container{background:transparent}
+.embroidery-hero .shape-frame{opacity:.42}
+.embroidery-events{
+  position:relative; padding:clamp(54px,7vw,96px) 0;
+  background:
+    radial-gradient(ellipse at 50% 0%,rgba(190,139,72,.10),transparent 48%),
+    linear-gradient(180deg,#fffaf1 0%,#f7eee2 100%);
+}
+.embroidery-events:before,.embroidery-events:after{
+  content:"";position:absolute;left:0;right:0;height:8px;opacity:.38;
+  background:repeating-linear-gradient(90deg,#a84c40 0 3px,transparent 3px 10px,#c3974c 10px 12px,transparent 12px 20px);
+}
+.embroidery-events:before{top:0}.embroidery-events:after{bottom:0}
+.embroidery-section-heading{max-width:760px;margin:0 auto 46px;padding:0 18px;text-align:center}
+.embroidery-section-heading>span,.embroidery-cultural-kicker{
+  color:#a04b40;font:600 10px/1.6 Georgia,serif;letter-spacing:.25em
+}
+.embroidery-section-heading h2,.embroidery-cultural-inner h2{
+  margin:10px 0 12px;color:#70443b;font:400 clamp(30px,4.3vw,48px)/1.15 Georgia,serif
+}
+.embroidery-section-heading p{margin:0;color:#897564;font:14px/1.7 Georgia,serif}
+.embroidery-rule{display:flex;align-items:center;justify-content:center;gap:12px;margin:22px auto 0;color:#b7833f}
+.embroidery-rule:before,.embroidery-rule:after{content:"";width:68px;border-top:1px dashed #bd8b4e}
+.embroidery-rule i{font-style:normal;font-size:18px}
+.embroidery-event-card{
+  position:relative;isolation:isolate;height:100%;overflow:hidden!important;
+  padding:22px 18px 16px!important;border:1px solid rgba(151,89,62,.48)!important;
+  border-radius:5px!important;background:#fffaf0!important;
+  box-shadow:0 10px 28px rgba(89,57,37,.10),inset 0 0 0 5px rgba(193,151,87,.10)!important;
+}
+.embroidery-event-card:before{
+  content:"";position:absolute;inset:8px;z-index:-1;pointer-events:none;
+  border:1px dashed rgba(163,105,69,.48);border-radius:2px;
+}
+.embroidery-card-stitch{
+  display:flex;align-items:center;justify-content:center;gap:15px;
+  margin:0 auto 9px;color:#b24e42;font-size:13px
+}
+.embroidery-card-stitch span:nth-child(2){color:#c29442;font-size:10px}
+.embroidery-card-label{
+  margin-bottom:7px;text-align:center;color:#a17b54;
+  font:600 8px/1.5 Georgia,serif;letter-spacing:.22em
+}
+.embroidery-event-card .wpo-story-img{width:min(100%,290px)!important}
+.embroidery-event-card .wpo-story-img .flower-shape img{opacity:.92}
+.embroidery-event-card .wpo-story-content{
+  position:relative;z-index:2;padding:8px 12px 4px!important;text-align:center
+}
+.embroidery-event-copy .embroidery-event-date{
+  display:inline-block;margin:0 0 8px;padding:5px 13px;
+  border:1px solid rgba(174,126,66,.55);border-radius:30px;
+  color:#986c3e;background:#fbf1dc;font:600 10px/1.3 Georgia,serif;letter-spacing:.08em
+}
+.embroidery-event-copy h2{
+  margin:0 0 7px;color:#7c4038;font:400 clamp(24px,2.5vw,31px)/1.2 Georgia,serif
+}
+.embroidery-event-copy .embroidery-event-time{
+  margin:0 0 5px;color:#70594b;font:500 13px/1.6 Georgia,serif
+}
+.embroidery-event-copy .embroidery-event-venue{
+  margin:0;color:#8a7767;font:12px/1.6 Georgia,serif
+}
+.embroidery-event-venue span{color:#b04c40}
+.embroidery-card-foot{
+  margin-top:10px;text-align:center;color:#b18549;
+  font:600 8px/1.5 Georgia,serif;letter-spacing:.2em
+}
+.embroidery-cultural-note{
+  position:relative;padding:clamp(52px,7vw,88px) 18px;text-align:center;
+  background:
+    radial-gradient(circle at 10% 20%,rgba(193,142,65,.12) 0 2px,transparent 3px) 0 0/28px 28px,
+    radial-gradient(circle at 90% 80%,rgba(165,70,58,.10) 0 2px,transparent 3px) 0 0/28px 28px,
+    #f4e8d8;
+}
+.embroidery-cultural-inner{
+  max-width:850px;margin:0 auto;padding:clamp(25px,5vw,48px);
+  border:1px solid rgba(155,94,62,.45);outline:1px dashed rgba(174,131,72,.55);outline-offset:-8px;
+  background:rgba(255,250,240,.68)
+}
+.embroidery-cultural-inner h2{font-size:clamp(28px,4vw,42px)}
+.embroidery-cultural-inner>p{
+  max-width:700px;margin:0 auto;color:#7f6b5a;font:14px/1.85 Georgia,serif
+}
+.embroidery-cultural-motifs{display:flex;justify-content:center;gap:28px;margin:20px 0;color:#b34f43;font-size:20px}
+.embroidery-cultural-motifs span:nth-child(2){color:#c09343}
+.embroidery-cultural-inner .embroidery-blessing{color:#8d4e43;font-style:italic}
+.embroidery-footer{
+  position:relative;border-top:4px double rgba(239,205,151,.52);
+  background:
+    radial-gradient(circle at 50% 0,rgba(218,174,112,.17),transparent 60%),
+    linear-gradient(135deg,#553a35,#80524a)!important
+}
+.embroidery-footer:before{
+  content:"";position:absolute;top:10px;left:50%;width:min(280px,60vw);height:9px;transform:translateX(-50%);
+  background:radial-gradient(circle,#e5bd78 2px,transparent 2.8px) 0 0/14px 9px repeat-x
+}
+@media(max-width:767px){
+  .embroidery-intro-band{padding-top:16px}
+  .embroidery-topline{gap:9px;font-size:8px;letter-spacing:.15em}
+  .embroidery-intro-band p{font-size:11px}
+  .embroidery-hero{padding:20px 10px 36px}
+  .embroidery-hero-frame{padding:12px 8px}
+  .embroidery-corner{font-size:17px}
+  .embroidery-section-heading{margin-bottom:30px}
+  .embroidery-event-card{padding:16px 12px 13px!important}
+  .embroidery-card-label{font-size:7px}
+  .embroidery-cultural-inner{padding:26px 18px}
+}
+@media(prefers-reduced-motion:reduce){
+  .embroidery-event-card,.embroidery-event-card *{transition:none!important}
+}
